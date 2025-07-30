@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Define.Prototype.Sleep.Repeat.</title>
-    <link>https://amylily1011.github.io/</link>
-    <description>Recent content on Define.Prototype.Sleep.Repeat.</description>
+    <title>Projects on Define.Prototype.Sleep.Repeat.</title>
+    <link>https://amylily1011.github.io/projects/</link>
+    <description>Recent content in Projects on Define.Prototype.Sleep.Repeat.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Jun 2025 17:15:51 +0100</lastBuildDate>
-    <atom:link href="https://amylily1011.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://amylily1011.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/maassearch/</link>
@@ -18,7 +18,7 @@
     <item>
       <title>The MAAS redesign that changes the Design System</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/appliactionlayout/</link>
-      <pubDate>Sat, 01 Feb 2025 14:53:41 +0000</pubDate>
+      <pubDate>Wed, 01 Feb 2023 14:53:41 +0000</pubDate>
       <guid>https://amylily1011.github.io/projects/projectdirectory/appliactionlayout/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;We want to redesign MAAS UI to fit in with the modern world cloud-like experience and align designs across products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&#xA;We need a way to create a functional design that can be applied across products under the Cloud and Infrastructure division.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&#xA;UX lead, collaborating with engineering and PM. I conducted user interviews with 5 internal users and 1 external user.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;&#34;&gt;&#xA;&lt;!-- Column 1: Image --&gt;&#xA;    &lt;div style=&#34;flex: 1; max-width: 45%;&#34;&gt;&#xA;        &lt;strong&gt;Timeline:&lt;/strong&gt;  &#xA;We spent a total of 6 weeks on this project to spin up a prototype of the new MAAS UI.&#xA;&lt;p&gt;We were fortunate enough to have an external user signed up to test out the new UI with us along with the 5 initial internal testers.&lt;/p&gt;</description>
     </item>
