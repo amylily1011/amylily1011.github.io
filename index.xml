@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Define. Prototype. Sleep. Repeat.</title>
-    <link>https://amylily1011.github.io/</link>
-    <description>Recent content on Define. Prototype. Sleep. Repeat.</description>
+    <title>Amy Lily</title>
+    <link>https://example.org/</link>
+    <description>Recent content on Amy Lily</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 12 Jun 2025 17:15:51 +0100</lastBuildDate>
-    <atom:link href="https://amylily1011.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/maassearch/</link>
+      <link>https://example.org/projects/projectdirectory/maassearch/</link>
       <pubDate>Thu, 12 Jun 2025 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/maassearch/</guid>
+      <guid>https://example.org/projects/projectdirectory/maassearch/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The default search relied on learning a custom DSL. This is not efficient, intimidating and error-prone for both expert users and new users. The translation step is where all users made the most mistakes. Once the correct query is constructed, users who check in the next day tends to forget how they constructed the query.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we remove the manual translation step without compromising on precision?&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>whoami</title>
-      <link>https://amylily1011.github.io/about/</link>
+      <link>https://example.org/about/</link>
       <pubDate>Sun, 01 Dec 2024 16:20:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/about/</guid>
-      <description>&lt;p&gt;👋 Hi, I’m Amy!&lt;/p&gt;&#xA;&lt;p&gt;UX explorer by day, dumpling enthusiast by night 🥟✨&lt;/p&gt;&#xA;&lt;p&gt;I’m a London-based UX Design Manager with a soft spot for elegant systems, bold ideas, and anything that makes complex things feel delightfully simple. I’ve spent the last 10+ years designing products and experiences that live at the intersection of cloud infrastructure, AI, and open source — making the technical feel human.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/about-me/tangbao.jpg&#34; alt=&#34;tangbao&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;My favorite things include:&lt;/p&gt;</description>
+      <guid>https://example.org/about/</guid>
+      <description>&lt;p&gt;👋 Hi, I’m Amy!&lt;/p&gt;&#xA;&lt;p&gt;UX explorer by day, dumpling enthusiast by night 🥟✨&lt;/p&gt;&#xA;&lt;p&gt;I’m a London-based UX Design Manager with a soft spot for elegant systems, bold ideas, and anything that makes complex things feel delightfully simple. I’ve spent the last 10+ years designing products and experiences that live at the intersection of cloud infrastructure, AI, and open source — making the technical feel human.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://example.org/images/about-me/tangbao.jpg&#34; alt=&#34;tangbao&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;My favorite things include:&lt;/p&gt;</description>
     </item>
     <item>
       <title>The MAAS redesign that changes the Design System</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/appliactionlayout/</link>
+      <link>https://example.org/projects/projectdirectory/applicationlayout/</link>
       <pubDate>Wed, 01 Feb 2023 14:53:41 +0000</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/appliactionlayout/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;We want to redesign MAAS UI to fit in with the modern world cloud-like experience and align designs across products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&#xA;We need a way to create a functional design that can be applied across products under the Cloud and Infrastructure division.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&#xA;UX lead, collaborating with engineering and PM. I conducted user interviews with 5 internal users and 1 external user.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;&#34;&gt;&#xA;&lt;!-- Column 1: Image --&gt;&#xA;    &lt;div style=&#34;flex: 1; max-width: 45%;&#34;&gt;&#xA;        &lt;strong&gt;Timeline:&lt;/strong&gt;  &#xA;We spent a total of 6 weeks on this project to spin up a prototype of the new MAAS UI.&#xA;&lt;p&gt;We were fortunate enough to have an external user signed up to test out the new UI with us along with the 5 initial internal testers.&lt;/p&gt;</description>
+      <guid>https://example.org/projects/projectdirectory/applicationlayout/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;We want to redesign MAAS UI to fit in with the modern world cloud-like experience and align designs across products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&#xA;We need a way to create a functional design that can be applied across products under the Cloud and Infrastructure division.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&#xA;UX lead, collaborating with engineering and PM. I conducted user interviews with 5 internal users and 1 external user.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;We were fortunate enough to have an external user signed up to test out the new UI with us along with the 5 initial internal testers.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
