@@ -17,6 +17,20 @@
       <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The default search relied on learning a custom DSL. This is not efficient, intimidating and error-prone for both expert users and new users. The translation step is where all users made the most mistakes. Once the correct query is constructed, users who check in the next day tends to forget how they constructed the query.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we remove the manual translation step without compromising on precision?&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>[WIP] Redesigning the Ubuntu Pro Client CLI</title>
+      <link>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</link>
+      <pubDate>Wed, 12 Jun 2024 17:15:51 +0100</pubDate>
+      <guid>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[WIP] MAAS cluster manager from concept to product - serving 60K MEC sites</title>
+      <link>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</link>
+      <pubDate>Mon, 12 Jun 2023 17:15:51 +0100</pubDate>
+      <guid>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>The MAAS redesign that changes the Design System</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</link>
       <pubDate>Wed, 01 Feb 2023 14:53:41 +0000</pubDate>
