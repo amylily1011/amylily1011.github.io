@@ -210,7 +210,8 @@ How might we only surface the default for machines that are actually helpful in 
 
 ***
 
-**<H3>Sneakpeek: Final prototype:</H3>**
+**<H3>Sneakpeek: Final prototype</H3>**
+
 <iframe style="border: none;" width="800" height="450" src="https://embed.figma.com/proto/JRD38DvBBt6VMdqbW97vqO/Untitled?scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-4809&starting-point-node-id=1%3A9124&embed-host=share" allowfullscreen></iframe>
 
 **Task one: Commissioning flow**
