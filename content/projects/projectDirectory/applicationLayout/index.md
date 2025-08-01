@@ -34,8 +34,21 @@ In this experiment, we went through 6 design iterations before the final version
 </div>
 
 ***
+
+**Users:**
+During my on-boarding week, I went through past research videos from the previous experiment where the team was testing out MAAS with 11 internal developers and Field Engineers who are working to support MAAS clients. With this leading insights I've created a survey to reach out to external users of MAAS, map the data to our Grafana Dashboard, and categorized our users into groups.
+
+The graph below shows the number categories of users of MAAS and their purpose of using MAAS. 
+
+![maas user groups](/images/maas-application-layout/usergroups.png)
+
+We found that 35.5% of our users are using MAAS for production purposes in their private clouds. The majority of our users (64.6%) are using MAAS for lab purposes such as creating a mini homelab with a MAAS cluster. There is also an overlap of 18.2% where companies use MAAS to support both lab and production environment. The insights on the survery also aligns with our gathered data from the Grafana Dashboard as well.  
+
+***
 **Problems:** 
-This research focuses on 3 aspects of the current (MAAS 2.8 - year 2020) UI:
+Based on the input data we received, I have observed that our UI was not easily learnable, not efficient, and quite error tolerant. The three aspects below are factors that contributes to problems that persists in the experience of MAAS. 
+
+This redesign focuses on 3 aspects of the current (MAAS 2.8 - year 2020) UI:
 1. Navigation and information architecture
 2. Error-prone action button
 3. How to make MAAS process and events feel more real-time in the UI?
