@@ -38,7 +38,7 @@ In this experiment, we went through 6 design iterations before the final version
 **Users:**
 During my on-boarding week, I went through past research videos from the previous experiment where the team was testing out MAAS with 11 internal developers and Field Engineers who are working to support MAAS clients. With this leading insights I've created a survey to reach out to external users of MAAS, map the data to our Grafana Dashboard, and categorized our users into groups.
 
-The graph below shows the number categories of users of MAAS and their purpose of using MAAS. 
+The graph below shows categories of users of MAAS and their purpose of using MAAS. 
 
 ![maas user groups](/images/maas-application-layout/usergroups.png)
 
