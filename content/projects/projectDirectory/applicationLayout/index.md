@@ -1,5 +1,5 @@
 +++
-title = 'The MAAS redesign that changes the Design System'
+title = 'Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift'
 date = 2023-02-01T14:53:41Z
 type = "projects"
 draft = false
