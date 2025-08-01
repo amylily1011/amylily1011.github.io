@@ -52,7 +52,7 @@ How might we remove the manual translation step without compromising on precisio
 My Role:">
   <meta itemprop="datePublished" content="2025-06-12T17:15:51+01:00">
   <meta itemprop="dateModified" content="2025-06-12T17:15:51+01:00">
-  <meta itemprop="wordCount" content="1433">
+  <meta itemprop="wordCount" content="1488">
   <meta itemprop="image" content="https://amylily1011.github.io/">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -193,7 +193,7 @@ My Role:">
 <li><em>[UX Design]:</em> We need a way  to enable people to <em>search without learning the syntax</em>, because the translation step is where people make the most mistakes.</li>
 </ul>
 <hr>
-<!-- raw HTML omitted -->
+<h3>Iteration 1 [MAAS 3.0 - 2022] - How might we reduce the load time from 2 mins to 10 secs for 1000 machines? </h3>
 <p>The table below shows the estimated Web Socket response time in miliseconds and the total UI load time in relation to the number of machines.</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/machinelist-metrics.png" alt="Search performance"></p>
 <p>From this graph, we notices that when our user scales their environment to more than 100 machines in their environment, the load time starts to lag. This causes the entire experience to be less motivated.</p>
@@ -219,11 +219,13 @@ My Role:">
 <li>Data presented on the client side were joined between multiple tables, creating one big object which makes the list API quite expensive. We need the list API to work in a collection basis, which will allow the function to render all machines in one go.</li>
 </ol>
 <hr>
-<!-- raw HTML omitted -->
+<h3>Iteration 2 - How might we allow users to search for machines on MAAS easily with the new speed?</h3>
 <p><strong>Exploring different UI interactions</strong></p>
 <p>After moving the API calls to the server side, break down the object to fit for its purpose, we started testing out the UI interaction of this search behavior.</p>
 <p><strong>Adding helping texts</strong></p>
-<!-- raw HTML omitted -->
+<div style="text-align:center;">
+    <img src="https://amylily1011.github.io/images/maas-search/search-legend.png" alt="legend" width="350" >
+</div>
 <p>The image below shows the new version of our proposed interaction. Instead of having to learn from the docs page, the available filtering/searching elements will show up as chips sorted alphabetically. It also shows implicit logical operators such as AND, OR, and NOT in the bottom to specify it&rsquo;s logical order.</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/search-helper.png" alt="helper chip"></p>
 <p><strong>Keyboard interaction and free text search</strong></p>
@@ -261,14 +263,14 @@ We evaluate the interaction based on 4 elements:</p>
 <blockquote>
 <p>The problem here is although the UI felt easier to use. <em>People are still making a lot of mistakes</em> during the syntax creation/translation process. And even with all the fancy helper chip, 7 users still go back to the doc to find reference for the syntax.</p></blockquote>
 <hr>
-<!-- raw HTML omitted -->
+<h3>Iteration 3 - How might we remove the translation step out of search?</h3>
 <p>The video below shows our third UX prototype. In this prototype, I created a quick sample database with 10 machines to mimic NLP interactions that translates human language into MAAS search DSL.</p>
 <p>The idea was to remove the translation step out of the search journey and allow humans to search with human language.</p>
 <p>Visit <a href="https://github.com/amylily1011/NLPsearch"><img src="https://img.shields.io/badge/view-on%20github-blue?logo=github" alt="GitHub Repo"></a> to see the sample code using python steamlit to simulate the interaction.
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<video width="100%" controls>
+<source src="https://amylily1011.github.io/images/maas-search/maas-search-demo.mp4" type="video/mp4">
 Your browser does not support the video tag.
-<!-- raw HTML omitted --></p>
+</video></p>
 <blockquote>
 <p>The goal for this search interaction is to create a central search behavior so efficient that all cloud products at Canonical can reuse.</p></blockquote>
 <p><em>[Latest update]</em> We are still testing this out with other MAAS users and other cloud product teams.</p>
