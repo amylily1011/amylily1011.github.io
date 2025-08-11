@@ -115,11 +115,13 @@ These 2 examples are companies with fewer sites but with multiple MAAS instances
 
 We didn't really learn any new problems from this scenario in particular, aside from how they setup they MAAS instances. 
 
+Learning about the three scenarios above, we mapped out the importance VS urgency graph based on the feedback as follows.
+
+![importance VS urgency](/images/maas-site-manager/importanceVSurgency.png)
+
 *** 
 
 **Concept Proposal**
-
-Learning about the three scenarios above, the image below shows the concept of our first MVP. 
 
 ![Proposal](/images/maas-site-manager/proposal.png)
 
