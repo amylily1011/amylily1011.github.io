@@ -48,9 +48,9 @@ Timeline: We spent a total of 6 weeks on this project to spin up a prototype of 
 Challenge: We need a way to create a functional design that can be applied across products under the Cloud and Infrastructure division.
 My Role: UX lead, collaborating with engineering and PM. I conducted user interviews with 5 internal users and 1 external user.
 Timeline: We spent a total of 6 weeks on this project to spin up a prototype of the new MAAS UI. We were fortunate enough to have an external user signed up to test out the new UI with us along with the 5 initial internal testers.">
-  <meta itemprop="datePublished" content="2023-02-01T14:53:41+00:00">
-  <meta itemprop="dateModified" content="2023-02-01T14:53:41+00:00">
-  <meta itemprop="wordCount" content="2475">
+  <meta itemprop="datePublished" content="2021-10-01T14:53:41+00:00">
+  <meta itemprop="dateModified" content="2021-10-01T14:53:41+00:00">
+  <meta itemprop="wordCount" content="2528">
   <meta itemprop="image" content="https://amylily1011.github.io/">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -73,8 +73,8 @@ Timeline: We spent a total of 6 weeks on this project to spin up a prototype of 
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
-    <meta property="article:published_time" content="2023-02-01T14:53:41+00:00">
-    <meta property="article:modified_time" content="2023-02-01T14:53:41+00:00">
+    <meta property="article:published_time" content="2021-10-01T14:53:41+00:00">
+    <meta property="article:modified_time" content="2021-10-01T14:53:41+00:00">
     <meta property="og:image" content="https://amylily1011.github.io/">
 
 
@@ -82,7 +82,7 @@ Timeline: We spent a total of 6 weeks on this project to spin up a prototype of 
 
 
 
-    <meta property="article:published_time" content="2023-02-01 14:53:41 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2021-10-01 14:53:41 &#43;0000 UTC" />
 
 
 
@@ -169,14 +169,14 @@ We need a way to create a functional design that can be applied across products 
 UX lead, collaborating with engineering and PM. I conducted user interviews with 5 internal users and 1 external user.</p>
 <hr>
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-<!-- Column 1: Image -->
+<!-- Column 1: Text -->
     <div style="flex: 1; max-width: 45%;">
         <strong>Timeline:</strong>  
 We spent a total of 6 weeks on this project to spin up a prototype of the new MAAS UI.
 <p>We were fortunate enough to have an external user signed up to test out the new UI with us along with the 5 initial internal testers.</p>
 <p>In this experiment, we went through 6 design iterations before the final version was published. After the final version was shared with the design team, other teams were keen to pivot into the new layout. As a result, the application layout project became part of our design system.
 </div></p>
-  <!-- Column 2: Text -->
+  <!-- Column 2: Image -->
   <div style="flex: 2; max-width: 45%;">
     <img src="https://amylily1011.github.io/images/maas-application-layout/timeline.png" alt="MAAS Application Layout Timeline" style="width:100%; max-width: 100%; height: auto; border-radius: 6px;" />
 </div>
@@ -209,7 +209,8 @@ Based on the input data we received, I have observed that our UI was not easily 
 <p><strong>Why is the ACTION button a problem?</strong></p>
 <p>The image below shows the old version of MAAS UI. In the old version, all actions were cluttered under the green action button. Since <em>machines</em> are the main part of MAAS, the interaction point to all machines with the actions are quite far. This is an inefficient experience. Considering that every time a user clicks on the wrong item on the list, they will need to redo the experience again, making this very error prone and unpleasant to our users.<br>
 <img src="https://amylily1011.github.io/images/maas-application-layout/action-button.png" alt="MAAS action"></p>
-<p>On top of these two main problems, MAAS UI doesn&rsquo;t surface data that reflect reality. Many users needed to rely on the CLI to figure the current status of loading processes or things that are in waiting state.</p>
+<p>On top of these two main problems, <strong>this UI is also hard to scale</strong> because the centered align grid fixes all content to the center. This is hard for users to expand the window size in order to view information on the table in a more pragmatic way (opening a window and CLI tool in different tiles).</p>
+<p>In this version, MAAS UI doesn&rsquo;t surface data that reflect reality. Many users needed to rely on the CLI to figure the current status of loading processes or things that are in waiting state.</p>
 <p>One of our external users quoted that:</p>
 <blockquote>
 <p>I only use the UI for bulk actions because I cannot do that in the CLI, but the CLI is more reliable.</p></blockquote>

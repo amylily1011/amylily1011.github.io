@@ -24,18 +24,18 @@
       <description></description>
     </item>
     <item>
-      <title>[WIP - upcoming content] MAAS cluster manager from concept to product - serving 60K MEC sites</title>
+      <title>MAAS Cluster Manager from Concept to Product (Serving 60K MEC Sites)</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</link>
-      <pubDate>Thu, 12 Oct 2023 17:15:51 +0100</pubDate>
+      <pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
       <guid>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines. As MAAS scaled to over 60,000 edge sites across multi-region infrastructures, users struggled with fragmented deployments, image management, unreliable observability, and inconsistent management experiences. I led the design of MAAS Site Manager to solve this.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we empower organizations managing thousands of MAAS instances to monitor, troubleshoot, and control their infrastructure from a central UI without compromising scalability or security?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</link>
-      <pubDate>Wed, 01 Feb 2023 14:53:41 +0000</pubDate>
+      <pubDate>Fri, 01 Oct 2021 14:53:41 +0000</pubDate>
       <guid>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;We want to redesign MAAS UI to fit in with the modern world cloud-like experience and align designs across products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&#xA;We need a way to create a functional design that can be applied across products under the Cloud and Infrastructure division.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&#xA;UX lead, collaborating with engineering and PM. I conducted user interviews with 5 internal users and 1 external user.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;&#34;&gt;&#xA;&lt;!-- Column 1: Image --&gt;&#xA;    &lt;div style=&#34;flex: 1; max-width: 45%;&#34;&gt;&#xA;        &lt;strong&gt;Timeline:&lt;/strong&gt;  &#xA;We spent a total of 6 weeks on this project to spin up a prototype of the new MAAS UI.&#xA;&lt;p&gt;We were fortunate enough to have an external user signed up to test out the new UI with us along with the 5 initial internal testers.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;We want to redesign MAAS UI to fit in with the modern world cloud-like experience and align designs across products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&#xA;We need a way to create a functional design that can be applied across products under the Cloud and Infrastructure division.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&#xA;UX lead, collaborating with engineering and PM. I conducted user interviews with 5 internal users and 1 external user.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;&#34;&gt;&#xA;&lt;!-- Column 1: Text --&gt;&#xA;    &lt;div style=&#34;flex: 1; max-width: 45%;&#34;&gt;&#xA;        &lt;strong&gt;Timeline:&lt;/strong&gt;  &#xA;We spent a total of 6 weeks on this project to spin up a prototype of the new MAAS UI.&#xA;&lt;p&gt;We were fortunate enough to have an external user signed up to test out the new UI with us along with the 5 initial internal testers.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
