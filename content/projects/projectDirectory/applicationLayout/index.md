@@ -1,6 +1,6 @@
 +++
 title = 'Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift'
-date = 2023-02-01T14:53:41Z
+date = 2021-10-01T14:53:41Z
 type = "projects"
 draft = false
 +++
@@ -17,7 +17,7 @@ UX lead, collaborating with engineering and PM. I conducted user interviews with
 
 ***
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-<!-- Column 1: Image -->
+<!-- Column 1: Text -->
     <div style="flex: 1; max-width: 45%;">
         <strong>Timeline:</strong>  
 We spent a total of 6 weeks on this project to spin up a prototype of the new MAAS UI.
@@ -27,7 +27,7 @@ We were fortunate enough to have an external user signed up to test out the new 
 In this experiment, we went through 6 design iterations before the final version was published. After the final version was shared with the design team, other teams were keen to pivot into the new layout. As a result, the application layout project became part of our design system.
     </div>
 
-  <!-- Column 2: Text -->
+  <!-- Column 2: Image -->
   <div style="flex: 2; max-width: 45%;">
     <img src="/images/maas-application-layout/timeline.png" alt="MAAS Application Layout Timeline" style="width:100%; max-width: 100%; height: auto; border-radius: 6px;" />
 </div>
@@ -76,12 +76,15 @@ From this experiment coupled with our past testing results, we can conclude that
 The image below shows the old version of MAAS UI. In the old version, all actions were cluttered under the green action button. Since *machines* are the main part of MAAS, the interaction point to all machines with the actions are quite far. This is an inefficient experience. Considering that every time a user clicks on the wrong item on the list, they will need to redo the experience again, making this very error prone and unpleasant to our users.  
 ![MAAS action](/images/maas-application-layout/action-button.png)
 
-On top of these two main problems, MAAS UI doesn't surface data that reflect reality. Many users needed to rely on the CLI to figure the current status of loading processes or things that are in waiting state.
+On top of these two main problems, **this UI is also hard to scale** because the centered align grid fixes all content to the center. This is hard for users to expand the window size in order to view information on the table in a more pragmatic way (opening a window and CLI tool in different tiles).
+
+In this version, MAAS UI doesn't surface data that reflect reality. Many users needed to rely on the CLI to figure the current status of loading processes or things that are in waiting state.
 
 One of our external users quoted that:
 > I only use the UI for bulk actions because I cannot do that in the CLI, but the CLI is more reliable. 
 
 About 30% of our user based are recurring users of MAAS and started using MAAS since there were no UI. The CLI was originally design for machines to talk to machines, so most provisioning actions were done through a script via Foundations Cloud Engine (FCE) to on-board a new private cloud. A usual behavior is that users will rely on the CLI and only use the UI on redundant tasks. This creates a layer of complexity which made the entire experience very confusing, hardly learnable, and inefficient. 
+
 
 ***
 <H3> 🎉 Five iterations of prototyping and testing</H3>
