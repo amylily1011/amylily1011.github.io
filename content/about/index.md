@@ -24,6 +24,6 @@ When I’m not designing, you might find me:
 - Making dumplings and creating new recipes 🍜
 - Planning my next big adventure (Shanghai & Chongqing recently stole my heart)
 
-I believe great design happens when we listen deeply, explore curiously, and build fearlessly — always keeping the people we serve at the center.
+I believe great design happens when we listen deeply, explore curiously, and build fearlessly (always keeping the people we serve at the center).
 
 Let’s build something beautiful, weird, and meaningful together.
