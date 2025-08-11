@@ -48,7 +48,7 @@ Challenge:
 How might we empower organizations managing thousands of MAAS instances to monitor, troubleshoot, and control their infrastructure from a central UI without compromising scalability or security?">
   <meta itemprop="datePublished" content="2022-03-12T17:15:51+01:00">
   <meta itemprop="dateModified" content="2022-03-12T17:15:51+01:00">
-  <meta itemprop="wordCount" content="1610">
+  <meta itemprop="wordCount" content="1614">
   <meta itemprop="image" content="https://amylily1011.github.io/">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -242,9 +242,10 @@ MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco 
 <blockquote>
 <p><strong>Image management</strong> is still a problem in this scenario because both companies care a lot about image synchronization and the ability to replicate custom images.</p></blockquote>
 <p>We didn&rsquo;t really learn any new problems from this scenario in particular, aside from how they setup they MAAS instances.</p>
+<p>Learning about the three scenarios above, we mapped out the importance VS urgency graph based on the feedback as follows.</p>
+<p><img src="https://amylily1011.github.io/images/maas-site-manager/importanceVSurgency.png" alt="importance VS urgency"></p>
 <hr>
 <p><strong>Concept Proposal</strong></p>
-<p>Learning about the three scenarios above, the image below shows the concept of our first MVP.</p>
 <p><img src="https://amylily1011.github.io/images/maas-site-manager/proposal.png" alt="Proposal"></p>
 <h4>Image Management</h4>
 The first feature we aim to prioritize is Image Management, which is the problem that users from all three scenarios really care about. **They need a way to manage their images (especially custom images) in a centralized manner.**
