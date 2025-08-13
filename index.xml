@@ -24,18 +24,18 @@
       <description>&lt;p&gt;👋 Hi, I’m Amy!&lt;/p&gt;&#xA;&lt;p&gt;UX explorer by day, dumpling enthusiast by night 🥟✨&lt;/p&gt;&#xA;&lt;p&gt;I’m a London-based UX Design Manager with a soft spot for elegant systems, bold ideas, and anything that makes complex things feel delightfully simple. I’ve spent the last 10+ years designing products and experiences that live at the intersection of cloud infrastructure, AI, and open source — making the technical feel human.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/about-me/tangbao.jpg&#34; alt=&#34;tangbao&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;My favorite things include:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>[WIP - upcoming content] Redesigning the Ubuntu Pro Client CLI</title>
+      <title>Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</link>
       <pubDate>Fri, 12 Apr 2024 17:15:51 +0100</pubDate>
       <guid>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The &lt;code&gt;pro status&lt;/code&gt; CLI is the &lt;strong&gt;primary entry point&lt;/strong&gt; for human operators to check subscription status, security coverage, vulnerabilities, and service health.&lt;/p&gt;&#xA;&lt;p&gt;As the service portfolio grew across &lt;strong&gt;LTS, EOSS, non-LTS, and cloud-attached systems&lt;/strong&gt;, outputs became &lt;strong&gt;inconsistent, hard to parse, and difficult to act on&lt;/strong&gt; — especially for operators managing dozens or hundreds of machines.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>MAAS Cluster Manager from Concept to Product (Serving 60K MEC Sites)</title>
+      <title>Scaling Infra UX: Designing a Centralized Control Platform for 60K MAAS Sites</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</link>
       <pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
       <guid>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines. As MAAS scaled to over 60,000 edge sites across multi-region infrastructures, users struggled with fragmented deployments, image management, unreliable observability, and inconsistent management experiences. I led the design of MAAS Site Manager to solve this.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we empower organizations managing thousands of MAAS instances to monitor, troubleshoot, and control their infrastructure from a central UI without compromising scalability or security?&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines.&lt;br&gt;&#xA;As deployments scaled to &lt;strong&gt;60,000+ edge sites&lt;/strong&gt; across multi-region infrastructures, operators struggled with:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fragmented management&lt;/strong&gt; across thousands of MAAS instances&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual, redundant image handling&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Delayed observability&lt;/strong&gt; and no single source of truth&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Inconsistent UX&lt;/strong&gt; between sites&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I led the design of &lt;strong&gt;MAAS Site Manager&lt;/strong&gt; — a centralized control platform to unify monitoring, troubleshooting, and configuration at scale.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift</title>

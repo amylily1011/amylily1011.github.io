@@ -6,7 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="" />
+<meta name="description" content="Context: Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The pro status CLI is the primary entry point for human operators to check subscription status, security coverage, vulnerabilities, and service health.
+As the service portfolio grew across LTS, EOSS, non-LTS, and cloud-attached systems, outputs became inconsistent, hard to parse, and difficult to act on — especially for operators managing dozens or hundreds of machines.
+" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -15,7 +17,7 @@
 
     <title>
         
-            [WIP - upcoming content] Redesigning the Ubuntu Pro Client CLI :: Amy Lily 
+            Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability :: Amy Lily 
         
     </title>
 
@@ -39,23 +41,27 @@
 
 
 
-  <meta itemprop="name" content="[WIP - upcoming content] Redesigning the Ubuntu Pro Client CLI">
-  <meta itemprop="description" content="Nice theme for homepages and blogs">
+  <meta itemprop="name" content="Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability">
+  <meta itemprop="description" content="Context: Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The pro status CLI is the primary entry point for human operators to check subscription status, security coverage, vulnerabilities, and service health.
+As the service portfolio grew across LTS, EOSS, non-LTS, and cloud-attached systems, outputs became inconsistent, hard to parse, and difficult to act on — especially for operators managing dozens or hundreds of machines.">
   <meta itemprop="datePublished" content="2024-04-12T17:15:51+01:00">
   <meta itemprop="dateModified" content="2024-04-12T17:15:51+01:00">
+  <meta itemprop="wordCount" content="516">
   <meta itemprop="image" content="https://amylily1011.github.io/">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://amylily1011.github.io/">
-  <meta name="twitter:title" content="[WIP - upcoming content] Redesigning the Ubuntu Pro Client CLI">
-  <meta name="twitter:description" content="Nice theme for homepages and blogs">
+  <meta name="twitter:title" content="Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability">
+  <meta name="twitter:description" content="Context: Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The pro status CLI is the primary entry point for human operators to check subscription status, security coverage, vulnerabilities, and service health.
+As the service portfolio grew across LTS, EOSS, non-LTS, and cloud-attached systems, outputs became inconsistent, hard to parse, and difficult to act on — especially for operators managing dozens or hundreds of machines.">
 
 
 
     <meta property="og:url" content="https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/">
   <meta property="og:site_name" content="Amy Lily">
-  <meta property="og:title" content="[WIP - upcoming content] Redesigning the Ubuntu Pro Client CLI">
-  <meta property="og:description" content="Nice theme for homepages and blogs">
+  <meta property="og:title" content="Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability">
+  <meta property="og:description" content="Context: Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The pro status CLI is the primary entry point for human operators to check subscription status, security coverage, vulnerabilities, and service health.
+As the service portfolio grew across LTS, EOSS, non-LTS, and cloud-attached systems, outputs became inconsistent, hard to parse, and difficult to act on — especially for operators managing dozens or hundreds of machines.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
@@ -138,14 +144,133 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/">[WIP - upcoming content] Redesigning the Ubuntu Pro Client CLI</a></h2>
+            <h2 class="post-title"><a href="https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/">Ubuntu Pro CLI: Redesigning <code>pro status</code> for Clarity, Scale, and Actionability</a></h2>
 
             
             
             
 
             <div class="post-content">
-                
+                <p><strong>Context:</strong>
+Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The <code>pro status</code> CLI is the <strong>primary entry point</strong> for human operators to check subscription status, security coverage, vulnerabilities, and service health.</p>
+<p>As the service portfolio grew across <strong>LTS, EOSS, non-LTS, and cloud-attached systems</strong>, outputs became <strong>inconsistent, hard to parse, and difficult to act on</strong> — especially for operators managing dozens or hundreds of machines.</p>
+<hr>
+<p><strong>My Role:</strong></p>
+<p>I led the <strong>UX design and specification</strong> for the reworked <code>pro status</code> CLI, covering <strong>command structure, output design, empty states, accessibility, and extensibility</strong>.</p>
+<p>This is a cross-collaboration between the <strong>Server Team, Compliance Team, and Support Team.</strong></p>
+<hr>
+<p><strong>Challenge:</strong>
+How might we unify all <code>pro status</code> outputs into a <strong>consistent, human-readable format</strong> that:</p>
+<ul>
+<li>Works across <strong>different OS versions, support statuses, and terminal environments</strong></li>
+<li>Handles <strong>edge cases gracefully</strong> (unattached, expired, EOSS, non-LTS, failed auto-attach)</li>
+<li>Guides users toward <strong>next best actions</strong> without overwhelming them</li>
+<li>Preserves <strong>compatibility</strong> for automation and scripts</li>
+</ul>
+<hr>
+<p><strong>My Role:</strong>
+Lead UX Designer working with Product, Engineering, and Support.</p>
+<ul>
+<li>Audited existing CLI outputs for <strong>inconsistency and cognitive load</strong></li>
+<li>Created <strong>interaction &amp; layout specs</strong> for all main and edge cases</li>
+<li>Defined <strong>color, icon, and text conventions</strong> adaptive to terminal themes</li>
+<li>Coordinated with engineering to ensure <strong>backward compatibility</strong></li>
+</ul>
+<hr>
+<p><strong>Design Principles Applied:</strong></p>
+<ol>
+<li><strong>Consistency First</strong> – Tables, sections, and labels remain in the same order and wording.</li>
+<li><strong>Signal Over Noise</strong> – Critical info (security &amp; subscription) surfaces first.</li>
+<li><strong>Progressive Disclosure</strong> – Summaries in <code>pro status</code>; details in <code>pro service show</code>.</li>
+<li><strong>Accessibility &amp; Compatibility</strong> – Color-free mode, UTF-8 detection, non-TTY handling.</li>
+<li><strong>Context-Aware Guidance</strong> – Suggestions adapt to the machine’s state.</li>
+</ol>
+<hr>
+<p><strong>Scope of Work:</strong></p>
+<h3 id="1-command-structure-redesign">1. Command Structure Redesign</h3>
+<ul>
+<li>Unified <strong>verb-noun</strong> commands: <code>pro service enable</code>, <code>pro service show</code></li>
+<li>Grouped commands into <strong>Quick Start</strong>, <strong>Service-related</strong>, <strong>Security-related</strong>, <strong>Troubleshooting</strong></li>
+<li>Preserved old commands for compatibility</li>
+</ul>
+<h3 id="2-output-design-for-all-states">2. Output Design for All States</h3>
+<ul>
+<li>Attached systems: healthy, warnings, errors</li>
+<li>Unattached systems with <strong>dynamic suggestions</strong></li>
+<li>Expired subscriptions with/without grace periods</li>
+<li>EOSS / EOL releases with upgrade prompts</li>
+<li>Cloud auto-attach failures</li>
+</ul>
+<h3 id="3-security--package-coverage-views">3. Security &amp; Package Coverage Views</h3>
+<ul>
+<li>Vulnerability summaries ordered by severity</li>
+<li>Package coverage breakdowns: main/restricted, universe/multiverse, third-party</li>
+<li>Pending update summaries with <strong>exact next-step commands</strong></li>
+</ul>
+<h3 id="4-service-specific-details">4. Service-Specific Details</h3>
+<ul>
+<li>Templates for each service (FIPS, esm-apps, esm-infra, livepatch)</li>
+<li>Coverage until dates, installed/pending updates, contextual warnings</li>
+</ul>
+<h3 id="5-edge-case--accessibility-handling">5. Edge Case &amp; Accessibility Handling</h3>
+<ul>
+<li><code>--no-color</code> and <code>NO_COLOR</code> env var support</li>
+<li>UTF-8 fallback detection and replacement</li>
+<li><strong>Non-TTY</strong> clean output for automation</li>
+<li><code>--no-suggestions</code> mode</li>
+</ul>
+<hr>
+<p><strong>Before → After Improvements:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Old</strong></th>
+          <th><strong>New</strong></th>
+          <th><strong>Impact</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Inconsistent service lists</td>
+          <td>Standardized service table with name, status, entitlement, description</td>
+          <td>Reduces confusion</td>
+      </tr>
+      <tr>
+          <td>No clear next steps</td>
+          <td>Contextual suggestions with exact commands</td>
+          <td>Improves task completion</td>
+      </tr>
+      <tr>
+          <td>Hardcoded colors</td>
+          <td>Theme-aware colors, no-color fallback</td>
+          <td>Accessibility</td>
+      </tr>
+      <tr>
+          <td>Subscription buried in text</td>
+          <td>Dedicated “Subscription Status” section</td>
+          <td>Reduces missed critical info</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Impact &amp; Outcomes:</strong></p>
+<ul>
+<li>Reduced support tickets related to <code>pro status</code> by <strong>~45%</strong> in pilot</li>
+<li>Faster operator time-to-action via <strong>precise, contextual suggestions</strong></li>
+<li>Provided a <strong>single-source CLI spec</strong> for engineering</li>
+<li>Future-ready: new services can be plugged in without breaking consistency</li>
+</ul>
+<hr>
+<p><strong>Reflection &amp; Learnings:</strong></p>
+<ul>
+<li>CLI UX is <strong>product UX</strong> — consistency, accessibility, and context matter</li>
+<li>Balancing first-time vs. power-user needs was key</li>
+<li>Backward compatibility required <strong>careful spec design</strong></li>
+</ul>
+<hr>
+<p><img src="https://amylily1011.github.io/images/ubuntu-pro-cli/before-after.png" alt="CLI Before/After">
+<em>Structured, consistent, and action-oriented outputs replace fragmented, verbose text.</em></p>
+
             </div>
         </article>
 
