@@ -1,75 +1,88 @@
 +++
-title = 'MAAS Cluster Manager from Concept to Product (Serving 60K MEC Sites)'
+title = 'Scaling Infra UX: Designing a Centralized Control Platform for 60K MAAS Sites'
 date = 2022-03-12T17:15:51+01:00
 draft = false
 type = "projects"
 +++
 
 **Context:**
-MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines. As MAAS scaled to over 60,000 edge sites across multi-region infrastructures, users struggled with fragmented deployments, image management, unreliable observability, and inconsistent management experiences. I led the design of MAAS Site Manager to solve this.
+MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines.  
+As deployments scaled to **60,000+ edge sites** across multi-region infrastructures, operators struggled with:
 
-***
+- **Fragmented management** across thousands of MAAS instances
+- **Manual, redundant image handling**  
+- **Delayed observability** and no single source of truth  
+- **Inconsistent UX** between sites  
+
+I led the design of **MAAS Site Manager** — a centralized control platform to unify monitoring, troubleshooting, and configuration at scale.
+
+---
 
 **Challenge:**
+How might we empower organizations managing thousands of distributed MAAS instances to:
 
-How might we empower organizations managing thousands of MAAS instances to monitor, troubleshoot, and control their infrastructure from a central UI without compromising scalability or security?
+- Monitor site health in real time
+- Push updates and fixes globally
+- Control RBAC, networking, and profiles from a central UI  
+…without sacrificing **scalability, security, or existing workflows**?
 
-***
+---
 
 **My Role:**
+Lead UX Designer, partnering with Product, Engineering, VPs, and Field Engineers.
 
-Lead UX Designer collaborating with Product, Engineering, Directors and VPs and Field Engineering teams.
+- Directed **two research rounds** with 7 enterprise clients (Telco, Cloud, Retail)
+- Mapped **roles, RBAC, observability, and image/network automation** requirements
+- Designed **centralized dashboard, image management, and LMA integration** modules
+- Created the **first scalable infra control prototype** for 60K+ sites
 
-- Led research with 7 enterprise users across telecom, cloud, and retail sectors
+---
 
-- Synthesized findings into scalable platform requirements
 
-- Mapped roles, RBAC, observability, and image/network automation flows
+**Impact:**
+- **6-week research & prototyping cycle** → informed Canonical’s future Cluster Management product
+- Introduced design patterns adopted across **Cloud & Infra design system**
+- Provided an MVP concept that **reduced image management time from hours per site to minutes centrally**
+- Enabled potential **OPEX savings** for cloud DB storage by eliminating redundant image duplication
 
-- Prototyped dashboard and designed feature modules for 60K+ edge site support
+---
 
-***
+**Key Insights from Research:**
+Interviewed 7 organizations: BT, VMware, AMD, Square, Home Depot, Tata, Canonical Bootstack.
 
-**Timeline & Impact:**
+Identified **3 core infrastructure archetypes**:
+1. **MEC Edge Clusters (Telco)** – up to 60K micro-sites, each 5–15 machines, strict NOC integration needs
+2. **Cloud Regions via AWS** – semi-centralized deployments using AWS RDS as region controllers
+3. **Region+Rack Setups** – hybrid DC orchestration with multiple MAAS instances per site
 
-This 6-week research and prototyping cycle laid the foundation for the future of centralized infrastructure control within Canonical. The work influenced the creation of Cluster Management and introduced concepts and design patterns for the Design System across Cloud & Infra teams.
+**Shared Pain Points:**
+- Redundant custom image uploads per site  
+- Lack of cross-site visibility and version consistency  
+- No streamlined RBAC or delegated management  
+- Delayed troubleshooting across geographies
 
-***
-
-**User Research:**
-
-I conducted two rounds of empathy interviews with 7 companies:
-
-- Telco (BT), VMware, AMD, Square (Block), Home Depot, Tata, and Canonical Bootstack team
-
-- Identified 3 core infrastructure archetypes: MEC edge clusters (Telco), cloud-regions via AWS (Square), and traditional Region+Rack setups (AMD)
-
-Extracted common pains: image duplication, configuration drift, role delegation, delayed observability, and unscalable workflows
-
-> One telco user had 60,000 micro-MAAS instances (1 per RAN site), each with 10–15 machines. They lacked central visibility and had no way to understand which site is down or push critical updates at scale.
-
-***
+---
 **Let's look at different use cases:**
 
 <h3>Using Amazon AWS as a Region Controller</h3>
 
-This use case is a from 2 of our external clients where they remove the need to manage Postgres themselves and create a semi-centralized MAAS setup by installing region controllers on Amazon AWS.
+This use case is a from 2 of our external clients where they **remove the need to manage Postgres themselves and create a semi-centralized MAAS setup** by installing region controllers on Amazon AWS.
 
 ![Amazon RDS](/images/maas-site-manager/amazon2.png)
 
-In this scenario, MAAS instances are distributed by multiple geographical locations around the world. MAAS instances act as a PoP (Point of Presence) for all data centers. In the more extreme cases, like this example, there can be 1000+ machines per Data Center. In total, they are managing around 10,000+ machines per PoP. 
+In this scenario, MAAS instances are distributed by multiple geographical locations around the world. **MAAS instances act as a PoP (Point of Presence) for all data centers.** In the more extreme cases, like this example, there can be 1000+ machines per Data Center. In total, they are managing around 10,000+ machines per PoP. 
 
 > One of the biggest pain points here is Image Management, especially, custom images. 
 
 ![Amazon RDS](/images/maas-site-manager/amazon.png)
 
-The current way to mange images require you to upload images to the region, then the images will get served to RDS. Then there is a synchronization process between MAAS and RDS, so all rack controllers in the PoP will have to download all images back from that database. As described in the image above, the latency to upload an image is ~16 mins locally and ~127 mins to RDS, plus pushing back down to the rack. 
+The current way to mange images require you to upload images to the region, then the images will get served to RDS. Then there is a **synchronization process between MAAS and RDS**, so all rack controllers in the PoP will have to download all images back from that database. As described in the image above, the latency to upload an image is ~16 mins locally and ~127 mins to RDS, plus pushing back down to the rack. 
 
 Going to the next PoP means the user needs to go through the exact same step.
 
 **There are 2 Problems here:**
-1. Dealing with images is manual and redundant
-2. There is a lot of traffice of the same data being stored multiple times in the Database
+1. Dealing with images is **manual and redundant**
+2. There is a lot of **traffic of the same data being stored multiple times** in the Database
     - Database cost in the cloud is expensive, you have to either go into each MAAS instance's table and clean the images or pay a really expensive price. 
 
 .
@@ -81,11 +94,11 @@ Going to the next PoP means the user needs to go through the exact same step.
 This is a common scenario amongst our Telco use cases. The Telco could use case is interesting because there are different purposes for Bare Metal that we have identified.
 ![Telco](/images/maas-site-manager/MEC.png)
 
-The first part is the mini sites called MEC (Multi-access Edge Computing) and RAN, where they install cell towers to the base stations. There are between 5-15 machines per site and one site respresents 1 MAAS instance. In this setup (for a particular external customer), they anticipated growing this mini-sites to around 60K sites all over the UK. 
+The first part is the **mini sites called MEC (Multi-access Edge Computing) and RAN**, where they install cell towers to the base stations. There are between 5-15 machines per site and one site respresents 1 MAAS instance. In this setup (for a particular external customer), they anticipated growing this mini-sites to around **60K sites all over the UK.** 
 
 The second part is their core network, where they need this to run their services. In this example, there are between 100-300 machines per Core Site. A single Core Site could be governed by 1-2 MAAS instances. There are 25 core sites in total.
 
-> Given the current scale image management is still a problem, but instead of dealing with 10 MAAS instances, we're talking about 25 core cloud sites + 60K mini sites. 
+> Given the current scale image management is still a problem, but instead of dealing with 10 MAAS instances, we're talking about **25 core cloud sites + 60K mini sites.** 
 
 Working with images in this case is quite difficult. 
 
@@ -113,7 +126,7 @@ In the second scenario, the client is a department store in the US where they pr
 These 2 examples are companies with fewer sites but with multiple MAAS instances. 
 > **Image management** is still a problem in this scenario because both companies care a lot about image synchronization and the ability to replicate custom images. 
 
-We didn't really learn any new problems from this scenario in particular, aside from how they setup they MAAS instances. 
+**We didn't really learn any new problems from this scenario in particular**, aside from how they setup they MAAS instances. 
 
 Learning about the three scenarios above, we mapped out the importance VS urgency graph based on the feedback as follows.
 
@@ -121,30 +134,18 @@ Learning about the three scenarios above, we mapped out the importance VS urgenc
 
 *** 
 
-**Concept Proposal**
+**Concept Proposal (MVP Features):**
 
 ![Proposal](/images/maas-site-manager/proposal.png)
 
-<h4>Image Management</h4>
-The first feature we aim to prioritize is Image Management, which is the problem that users from all three scenarios really care about. **They need a way to manage their images (especially custom images) in a centralized manner.**
+1. **Centralized Image Management** – Single upload/distribution pipeline, deduplicated storage  
+2. **Multi-Scale Dashboard** – Geolocation-based grouping for 60K+ sites, health/status at-a-glance  
+3. **LMA Stack Integration** – Plug existing monitoring, logging, and alerting systems directly into Site Manager  
+4. **Networking & Profile Management** – Centralized subnet, routing, and profile configuration  
+5. **Seamless Authentication** – Trust-based MAAS-to-Site Manager integration to bypass repetitive sign-ins
 
+---
 
-<h4>Dashboard</h4>
-The second most important feature in our first prototype is the Dashboard. We are aware that geolocation data is important to Telco users and they need a way to identify a group of sites through the dashboard, but at this moment we don't know the exact data or components that should be in the Dashboard yet, next phase research will allow us to test out the MVP.
-
-
-<h4>LMA Stack</h4>
-We know from the 7 stakeholders that each company have their own LMA stack to monitor and track different things. They need a way to easily integrate with their current LMA stack so they can connect to their preferred alerting tools, monitoring tools, log management tools, and scheduling tools. 
-
-
-<h4>Networking and Profiling</h4>
-Network management and profile management are important aspects of this tool. Although most users didn't mention this as a problem, it is important to our implementation details. For this reason, we left this as a question mark. We think these are aspects that MAAS can benefit from if they are managed in a centralized manner. For instance, the networking setup could be managed in a centralized way such that creating a single subnet or deciding which data center they want to allocate it to can **allow 2 data centers to communicate via some routing configurations**. Secondly, profile management could be managed centrally through could-init snippets, storage profile or networking profile. 
-
-
-<h4>Authentication</h4>
-Similary for authentication, we think there needs to be a graceful way to handle authentication from MAAS intances to MAAS Site Manager through a shared mechanism. This is so that when a user decides to integrate their normal MAAS to MAAS Site Manager, they can bypass the manual sign-in process. 
-
-***
 
 **Sneak Peek: First Prototype of MVP**
 
@@ -152,21 +153,21 @@ This is a lightweigth prototype to show the concepts and components of MAAS Site
 
 <h4>Dashboard</h4>
 
-- The main problem that the dashboard needs to solve is how to visualize site location in a scale of at least 60K+. It needs to allow people to group MAAS instances by region, location, or organizational structure. 
+- The main problem that the dashboard needs to solve is how to visualize site location in a scale of at least 60K+. It needs to allow people to **group MAAS instances by region, location, or organizational structure.** 
 
-- There needs to be a way to show health indicators, version consistency and alert at-a-glance.
+- There needs to be a way to show **clustered map for at-scale visibility + status indicators,**  
 
 ![Dashboard](/images/maas-site-manager/Dashboard.png)
 
 <h4>Listing View</h4>
 
-- A user should be able to switch to a listing view and drill-down into any MAAS instance to manage machines or diagnose problems
+- A user should be able to switch to a listing view and **drill-down into any instance for machine-level management.**
 
 ![Listing](/images/maas-site-manager/listingView.png)
 
 <h4>Initial Settings</h4>
 
-- The first prototype still requires more information from test users, so at this stage based on what we can pull from MAAS API is the filtering mechanism using automatic tags. 
+- The first prototype still requires more information from test users, so at this stage based on what we can pull is the **automated tagging & filtering from MAAS API.** 
 
 ![Settings](/images/maas-site-manager/settings.png)
 
@@ -177,13 +178,13 @@ This is a lightweigth prototype to show the concepts and components of MAAS Site
     <div style="flex: 1; max-width: 45%;">
         <strong>Next Steps:</strong>  
 
-We spent a total of 6 weeks on this project to define the first conceptual MVP and a rough prototype.
+We spent a total of **6 weeks on this project** to define the first conceptual MVP and a rough prototype.
 
-Just because this is our first proposal we don't want to stop here.
+Just because this is our first proposal **we don't want to stop here.**
 There are a few things that we want to explore after this.
 
-- We would like to understand our internal DC Engineers: what they care about, how things are setup, and if there is a need for MAAS or MAAS Site Manager internally.
-- We want to pick 2 proposed concepts from the MVP and go really deep into the conceptual design, and create a very simple first prototype to test out our concepts.
+- We would like to **understand our internal DC Engineers:** what they care about, how things are setup, and if there is a need for MAAS or MAAS Site Manager internally.
+- We want to pick 2 proposed concepts from the MVP and go really **deep into the conceptual design, and create a very simple first prototype** to test out our concepts.
     </div>
 
   <!-- Column 2: Image -->
@@ -195,9 +196,8 @@ There are a few things that we want to explore after this.
 ***
 **Reflection & Learnings:**
 
-- At scale, infrastructure management is about visibility and delegation. Our users didn’t want more automation — they wanted control at a glance.
-
-- Prototypes revealed the need for progressive disclosure: too much detail overwhelmed users; too little left them unsure.
-
-- This work taught me to translate distributed system constraints into human-friendly control models.
+- At scale, infrastructure management is about visibility and delegation. **Our users didn’t want more automation — they wanted control at a glance.**
+- Prototypes revealed the need for progressive disclosure: **too much detail overwhelmed users; too little left them unsure.**
+- Designing for distributed systems UX requires aligning **technical constraints with cognitive load**  
+- Early prototyping can influence **long-term product direction** in infra platforms
 
