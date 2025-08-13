@@ -7,10 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="Context:
-The default search relied on learning a custom DSL. This is not efficient, intimidating and error-prone for both expert users and new users. The translation step is where all users made the most mistakes. Once the correct query is constructed, users who check in the next day tends to forget how they constructed the query.
+MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but intimidating and error-prone for both expert and new users.
+The translation step (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.
+Users frequently forgot query syntax between sessions, making search a recurring learning curve.
 Challenge:
-How might we remove the manual translation step without compromising on precision?
-My Role:
+How might we remove the manual translation step while keeping search fast, precise, and scalable?
 " />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -46,23 +47,25 @@ My Role:
 
   <meta itemprop="name" content="From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search">
   <meta itemprop="description" content="Context:
-The default search relied on learning a custom DSL. This is not efficient, intimidating and error-prone for both expert users and new users. The translation step is where all users made the most mistakes. Once the correct query is constructed, users who check in the next day tends to forget how they constructed the query.
+MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but intimidating and error-prone for both expert and new users.
+The translation step (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.
+Users frequently forgot query syntax between sessions, making search a recurring learning curve.
 Challenge:
-How might we remove the manual translation step without compromising on precision?
-My Role:">
+How might we remove the manual translation step while keeping search fast, precise, and scalable?">
   <meta itemprop="datePublished" content="2025-06-12T17:15:51+01:00">
   <meta itemprop="dateModified" content="2025-06-12T17:15:51+01:00">
-  <meta itemprop="wordCount" content="1488">
+  <meta itemprop="wordCount" content="1471">
   <meta itemprop="image" content="https://amylily1011.github.io/">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://amylily1011.github.io/">
   <meta name="twitter:title" content="From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search">
   <meta name="twitter:description" content="Context:
-The default search relied on learning a custom DSL. This is not efficient, intimidating and error-prone for both expert users and new users. The translation step is where all users made the most mistakes. Once the correct query is constructed, users who check in the next day tends to forget how they constructed the query.
+MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but intimidating and error-prone for both expert and new users.
+The translation step (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.
+Users frequently forgot query syntax between sessions, making search a recurring learning curve.
 Challenge:
-How might we remove the manual translation step without compromising on precision?
-My Role:">
+How might we remove the manual translation step while keeping search fast, precise, and scalable?">
 
 
 
@@ -70,10 +73,11 @@ My Role:">
   <meta property="og:site_name" content="Amy Lily">
   <meta property="og:title" content="From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search">
   <meta property="og:description" content="Context:
-The default search relied on learning a custom DSL. This is not efficient, intimidating and error-prone for both expert users and new users. The translation step is where all users made the most mistakes. Once the correct query is constructed, users who check in the next day tends to forget how they constructed the query.
+MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but intimidating and error-prone for both expert and new users.
+The translation step (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.
+Users frequently forgot query syntax between sessions, making search a recurring learning curve.
 Challenge:
-How might we remove the manual translation step without compromising on precision?
-My Role:">
+How might we remove the manual translation step while keeping search fast, precise, and scalable?">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
@@ -164,26 +168,41 @@ My Role:">
 
             <div class="post-content">
                 <p><strong>Context:</strong></p>
-<p>The default search relied on learning a custom DSL. This is not efficient, intimidating and error-prone for both expert users and new users. The translation step is where all users made the most mistakes. Once the correct query is constructed, users who check in the next day tends to forget how they constructed the query.</p>
+<p>MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but <strong>intimidating and error-prone</strong> for both expert and new users.<br>
+The <strong>translation step</strong> (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.<br>
+Users frequently forgot query syntax between sessions, making search <strong>a recurring learning curve</strong>.</p>
 <hr>
 <p><strong>Challenge:</strong></p>
-<p>How might we remove the manual translation step without compromising on precision?</p>
+<p>How might we <strong>remove the manual translation step</strong> while keeping search <strong>fast, precise, and scalable</strong>?</p>
 <hr>
-<p><strong>My Role:</strong></p>
-<p>UX lead, collaborating with engineering and PM. I conducted user interviews, mapped pain points, and prototyped a natural language parser layered over the DSL logic.</p>
+<p><strong>My Role:</strong>
+Lead UX Designer collaborating with Engineering &amp; PM:</p>
+<ul>
+<li>Conducted <strong>11 usability tests</strong> and multiple deep-dive interviews with MAAS users</li>
+<li>Mapped <strong>pain points in syntax translation, performance, and query building</strong></li>
+<li>Partnered with engineers to <strong>prototype both backend and UI solutions</strong></li>
+<li>Designed a <strong>human-language-driven search model</strong> layered over existing DSL logic</li>
+</ul>
 <hr>
-<p><strong>Problems:</strong></p>
-<p>In MAAS 2.9 <em>(June 15, 2021)</em>, a user with 1800+ machines in their MAAS environment experienced a 3-min wait time before they can start working with the UI. This makes the entire search experience very in efficient, error-prone and in many cases unacceptable for mission-critial workflows. It is a very common behavior in MAAS 2.9 to open multiple tabs and execute tasks separately. Making the workflow fragmented. As a result, creating a disjoined experience with the product.</p>
-<p><img src="https://amylily1011.github.io/images/maas-search/output-onlinegiftools.gif" alt="MAAS Search"></p>
-<p>Back in MAAS 2.9 and below, a common behavior for users with more than 200 machines were to:</p>
+<p><strong>Key Problems:</strong></p>
+<ul>
+<li>Load times of <strong>~3 minutes</strong> for environments with 1800+ machines (referrence environment as shown in the image below) —&gt; unacceptable for mission-critical workflows</li>
+<li>String-based, client-side search logic required memorizing obscure syntax</li>
+<li>Complex API joins across multiple tables —&gt; <strong>slow &amp; expensive queries</strong></li>
+<li>Poor error recovery: every syntax error required a full reload</li>
+<li>Documentation lookups interrupted workflow</li>
+</ul>
+<p><img src="https://amylily1011.github.io/images/maas-search/output-onlinegiftools.gif" alt="MAAS Search">
+MAAS 2.9 <em>(June 15, 2021)</em></p>
+<p>Back in MAAS 2.9 and below, a common behavior for users with more than <strong>200 machines</strong> were to:</p>
 <ol>
-<li>Open multiple tabs and execute tasks separately.</li>
-<li>Every mistake cost extra time to load, which becomes harder to scale for their private cloud.</li>
-<li>Search behavior is a string search-base and done on the client side.</li>
-<li>The API returns an object that is a product of joining multiple table making the runtime quite expensive.</li>
-<li>Search logic is confusing.</li>
+<li>Open <strong>multiple tabs</strong> and execute tasks separately.</li>
+<li>Every mistake <strong>cost extra time to load</strong>, which becomes harder to scale for their private cloud.</li>
+<li>Search behavior is a string search-base and done on the <strong>client side.</strong></li>
+<li>The API returns an object that is a <strong>product of joining multiple tables</strong> making the runtime quite expensive.</li>
+<li>Search logic is <strong>confusing.</strong></li>
 </ol>
-<p>Based on the search query, there is a hint of an AND operation and an OR operation, but people won&rsquo;t know which one that is unless they visit and learn from the documentation. Having to go through the documentation from this page creates a disconnection in the experience because they are entering a new UI where they have to relearn how to navigate the docs.</p>
+<p>Based on the search query, there is a hint of an <strong>AND operation and an OR operation</strong>, but people won&rsquo;t know which one that is unless they visit and <strong>learn from the documentation</strong>. Having to go through the documentation from this page creates a disconnection in the experience because they are entering a new UI where they have to relearn how to navigate the docs.</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/search-query.png" alt="Search Query"></p>
 <p>What a typical search journey looks like?</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/mermaid-search-journey.png" alt="Search Journey"></p>
@@ -193,10 +212,21 @@ My Role:">
 <li><em>[UX Design]:</em> We need a way  to enable people to <em>search without learning the syntax</em>, because the translation step is where people make the most mistakes.</li>
 </ul>
 <hr>
-<h3>Iteration 1 [MAAS 3.0 - 2022] - How might we reduce the load time from 2 mins to 10 secs for 1000 machines? </h3>
-<p>The table below shows the estimated Web Socket response time in miliseconds and the total UI load time in relation to the number of machines.</p>
+<h2 id="iteration-1--performance-first-maas-30-2022">Iteration 1 — <strong>Performance First</strong> (MAAS 3.0, 2022)</h2>
+<p><strong>Goal:</strong> Reduce load time from <strong>2 mins → 10 secs for 1000 machines</strong></p>
+<ul>
+<li>Moved filtering/grouping to server-side</li>
+<li>Reimplemented WebSocket handlers for machine listing</li>
+<li>Refactored DB queries to avoid unnecessary joins</li>
+</ul>
+<p><strong>Impact:</strong></p>
+<ul>
+<li>Achieved <strong>2 secs / 1000 machines</strong> (10× faster than goal)</li>
+<li>Exposed DB model inefficiencies → simplified for long-term scalability</li>
+</ul>
+<p>The table below shows the estimated <strong>Web Socket response time in miliseconds</strong> and the total UI load time in relation to the number of machines.</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/machinelist-metrics.png" alt="Search performance"></p>
-<p>From this graph, we notices that when our user scales their environment to more than 100 machines in their environment, the load time starts to lag. This causes the entire experience to be less motivated.</p>
+<p>From this graph, we notices that when our user scales their environment to more than <strong>100 machines in their environment, the load time starts to lag</strong>. This causes the entire experience to be less motivated.</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/maas-performance-graph.png" alt="Search performance graph"></p>
 <p><strong>Exploring different handlers</strong></p>
 <p>As an attempt to start fixing our performance, we created a spike to test out different websocket handlers. The following graph shows the timing for getting data for <em>1000 machines</em> (the whole dataset is from a sample database) with the current implementation websocket handler for the machine listing page.</p>
@@ -219,7 +249,14 @@ My Role:">
 <li>Data presented on the client side were joined between multiple tables, creating one big object which makes the list API quite expensive. We need the list API to work in a collection basis, which will allow the function to render all machines in one go.</li>
 </ol>
 <hr>
-<h3>Iteration 2 - How might we allow users to search for machines on MAAS easily with the new speed?</h3>
+<h2 id="iteration-2--syntax-assistance">Iteration 2 — <strong>Syntax Assistance</strong></h2>
+<p>With speed solved, we focused on <strong>search usability</strong>:</p>
+<ul>
+<li><strong>Helper chips</strong> with available filters &amp; logical operators (AND/OR/NOT)</li>
+<li><strong>Keyboard-first interactions</strong> + free-text search</li>
+<li><strong>Edit/remove chips</strong> inline</li>
+<li><strong>Save &amp; share queries</strong> + last 5 search history</li>
+</ul>
 <p><strong>Exploring different UI interactions</strong></p>
 <p>After moving the API calls to the server side, break down the object to fit for its purpose, we started testing out the UI interaction of this search behavior.</p>
 <p><strong>Adding helping texts</strong></p>
@@ -237,14 +274,13 @@ My Role:">
 <p><strong>Saving and sharing search</strong></p>
 <p>One a search query is constructed, a user have an option to either save the search, share their search or view search queries that are shared with them. They can also retrieve the last 5 historical search queries by clicking on the clock icon.</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/save-search.png" alt="save search"></p>
-<p><strong>Testing results</strong></p>
-<p>We tested this prototype out with 11 people who are:</p>
-<ol>
-<li>Users of MAAS with at least 100 machines their environment. (2 were users with 4000 machines.)</li>
-<li>People with more than one MAAS clusters.</li>
-<li>People who treats MAAS machines with naming conventions (cattle).</li>
-<li>People who use logical operators with their search queries in older MAAS versions.</li>
-</ol>
+<p><strong>Testing Results (n=11)</strong>:</p>
+<ul>
+<li>Easy to learn (<code>&quot;feels more efficient&quot;</code>) but <strong>syntax translation mistakes persisted</strong></li>
+<li><strong>Save search</strong> was a favorite: 9/11 users felt it solved a major pain</li>
+<li>7/11 still reverted to documentation for syntax help</li>
+</ul>
+<p><strong>Insight:</strong> Even with UI assistance, <strong>manual syntax translation remained a failure point</strong>.</p>
 <p><img src="https://amylily1011.github.io/images/maas-search/pie-chart.png" alt="pie chart"></p>
 <p>Our test evaluates users based on their feedback and observation of their behavior with a rating of 1 to 5 (highly agreed).
 We evaluate the interaction based on 4 elements:</p>
@@ -254,6 +290,7 @@ We evaluate the interaction based on 4 elements:</p>
 <li><em>Error tolerance</em> - can a user recover from their mistakes easily?</li>
 <li><em>Pleasantness</em> - is the design and interaction pleasant to use?</li>
 </ol>
+<hr>
 <p><strong>Observation</strong></p>
 <ol>
 <li>Most people find the new experience easy to learn and quoting <code>it feels more efficient</code>. However, while interacting with the prototype, many users struggles with the interaction <code>switching between keyboard and mouse</code>. Based on this interaction, we cannot fully conclude that the prototype is more efficient.</li>
@@ -263,38 +300,43 @@ We evaluate the interaction based on 4 elements:</p>
 <blockquote>
 <p>The problem here is although the UI felt easier to use. <em>People are still making a lot of mistakes</em> during the syntax creation/translation process. And even with all the fancy helper chip, 7 users still go back to the doc to find reference for the syntax.</p></blockquote>
 <hr>
-<h3>Iteration 3 - How might we remove the translation step out of search?</h3>
-<p>The video below shows our third UX prototype. In this prototype, I created a quick sample database with 10 machines to mimic NLP interactions that translates human language into MAAS search DSL.</p>
-<p>The idea was to remove the translation step out of the search journey and allow humans to search with human language.</p>
+<h2 id="iteration-3--removing-translation-entirely">Iteration 3 — <strong>Removing Translation Entirely</strong></h2>
+<p><strong>Concept:</strong> A Natural Language Processing (NLP) layer that converts plain English into valid MAAS DSL queries.</p>
+<p><strong>Prototype:</strong></p>
+<ul>
+<li>Built in <strong>Python + Streamlit</strong> to simulate query parsing</li>
+<li>Designed for <strong>ambiguous and partial queries</strong> (“all Ubuntu machines not running”)</li>
+<li>Mapped fallback behaviors for underspecified requests</li>
+<li>Created <strong>feedback loops</strong> to resolve ambiguity before execution</li>
+</ul>
+<p><strong>Goals:</strong></p>
+<ol>
+<li>Identify <strong>reusable search intents</strong> across Canonical’s infra products</li>
+<li>Map trade-offs between <strong>precision vs ambiguity</strong></li>
+<li>Understand how users phrase queries in natural language</li>
+<li>Build a <strong>scalable search model</strong> for cross-product reuse</li>
+</ol>
 <p>Visit <a href="https://github.com/amylily1011/NLPsearch"><img src="https://img.shields.io/badge/view-on%20github-blue?logo=github" alt="GitHub Repo"></a> to see the sample code using python steamlit to simulate the interaction.
 <video width="100%" controls>
 <source src="https://amylily1011.github.io/images/maas-search/maas-search-demo.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video></p>
-<blockquote>
-<p>The goal for this search interaction is to create a central search behavior so efficient that all cloud products at Canonical can reuse.</p></blockquote>
 <p><em>[Latest update]</em> We are still testing this out with other MAAS users and other cloud product teams.</p>
-<p><strong>The goal of the experiment is to:</strong></p>
-<ol>
-<li>Identify common, reusable search terms or similar intents across Canonical&rsquo;s infrastructure products.</li>
-<li>Understand what are the trade-offs between precision and ambiguity in the NLP design?</li>
-<li>Understand how users phrase queries in natual language and where misunderstandings occur.</li>
-<li>Develop a scalable, human-centric search model that can be reused by other team beyond MAAS.</li>
-</ol>
 <hr>
-<p>Approach:</p>
+<p><strong>Outcomes:</strong></p>
 <ul>
-<li>🧪 Rapid prototyping in Python + Streamlit to simulate interpretation</li>
-<li>🤖 Prompt behavior testing to evaluate how partial, ambiguous input should resolve (e.g., “all Ubuntu machines not running”)</li>
-<li>🧭 Behavior mapping: designed feedback loops when inputs were underspecified or invalid</li>
-<li>🔍 Error exploration: mapped “model mismatch” moments (e.g., plural nouns, passive voice) to fallback DSL templates</li>
+<li>Reduced wait time <strong>from 2 mins to 2 secs</strong> for 1000 machines</li>
+<li>Eliminated manual translation: users could search in plain language</li>
+<li>Identified <strong>common NLP patterns</strong> for future infra-wide search</li>
+<li>Provided <strong>design + technical proof</strong> for a reusable, human-centric search model</li>
 </ul>
 <hr>
-<p>Outcomes:</p>
+<p><strong>Reflection &amp; Learnings:</strong></p>
 <ul>
-<li>Reduced wait time from 2 mins to 2 secs for 1000 machines.</li>
-<li>Remove the translation step where people make the most mistakes in the search interaction.</li>
-<li>Initial behavioral testing revealed common patterns of ambiguity — used to refine parser prompts and UI hinting</li>
+<li>Search at scale is <strong>equal parts speed, precision, and cognitive load</strong></li>
+<li>Even “better syntax” is not enough — <strong>removing syntax entirely</strong> unlocks true usability</li>
+<li>Early prototypes are powerful for testing <strong>cross-product scalability</strong></li>
+<li>Collaboration with engineering on backend performance paved the way for <strong>UX wins</strong></li>
 </ul>
 
             </div>
