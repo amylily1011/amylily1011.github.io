@@ -26,6 +26,7 @@ How might we unify all `pro status` outputs into a **consistent, human-readable 
 - Handles **edge cases gracefully** (unattached, expired, EOSS, non-LTS, failed auto-attach)
 - Guides users toward **next best actions** without overwhelming them
 - Preserves **compatibility** for automation and scripts
+- Influence the mental model of **one command one purpose** to enhance ease-of-use
 
 ---
 
@@ -104,6 +105,53 @@ Lead UX Designer working with Product, Engineering, and Support.
 - Backward compatibility required **careful spec design**
 
 ---
+## Deep Dive into Details
 
-![CLI Before/After](/images/ubuntu-pro-cli/before-after.png)
+**Pro Status (Before):**
+![CLI Before/After](/images/pro-status/Old-jammy.png)
 *Structured, consistent, and action-oriented outputs replace fragmented, verbose text.*
+
+<!-- Todo: A gif demo here. -->
+
+**Pro Status (After):**
+### 1. Breakdown `pro status` into 4 commands
+`pro status`, `pro service`, `pro subscription`, `pro security status`
+
+Redesigning`pro status` and `pro security status` and introducing 2 new commands `pro service` and `pro subscription`.
+
+## pro status
+
+![CLI Before/After](/images/pro-status/pro-status.png)
+
+A close comparison shows that the new version is **more concise, more skim friendly, and highlights important messages**.
+
+![CLI Before/After](/images/pro-status/before-after-pro-status2.png)
+
+## pro security status
+
+![CLI Before/After](/images/pro-status/pro-security.png)
+
+Another comparison for how we enhance the exist command. This is one of the commands that **all users find confusing and hard to know what to fix**.
+The purpose of this command is to quickly glance through fixable CVEs and other vulnerabilities while being able to see correlation between different services.
+![CLI Before/After](/images/pro-status/before-after-security-status.png)
+
+## pro service (new)
+Ubuntu Pro centers around services on the server. Listing out the services entails and encourages users to attach ubuntu pro to their client machine. 
+
+
+![CLI after-service](/images/pro-status/pro-services.png)
+
+A natural interaction that comes with this command is to allow people to drill down into individual services to understand more about the service by adding `show` + `[service name]` to this command.
+
+![CLI after-service](/images/pro-status/pro-service-show.png)
+
+## pro subscription (new)
+Subscription information is one of the information that people who are System Admins asked for. It is essential to know in order to **maintain the infrastructure**, especially who they can contract for support. The old version was bundled with `pro status` which didn't make sense or fit the purpose of the command. Splitting this out creates a clear purpose for this command and made it easier to find. 
+
+![CLI after-sub](/images/pro-status/pro-subscription.png)
+
+This shows the case of warning when the subscription is about to expire. 
+![CLI after-sub](/images/pro-status/pro-subscription-almost-expired.png)
+
+This shows the information for when it is expired.
+![CLI after-sub](/images/pro-status/pro-sub-expired.png)
