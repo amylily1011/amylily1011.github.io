@@ -46,7 +46,7 @@ As the service portfolio grew across LTS, EOSS, non-LTS, and cloud-attached syst
 As the service portfolio grew across LTS, EOSS, non-LTS, and cloud-attached systems, outputs became inconsistent, hard to parse, and difficult to act on — especially for operators managing dozens or hundreds of machines.">
   <meta itemprop="datePublished" content="2024-04-12T17:15:51+01:00">
   <meta itemprop="dateModified" content="2024-04-12T17:15:51+01:00">
-  <meta itemprop="wordCount" content="516">
+  <meta itemprop="wordCount" content="797">
   <meta itemprop="image" content="https://amylily1011.github.io/">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -166,6 +166,7 @@ How might we unify all <code>pro status</code> outputs into a <strong>consistent
 <li>Handles <strong>edge cases gracefully</strong> (unattached, expired, EOSS, non-LTS, failed auto-attach)</li>
 <li>Guides users toward <strong>next best actions</strong> without overwhelming them</li>
 <li>Preserves <strong>compatibility</strong> for automation and scripts</li>
+<li>Influence the mental model of <strong>one command one purpose</strong> to enhance ease-of-use</li>
 </ul>
 <hr>
 <p><strong>My Role:</strong>
@@ -268,8 +269,36 @@ Lead UX Designer working with Product, Engineering, and Support.</p>
 <li>Backward compatibility required <strong>careful spec design</strong></li>
 </ul>
 <hr>
-<p><img src="https://amylily1011.github.io/images/ubuntu-pro-cli/before-after.png" alt="CLI Before/After">
+<h2 id="deep-dive-into-details">Deep Dive into Details</h2>
+<p><strong>Pro Status (Before):</strong>
+<img src="https://amylily1011.github.io/images/pro-status/Old-jammy.png" alt="CLI Before/After">
 <em>Structured, consistent, and action-oriented outputs replace fragmented, verbose text.</em></p>
+<!-- Todo: A gif demo here. -->
+<p><strong>Pro Status (After):</strong></p>
+<h3 id="1-breakdown-pro-status-into-4-commands">1. Breakdown <code>pro status</code> into 4 commands</h3>
+<p><code>pro status</code>, <code>pro service</code>, <code>pro subscription</code>, <code>pro security status</code></p>
+<p>Redesigning<code>pro status</code> and <code>pro security status</code> and introducing 2 new commands <code>pro service</code> and <code>pro subscription</code>.</p>
+<h2 id="pro-status">pro status</h2>
+<p><img src="https://amylily1011.github.io/images/pro-status/pro-status.png" alt="CLI Before/After"></p>
+<p>A close comparison shows that the new version is <strong>more concise, more skim friendly, and highlights important messages</strong>.</p>
+<p><img src="https://amylily1011.github.io/images/pro-status/before-after-pro-status2.png" alt="CLI Before/After"></p>
+<h2 id="pro-security-status">pro security status</h2>
+<p><img src="https://amylily1011.github.io/images/pro-status/pro-security.png" alt="CLI Before/After"></p>
+<p>Another comparison for how we enhance the exist command. This is one of the commands that <strong>all users find confusing and hard to know what to fix</strong>.
+The purpose of this command is to quickly glance through fixable CVEs and other vulnerabilities while being able to see correlation between different services.
+<img src="https://amylily1011.github.io/images/pro-status/before-after-security-status.png" alt="CLI Before/After"></p>
+<h2 id="pro-service-new">pro service (new)</h2>
+<p>Ubuntu Pro centers around services on the server. Listing out the services entails and encourages users to attach ubuntu pro to their client machine.</p>
+<p><img src="https://amylily1011.github.io/images/pro-status/pro-services.png" alt="CLI after-service"></p>
+<p>A natural interaction that comes with this command is to allow people to drill down into individual services to understand more about the service by adding <code>show</code> + <code>[service name]</code> to this command.</p>
+<p><img src="https://amylily1011.github.io/images/pro-status/pro-service-show.png" alt="CLI after-service"></p>
+<h2 id="pro-subscription-new">pro subscription (new)</h2>
+<p>Subscription information is one of the information that people who are System Admins asked for. It is essential to know in order to <strong>maintain the infrastructure</strong>, especially who they can contract for support. The old version was bundled with <code>pro status</code> which didn&rsquo;t make sense or fit the purpose of the command. Splitting this out creates a clear purpose for this command and made it easier to find.</p>
+<p><img src="https://amylily1011.github.io/images/pro-status/pro-subscription.png" alt="CLI after-sub"></p>
+<p>This shows the case of warning when the subscription is about to expire.
+<img src="https://amylily1011.github.io/images/pro-status/pro-subscription-almost-expired.png" alt="CLI after-sub"></p>
+<p>This shows the information for when it is expired.
+<img src="https://amylily1011.github.io/images/pro-status/pro-sub-expired.png" alt="CLI after-sub"></p>
 
             </div>
         </article>
