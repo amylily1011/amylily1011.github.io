@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscs on Amy Lily</title>
+    <link>https://amylily1011.github.io/misc/</link>
+    <description>Recent content in Miscs on Amy Lily</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 12 Mar 2022 17:15:51 +0100</lastBuildDate>
+    <atom:link href="https://amylily1011.github.io/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Confusion to Clarity: Designing `/explain` to Make Concepts Click</title>
+      <link>https://amylily1011.github.io/misc/explain/</link>
+      <pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
+      <guid>https://amylily1011.github.io/misc/explain/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;&#xA;&lt;p&gt;During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/explain/maas-explain.png&#34; alt=&#34;explain lxd in MAAS&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Little did I know, this was how other designers understood my explanation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

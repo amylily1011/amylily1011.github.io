@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Context:
+At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.
+Why? During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.
+Little did I know, this was how other designers understood my explanation.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/misc/explain/" />
+
+
+    <title>
+        
+            From Confusion to Clarity: Designing `/explain` to Make Concepts Click :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.07ea7ac7da67e2e153a7dfa2457bc6a19cca824288d175e223fadc579041bc51.css" integrity="sha256-B&#43;p6x9pn4uFTp9&#43;iRXvGoZzKgkKI0XXiI/rcV5BBvFE=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://amylily1011.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://amylily1011.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://amylily1011.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://amylily1011.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://amylily1011.github.io/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://amylily1011.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="From Confusion to Clarity: Designing `/explain` to Make Concepts Click">
+  <meta itemprop="description" content="Context:
+At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.
+Why? During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.
+Little did I know, this was how other designers understood my explanation.">
+  <meta itemprop="datePublished" content="2022-03-12T17:15:51+01:00">
+  <meta itemprop="dateModified" content="2022-03-12T17:15:51+01:00">
+  <meta itemprop="wordCount" content="420">
+  <meta itemprop="image" content="https://amylily1011.github.io/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://amylily1011.github.io/">
+  <meta name="twitter:title" content="From Confusion to Clarity: Designing `/explain` to Make Concepts Click">
+  <meta name="twitter:description" content="Context:
+At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.
+Why? During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.
+Little did I know, this was how other designers understood my explanation.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/misc/explain/">
+  <meta property="og:site_name" content="Amy Lily">
+  <meta property="og:title" content="From Confusion to Clarity: Designing `/explain` to Make Concepts Click">
+  <meta property="og:description" content="Context:
+At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.
+Why? During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.
+Little did I know, this was how other designers understood my explanation.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="misc">
+    <meta property="article:published_time" content="2022-03-12T17:15:51+01:00">
+    <meta property="article:modified_time" content="2022-03-12T17:15:51+01:00">
+    <meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-03-12 17:15:51 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amylily1011.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amylily1011.github.io/about/">whoami</a></li><li><a href="https://amylily1011.github.io/misc">Miscellaneous</a></li><li><a href="https://amylily1011.github.io/projects">Projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://amylily1011.github.io/misc/explain/">From Confusion to Clarity: Designing <code>/explain</code> to Make Concepts Click</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><strong>Context:</strong></p>
+<p>At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.</p>
+<hr>
+<h3 id="why">Why?</h3>
+<p>During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.</p>
+<p><img src="https://amylily1011.github.io/images/explain/maas-explain.png" alt="explain lxd in MAAS"></p>
+<p>Little did I know, this was how other designers understood my explanation.</p>
+<p><img src="https://i.imgur.com/lBBxrh1.jpeg" alt="NapImust">
+<em>Image source:</em> <a href="https://imgur.com/lBBxrh1">imgur.com/lBBxrh1</a></p>
+<p>In that very same meeting, below was how my colleague explained the concept of Ubuntu Advantage.</p>
+<p><img src="https://amylily1011.github.io/images/explain/will-explain.png" alt="Ubuntu Advantage"></p>
+<p>Yet, this was how I understood it.</p>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnp4ZXI3N2s3a3llZGV2YnRnbTAyZWc0c2p1c3MwNTR3ZDNrN3M5byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oGzFZek2lszlK/giphy.gif" alt="Need help">
+<em>GIF via</em> <a href="https://giphy.com/gifs/help-big-bang-theory-me-oGzFZek2lszlK">GIPHY</a></p>
+<hr>
+<h2 id="problem">Problem?</h2>
+<p><strong>We work with a lot of complicated concepts:</strong></p>
+<p>We had no quick, lightweight way to understand technical concepts outside of our own teams.</p>
+<p>Here are some examples of terms that often confuse people outside their teams:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Concepts</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SmartNICs</td>
+      </tr>
+      <tr>
+          <td>TFA</td>
+      </tr>
+      <tr>
+          <td>Multi-access Edge Computing (MEC)</td>
+      </tr>
+      <tr>
+          <td>Ceph</td>
+      </tr>
+      <tr>
+          <td>Canadisk?</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Without shared language,</strong> even well-designed features risked being misaligned or miscommunicated.</p>
+<h2 id="approach">Approach</h2>
+<p>I created <code>/explain</code> — a slash command integrated into Mattermost (our internal chat platform).</p>
+<p>Anyone could type:</p>
+<pre tabindex="0"><code>/explain [term]
+</code></pre><p><img src="https://amylily1011.github.io/images/explain/explain-command.gif" alt="Explain command"></p>
+<p>It returns a simple, friendly, human-readable explanation of a concept — often sourced from PMs, engineers, or documentation. Think “just enough context” without the Wikipedia rabbit hole.</p>
+<p><strong>To build momentum:</strong></p>
+<ul>
+<li>I seeded the database with common terms people struggle with.</li>
+<li>Crowdsourced the definition from internal people who are team experts or Technical Authors.</li>
+</ul>
+<p><img src="https://amylily1011.github.io/images/explain/data-base.png" alt="Explain data"></p>
+<p>When the <code>[term]</code> does not exist, someone with the knowledge can contribute to the meaning of that term.</p>
+<p><img src="https://amylily1011.github.io/images/explain/explain-something.png" alt="Explain something"></p>
+<h2 id="pro-tip">Pro tip</h2>
+<p>If you have a <strong>bad day</strong> and you don&rsquo;t want to learn new concepts, you can type <code>/explain why</code>. This will return jokes from the Unix fortune database <a href="https://en.wikipedia.org/wiki/Fortune_(Unix)">bsd-fortune</a>.</p>
+<p>(Fortune database from HubTou)<a href="https://github.com/HubTou/fortunes-historical/tree/main"><img src="https://img.shields.io/badge/view-on%20github-blue?logo=github" alt="GitHub Repo"></a></p>
+<p><img src="https://amylily1011.github.io/images/explain/explain-why.gif" alt="explain why"></p>
+<hr>
+<h2 id="outcome">Outcome</h2>
+<blockquote>
+<p>Sometimes the best UX isn&rsquo;t a screen&hellip;it&rsquo;s helping people <em>understand</em> what&rsquo;s on it.</p></blockquote>
+<ul>
+<li><code>/explain</code> was adopted organically by multiple teams.</li>
+<li>PMs and Engineers contributed to definitions, turning it into a share glossary.</li>
+<li>I helped onboard new hires, spark discussion, and normalize asking <em>What does that mean?</em></li>
+</ul>
+<p>This became more than just a tool, it created a space for <em>learning out loud</em> without slowing anyone down.</p>
+<hr>
+<h2 id="reflection">Reflection</h2>
+<p>This side project reminded me that UX isn&rsquo;t always about visual, sometimes it&rsquo;s a <em>cultural design intervention.</em></p>
+<p>By turning misunderstanding into a moment of play and clarity, <code>/explain</code> showed how a small, targeted tool can shift team dynamics, unblock ambiguity, and scale knowledge in distributed environments.</p>
+<blockquote>
+<p>Maybe <em>good design</em> isn&rsquo;t always about polishing. Sometimes, it&rsquo;s about lowering the cost of <em>asking a &ldquo;dumb&rdquo; question</em>.</p></blockquote>
+<p><img src="https://amylily1011.github.io/images/explain/the-end.png" alt="explain why"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://amylily1011.github.io/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>
