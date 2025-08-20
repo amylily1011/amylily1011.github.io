@@ -243,10 +243,17 @@ disableHugoGeneratorInject = false
 #    identifier = "about"
 #    name       = "whoami"
 #    url        = "about/"
+  
   [[menu.main]]
     identifier = "projects"
     name       = "Projects"
     url        = "/projects"
+  [[menu.main]]
+    identifier = "misc"
+    name       = "Miscellaneous"
+    url        = "/misc"
+
+  
 
 [markup]
   [markup.goldmark]
