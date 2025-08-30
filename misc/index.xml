@@ -16,5 +16,12 @@
       <guid>https://amylily1011.github.io/misc/explain/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;&#xA;&lt;p&gt;During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/explain/maas-explain.png&#34; alt=&#34;explain lxd in MAAS&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Little did I know, this was how other designers understood my explanation.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>The new MAAS CLI that changes Ubuntu CLI Guideline</title>
+      <link>https://amylily1011.github.io/misc/maas-cli/</link>
+      <pubDate>Mon, 28 Sep 2020 17:15:51 +0100</pubDate>
+      <guid>https://amylily1011.github.io/misc/maas-cli/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;MAAS (Metal-as-a-service) is Canonical&amp;rsquo;s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Most users either avoided it or wrote custom scripts on FCE to bypass confusion. However, overtime there is a need for this CLI tool to be more human friendly while not breaking scripts from legacy users.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Role:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;As the Lead UX Designer, I was tasked with one deceptively simple goal:&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

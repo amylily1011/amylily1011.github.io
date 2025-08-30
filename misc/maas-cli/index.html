@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Context:
+MAAS (Metal-as-a-service) is Canonical&rsquo;s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Most users either avoided it or wrote custom scripts on FCE to bypass confusion. However, overtime there is a need for this CLI tool to be more human friendly while not breaking scripts from legacy users.
+Role:
+As the Lead UX Designer, I was tasked with one deceptively simple goal:
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/misc/maas-cli/" />
+
+
+    <title>
+        
+            The new MAAS CLI that changes Ubuntu CLI Guideline :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.07ea7ac7da67e2e153a7dfa2457bc6a19cca824288d175e223fadc579041bc51.css" integrity="sha256-B&#43;p6x9pn4uFTp9&#43;iRXvGoZzKgkKI0XXiI/rcV5BBvFE=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://amylily1011.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://amylily1011.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://amylily1011.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://amylily1011.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://amylily1011.github.io/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://amylily1011.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="The new MAAS CLI that changes Ubuntu CLI Guideline">
+  <meta itemprop="description" content="Context:
+MAAS (Metal-as-a-service) is Canonical’s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Most users either avoided it or wrote custom scripts on FCE to bypass confusion. However, overtime there is a need for this CLI tool to be more human friendly while not breaking scripts from legacy users.
+Role:
+As the Lead UX Designer, I was tasked with one deceptively simple goal:">
+  <meta itemprop="datePublished" content="2020-09-28T17:15:51+01:00">
+  <meta itemprop="dateModified" content="2020-09-28T17:15:51+01:00">
+  <meta itemprop="wordCount" content="959">
+  <meta itemprop="image" content="https://amylily1011.github.io/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://amylily1011.github.io/">
+  <meta name="twitter:title" content="The new MAAS CLI that changes Ubuntu CLI Guideline">
+  <meta name="twitter:description" content="Context:
+MAAS (Metal-as-a-service) is Canonical’s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Most users either avoided it or wrote custom scripts on FCE to bypass confusion. However, overtime there is a need for this CLI tool to be more human friendly while not breaking scripts from legacy users.
+Role:
+As the Lead UX Designer, I was tasked with one deceptively simple goal:">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/misc/maas-cli/">
+  <meta property="og:site_name" content="Amy Lily">
+  <meta property="og:title" content="The new MAAS CLI that changes Ubuntu CLI Guideline">
+  <meta property="og:description" content="Context:
+MAAS (Metal-as-a-service) is Canonical’s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Most users either avoided it or wrote custom scripts on FCE to bypass confusion. However, overtime there is a need for this CLI tool to be more human friendly while not breaking scripts from legacy users.
+Role:
+As the Lead UX Designer, I was tasked with one deceptively simple goal:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="misc">
+    <meta property="article:published_time" content="2020-09-28T17:15:51+01:00">
+    <meta property="article:modified_time" content="2020-09-28T17:15:51+01:00">
+    <meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-09-28 17:15:51 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amylily1011.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amylily1011.github.io/about/">whoami</a></li><li><a href="https://amylily1011.github.io/misc">Miscs</a></li><li><a href="https://amylily1011.github.io/projects">Projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://amylily1011.github.io/misc/maas-cli/">The new MAAS CLI that changes Ubuntu CLI Guideline</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><strong>Context:</strong></p>
+<p>MAAS (Metal-as-a-service) is Canonical&rsquo;s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Most users either avoided it or wrote custom scripts on FCE to bypass confusion. However, overtime there is a need for this CLI tool to be more human friendly while not breaking scripts from legacy users.</p>
+<hr>
+<p><strong>Role:</strong></p>
+<p>As the Lead UX Designer, I was tasked with one deceptively simple goal:</p>
+<blockquote>
+<p>&ldquo;What makes the MAAS CLI more intuitive.&rdquo;</p></blockquote>
+<p>What followed was a full redesign: reshaping how people interact with complex infrastructure through the CLI.</p>
+<h3 id="-goals">🎯 Goals</h3>
+<p><strong>Focus Values:</strong></p>
+<ul>
+<li><strong>Learnability:</strong> Scaffold new users with interactive prompts</li>
+<li><strong>Efficiency:</strong> Simplify workflows for power users</li>
+<li><strong>Error tolerance:</strong> Clear, actionable feedback and recovery</li>
+<li><strong>Accessibility:</strong> Work across all terminal themes</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>Color themes vary widely in <strong>terminal setups</strong></li>
+<li>Command structure changes would <strong>break existing user scripts</strong></li>
+<li>Real-time states (e.g. commissioning/deploying) are hard to track without <strong>blocking prompt</strong></li>
+<li>Some <strong>waiting states are indeterminant</strong>, meaning we cannot predict if a task will be done.</li>
+<li>Displaying <strong>run-time and elapse time</strong> can be a challenge when dealing with timezones and server time.</li>
+<li><strong>Terminal size</strong> can affect the indentation of the output.</li>
+</ul>
+<hr>
+<h3 id="problem">Problem:</h3>
+<p>The MAAS CLI was built as a thin wrapper around the MAAS API.</p>
+<p><img src="https://amylily1011.github.io/images/maas-cli/flow.png" alt="flow chart"></p>
+<p>While functional, it wasn’t user-friendly:</p>
+<ul>
+<li><strong>Opaque Sythetic IDs for Objects:</strong> Users had to memorize system IDs not visible in the UI.</li>
+</ul>
+<p>For example, if a user tries to get information of one machine, they need to find the <code>[SYSTEMID]</code>.</p>
+<pre>
+>$ maas admin machine read [SYSTEMID]
+</pre>
+<p>To get the SYSTEMID, the user need to either copy the ID from the URL or using <code>jq</code>.</p>
+<pre>
+>$ maas admin machines read | jq '.[] | .hostname, .system_id'
+</pre>
+<p>The output of the <code>machine read</code> is as below:
+It returns 82 lines in JSON format, showing information of one machine.</p>
+<p><img src="https://amylily1011.github.io/images/maas-cli/jsonOutput.png" alt="flow chart"></p>
+<p>While this is convenient for machines to process, they are not easily processed by humans.</p>
+<p>Other problems include:</p>
+<ul>
+<li><strong>Poor learnability:</strong> Flags and commands weren’t self-explanatory or discoverable.</li>
+<li><strong>Unfriendly human-friendly outputs:</strong> Responses came back in raw JSON.</li>
+<li><strong>Error messages:</strong> No support for error recovery or readable output.</li>
+<li><strong>Inefficiency at scale:</strong> Bulk actions required scripting, not native support.</li>
+<li><strong>Low accessibility:</strong> Color cues didn’t render properly in many terminal themes.</li>
+<li><strong>No waiting state:</strong> None of the commands display any waiting state when things are processing, so the user needs to keep pinging to see if it&rsquo;s done.</li>
+</ul>
+<hr>
+<h3 id="week-1-2-research--user-modeling">Week 1-2: Research &amp; User Modeling</h3>
+<p>End-to-end UX process from research -&gt; prototype -&gt; internal testing.</p>
+<p>Interviewed internal Canonical Engineers across teams who are MAAS user and mapped out usage patterns.</p>
+<p><img src="https://amylily1011.github.io/images/maas-cli/extremeUsers.png" alt="flow chart"></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>User Type</strong></th>
+          <th><strong>Behavior</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Extreme Users</td>
+          <td>Use CLI directly, script around missing features.</td>
+      </tr>
+      <tr>
+          <td>Beginners</td>
+          <td>Drop out quickly, avoid the CLI.</td>
+      </tr>
+      <tr>
+          <td>Support Engineers / Field Engineers</td>
+          <td>Need quick, readable outputs to debug.</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="key-insights">Key insights:</h4>
+<ul>
+<li><strong>65%</strong> wrote custom scripts to bypass core UX flaws.</li>
+<li>Even power users struggle with <strong>inconsistent singular/plural</strong> patterns.</li>
+<li>80% uses <strong>dark theme</strong> terminal.</li>
+<li>The <code>--help</code> flag caused <strong>more confusion</strong> than clarity.</li>
+<li>System IDs are <strong>difficult</strong> to obtain (not UI-visible).</li>
+<li>JSON outputs are <strong>unreadable</strong> without post-processing.</li>
+<li><strong>4 out of 5 users</strong> prefer waiting states when something is processing.</li>
+</ul>
+<hr>
+<h3 id="-focus-areas">🧠 Focus Areas</h3>
+<ol>
+<li>Human-readable outputs (<code>table</code>, <code>yaml</code>, <code>csv</code>, etc.)</li>
+<li>Better error messages (contextual hints, suggestions, links to docs)</li>
+<li>Interactive mode for missing/incomplete arguments</li>
+<li>Support for blocking prompts with progress indicators</li>
+<li>Auto-suggestions and fuzzy search for mistyped commands</li>
+<li>Tab completion and clear command structure</li>
+</ol>
+<hr>
+<h3 id="-prototype-weeks-34">🛠️ Prototype (Weeks 3–4)</h3>
+<p>Developed a new CLI prototype in NodeJS using <strong>CommanderJS</strong> and <strong>InquirerJS</strong>.</p>
+<p>(Visit the prototype)<a href="https://github.com/amylily1011/cli-project"><img src="https://img.shields.io/badge/view-on%20github-blue?logo=github" alt="GitHub Repo"></a></p>
+<h4 id="before">Before</h4>
+<p>To read all machines in MAAS</p>
+<pre>
+>$ maas admin machines read
+</pre>
+<h4 id="after">After</h4>
+<pre>
+>$ maas list
+</pre>
+<p><img src="https://amylily1011.github.io/images/maas-cli/maas-list.png" alt="flow chart"></p>
+<h4 id="listing-one-machine-with-a-typo">Listing one machine with a typo</h4>
+<p>Auto-suggestions for typos (<code>did you mean...?</code>)</p>
+<pre>
+>$ maas list [MACHINE NAME]
+</pre>
+<p>The command will search for the nearest neighbor and provide suggestions.
+<img src="https://amylily1011.github.io/images/maas-cli/fuzzySearch2.gif" alt="flow chart"></p>
+<h4 id="commands-man-page">Command&rsquo;s man page</h4>
+<p>Helpful <code>--help</code> output with structured layout and man-page style info
+<code>--format</code>: change output to <code>table</code> (default), <code>json</code>, <code>csv</code>, etc.</p>
+<p><img src="https://amylily1011.github.io/images/maas-cli/manPage.png" alt="flow chart"></p>
+<h4 id="waiting-states">Waiting States</h4>
+<p>There are two types of waititng states, parallel waiting state and progressive waiting state.
+The <code>--wait</code> flag block prompt for real-time progress (commission/deploy)</p>
+<h4 id="parallel-waiting-state">Parallel Waiting state</h4>
+<p>During commissioning, most tasks are done in parallel.
+<img src="https://amylily1011.github.io/images/maas-cli/commission.gif" alt="Commission"></p>
+<h4 id="progressive-waiting-state">Progressive Waiting state</h4>
+<p>During deployment, most tasks are done in a progressive manner.
+<img src="https://amylily1011.github.io/images/maas-cli/Deploy.gif" alt="Deploy"></p>
+<h4 id="interactive-prompts">Interactive prompts</h4>
+<p>We introduce the interactive prompt as a way to help users add incomplete requirements when deploying machines, the command also provides an equivalent command when the use wants to skip interactive mode.
+<img src="https://amylily1011.github.io/images/maas-cli/interactive.gif" alt="Deploy"></p>
+<h4 id="smart-error-recovery-error-codes-suggestions-direct-doc-links">Smart Error recovery (error codes, suggestions, direct doc links)</h4>
+<p><img src="https://amylily1011.github.io/images/maas-cli/errorState.png" alt="flow chart"></p>
+<h4 id="zero-state">Zero State:</h4>
+<p>When typing <code>maas</code> alone:
+Show quick tips, common commands, and link to docs
+<img src="https://amylily1011.github.io/images/maas-cli/stateZero.png" alt="Zero"></p>
+<hr>
+<h3 id="-testing--feedback-weeks-56">🔁 Testing &amp; Feedback (Weeks 5–6)</h3>
+<p>Tested with 12 internal users + shared prototype in <a href="https://discourse.maas.io/t/maas-ui-designing-the-new-maas-cli/3287/11">Discourse community</a> with feedback.</p>
+<h4 id="results">Results:</h4>
+<ul>
+<li>80% found new CLI easier to learn</li>
+<li>100% preferred the new interactive prompt</li>
+<li>90% said error tolerance and help flags improved workflow</li>
+<li>45% had trouble seeing color cues due to terminal theme</li>
+</ul>
+<p><img src="https://amylily1011.github.io/images/maas-cli/feedback.png" alt="Zero"></p>
+<hr>
+<h3 id="-learnings--next-steps">📌 Learnings &amp; Next Steps</h3>
+<ul>
+<li>Terminal color themes can obscure visual cues — future design needs theme-agnostic cues</li>
+<li><code>system_id</code> reliance still creates friction; improving discoverability of object IDs remains key</li>
+<li>Command structure must support tab completion and bulk action patterns</li>
+</ul>
+<h4 id="rollout-plan">Rollout Plan:</h4>
+<p>This was Phase 1 (exploration + prototype). Further testing is needed with enterprise users and external community contributors. Future phases:</p>
+<ul>
+<li>Usability validation with real-world scripts</li>
+<li>Integration with existing MAAS tooling</li>
+<li>CLI documentation and discoverability updates</li>
+</ul>
+<hr>
+<h3 id="-reflections">🧵 Reflections</h3>
+<p>This project shows the power of treating CLI design with the same UX depth as graphical interfaces. By surfacing real user pain points and applying interaction design principles to a technical surface, we created a CLI experience that feels more human, more helpful, and more scalable.</p>
+<hr>
+<p><strong>Tools &amp; Tech:</strong> NodeJS, CommanderJS, InquirerJS, MAAS API, Discourse Community</p>
+<p><strong>Keywords:</strong> Command Line UX, Developer Experience, CLI Redesign, Infrastructure UX, Canonical, MAAS, Systems Thinking</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://amylily1011.github.io/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>
