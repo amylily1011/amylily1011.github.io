@@ -8,6 +8,7 @@ type = 'Miscs'
 **Context:**  
 
 MAAS (Metal-as-a-service) is Canonical's bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Over time, users either abandoned the CLI or built their own wrappers — indicating a breakdown in usability and trust. We set out to reimagine what a CLI could feel like when designed with empathy, efficiency, and accessibility in mind.
+
 ---
 
 **Role:**
@@ -38,7 +39,7 @@ What followed was a full redesign: reshaping how people interact with complex in
 
 The MAAS CLI was built as a thin wrapper around the MAAS API. 
 
-![flow chart](/images/maas-cli/flow.png)
+![flow](/images/maas-CLI/flow.png)
 
 While functional, it wasn’t user-friendly:
 - **Opaque Sythetic IDs for Objects:** Users had to memorize system IDs not visible in the UI.
