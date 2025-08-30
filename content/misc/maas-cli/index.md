@@ -7,8 +7,7 @@ type = 'Miscs'
 
 **Context:**  
 
-MAAS (Metal-as-a-service) is Canonical's bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Most users either avoided it or wrote custom scripts on FCE to bypass confusion. However, overtime there is a need for this CLI tool to be more human friendly while not breaking scripts from legacy users. 
-
+MAAS (Metal-as-a-service) is Canonical's bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Over time, users either abandoned the CLI or built their own wrappers — indicating a breakdown in usability and trust. We set out to reimagine what a CLI could feel like when designed with empathy, efficiency, and accessibility in mind.
 ---
 
 **Role:**
@@ -97,14 +96,8 @@ Interviewed internal Canonical Engineers across teams who are MAAS user and mapp
 
 ---
 
-### 🧠 Focus Areas
-1. Human-readable outputs (`table`, `yaml`, `csv`, etc.)
-2. Better error messages (contextual hints, suggestions, links to docs)
-3. Interactive mode for missing/incomplete arguments
-4. Support for blocking prompts with progress indicators
-5. Auto-suggestions and fuzzy search for mistyped commands
-6. Tab completion and clear command structure
-
+### 🧠 Focus Areas  
+Six targeted improvements to make MAAS CLI faster, friendlier, and more resilient.
 ---
 
 ### 🛠️ Prototype (Weeks 3–4)
