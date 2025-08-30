@@ -1,5 +1,6 @@
 ---
 menu : main
+type : "about"
 title : 'whoami'
 date : 2024-12-01T16:20:00Z
 draft : false

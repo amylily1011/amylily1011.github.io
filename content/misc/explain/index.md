@@ -2,7 +2,7 @@
 title = 'From Confusion to Clarity: Designing `/explain` to Make Concepts Click'
 date = 2022-03-12T17:15:51+01:00
 draft = false
-type = "misc"
+type = 'Miscs'
 +++
 
 **Context:**  
@@ -52,6 +52,7 @@ Here are some examples of terms that often confuse people outside their teams:
 
 **Without shared language,** even well-designed features risked being misaligned or miscommunicated.
 
+---
 ## Approach
 
 I created `/explain` — a slash command integrated into Mattermost (our internal chat platform). 

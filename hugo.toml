@@ -250,8 +250,8 @@ disableHugoGeneratorInject = false
     url        = "/projects"
   
   [[menu.main]]
-    identifier = "misc"
-    name       = "Miscellaneous"
+    identifier = "Miscs"
+    name       = "Miscs"
     url        = "/misc"
 
   
