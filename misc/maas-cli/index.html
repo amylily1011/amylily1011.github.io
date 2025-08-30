@@ -179,7 +179,7 @@ MAAS (Metal-as-a-service) is Canonical’s bare-metal provisioning tool. The CLI
 <hr>
 <h3 id="problem">Problem:</h3>
 <p>The MAAS CLI was built as a thin wrapper around the MAAS API.</p>
-<p><img src="https://amylily1011.github.io/images/maas-cli/flow.png" alt="flow chart"></p>
+<p><img src="https://amylily1011.github.io/images/new-maas-cli/flow.png" alt="flow chart"></p>
 <p>While functional, it wasn’t user-friendly:</p>
 <ul>
 <li><strong>Opaque Sythetic IDs for Objects:</strong> Users had to memorize system IDs not visible in the UI.</li>
@@ -194,7 +194,7 @@ MAAS (Metal-as-a-service) is Canonical’s bare-metal provisioning tool. The CLI
 </pre>
 <p>The output of the <code>machine read</code> is as below:
 It returns 82 lines in JSON format, showing information of one machine.</p>
-<p><img src="https://amylily1011.github.io/images/maas-cli/jsonOutput.png" alt="JSON"></p>
+<p><img src="https://amylily1011.github.io/images/new-maas-cli/jsonOutput.png" alt="JSON"></p>
 <p>While this is convenient for machines to process, they are not easily processed by humans.</p>
 <p>Other problems include:</p>
 <ul>
@@ -209,7 +209,7 @@ It returns 82 lines in JSON format, showing information of one machine.</p>
 <h3 id="week-1-2-research--user-modeling">Week 1-2: Research &amp; User Modeling</h3>
 <p>End-to-end UX process from research -&gt; prototype -&gt; internal testing.</p>
 <p>Interviewed internal Canonical Engineers across teams who are MAAS user and mapped out usage patterns.</p>
-<p><img src="https://amylily1011.github.io/images/maas-cli/extremeUsers.png" alt="Extreme"></p>
+<p><img src="https://amylily1011.github.io/images/new-maas-cli/extremeUsers.png" alt="Extreme"></p>
 <table>
   <thead>
       <tr>
@@ -257,36 +257,36 @@ It returns 82 lines in JSON format, showing information of one machine.</p>
 <pre>
 >$ maas list
 </pre>
-<p><img src="https://amylily1011.github.io/images/maas-cli/maas-list.png" alt="maas list"></p>
+<p><img src="https://amylily1011.github.io/images/new-maas-cli/maas-list.png" alt="maas list"></p>
 <h4 id="listing-one-machine-with-a-typo">Listing one machine with a typo</h4>
 <p>Auto-suggestions for typos (<code>did you mean...?</code>)</p>
 <pre>
 >$ maas list [MACHINE NAME]
 </pre>
 <p>The command will search for the nearest neighbor and provide suggestions.
-<img src="https://amylily1011.github.io/images/maas-cli/fuzzySearch2.gif" alt="fuzzy search"></p>
+<img src="https://amylily1011.github.io/images/new-maas-cli/fuzzySearch2.gif" alt="fuzzy search"></p>
 <h4 id="commands-man-page">Command&rsquo;s man page</h4>
 <p>Helpful <code>--help</code> output with structured layout and man-page style info
 <code>--format</code>: change output to <code>table</code> (default), <code>json</code>, <code>csv</code>, etc.</p>
-<p><img src="https://amylily1011.github.io/images/maas-cli/manPage.png" alt="man page"></p>
+<p><img src="https://amylily1011.github.io/images/new-maas-cli/manPage.png" alt="man page"></p>
 <h4 id="waiting-states">Waiting States</h4>
 <p>There are two types of waititng states, parallel waiting state and progressive waiting state.
 The <code>--wait</code> flag block prompt for real-time progress (commission/deploy)</p>
 <h4 id="parallel-waiting-state">Parallel Waiting state</h4>
 <p>During commissioning, most tasks are done in parallel.
-<img src="https://amylily1011.github.io/images/maas-cli/commission.gif" alt="Commission"></p>
+<img src="https://amylily1011.github.io/images/new-maas-cli/commission.gif" alt="Commission"></p>
 <h4 id="progressive-waiting-state">Progressive Waiting state</h4>
 <p>During deployment, most tasks are done in a progressive manner.
-<img src="https://amylily1011.github.io/images/maas-cli/Deploy.gif" alt="Deploy"></p>
+<img src="https://amylily1011.github.io/images/new-maas-cli/Deploy.gif" alt="Deploy"></p>
 <h4 id="interactive-prompts">Interactive prompts</h4>
 <p>We introduce the interactive prompt as a way to help users add incomplete requirements when deploying machines, the command also provides an equivalent command when the use wants to skip interactive mode.
-<img src="https://amylily1011.github.io/images/maas-cli/interactive.gif" alt="Deploy"></p>
+<img src="https://amylily1011.github.io/images/new-maas-cli/interactive.gif" alt="Deploy"></p>
 <h4 id="smart-error-recovery-error-codes-suggestions-direct-doc-links">Smart Error recovery (error codes, suggestions, direct doc links)</h4>
-<p><img src="https://amylily1011.github.io/images/maas-cli/errorState.png" alt="flow chart"></p>
+<p><img src="https://amylily1011.github.io/images/new-maas-cli/errorState.png" alt="flow chart"></p>
 <h4 id="zero-state">Zero State:</h4>
 <p>When typing <code>maas</code> alone:
 Show quick tips, common commands, and link to docs
-<img src="https://amylily1011.github.io/images/maas-cli/stateZero.png" alt="Zero"></p>
+<img src="https://amylily1011.github.io/images/new-maas-cli/stateZero.png" alt="Zero"></p>
 <hr>
 <h3 id="-testing--feedback-weeks-56">🔁 Testing &amp; Feedback (Weeks 5–6)</h3>
 <p>Tested with 12 internal users + shared prototype in <a href="https://discourse.maas.io/t/maas-ui-designing-the-new-maas-cli/3287/11">Discourse community</a> with feedback.</p>
@@ -297,7 +297,7 @@ Show quick tips, common commands, and link to docs
 <li>90% said error tolerance and help flags improved workflow</li>
 <li>45% had trouble seeing color cues due to terminal theme</li>
 </ul>
-<p><img src="https://amylily1011.github.io/images/maas-cli/feedback.png" alt="Zero"></p>
+<p><img src="https://amylily1011.github.io/images/new-maas-cli/feedback.png" alt="Zero"></p>
 <hr>
 <h3 id="-learnings--next-steps">📌 Learnings &amp; Next Steps</h3>
 <ul>
