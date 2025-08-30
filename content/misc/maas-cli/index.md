@@ -39,7 +39,7 @@ What followed was a full redesign: reshaping how people interact with complex in
 
 The MAAS CLI was built as a thin wrapper around the MAAS API. 
 
-![flow](/images/maas-CLI/flow.png)
+![flow chart](/images/maas-cli/flow.png)
 
 While functional, it wasn’t user-friendly:
 - **Opaque Sythetic IDs for Objects:** Users had to memorize system IDs not visible in the UI.
