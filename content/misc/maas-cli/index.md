@@ -39,7 +39,7 @@ What followed was a full redesign: reshaping how people interact with complex in
 
 The MAAS CLI was built as a thin wrapper around the MAAS API. 
 
-![flow chart](/images/maas-cli/flow.png)
+![flow chart](/images/new-maas-cli/flow.png)
 
 While functional, it wasn’t user-friendly:
 - **Opaque Sythetic IDs for Objects:** Users had to memorize system IDs not visible in the UI.
@@ -57,7 +57,7 @@ To get the SYSTEMID, the user need to either copy the ID from the URL or using `
 The output of the `machine read` is as below:
 It returns 82 lines in JSON format, showing information of one machine. 
 
-![JSON](/images/maas-cli/jsonOutput.png)
+![JSON](/images/new-maas-cli/jsonOutput.png)
 
 While this is convenient for machines to process, they are not easily processed by humans. 
 
@@ -78,7 +78,7 @@ End-to-end UX process from research -> prototype -> internal testing.
 
 Interviewed internal Canonical Engineers across teams who are MAAS user and mapped out usage patterns.
 
-![Extreme](/images/maas-cli/extremeUsers.png)
+![Extreme](/images/new-maas-cli/extremeUsers.png)
 
 | **User Type** | **Behavior**|
 | --- | ---|
@@ -118,7 +118,7 @@ To read all machines in MAAS
 >$ maas list
 </pre>
 
-![maas list](/images/maas-cli/maas-list.png)
+![maas list](/images/new-maas-cli/maas-list.png)
 
 
 #### Listing one machine with a typo
@@ -127,14 +127,14 @@ Auto-suggestions for typos (`did you mean...?`)
 >$ maas list [MACHINE NAME]
 </pre>
 The command will search for the nearest neighbor and provide suggestions.
-![fuzzy search](/images/maas-cli/fuzzySearch2.gif)
+![fuzzy search](/images/new-maas-cli/fuzzySearch2.gif)
 
 
 #### Command's man page
 Helpful `--help` output with structured layout and man-page style info
 `--format`: change output to `table` (default), `json`, `csv`, etc.
 
-![man page](/images/maas-cli/manPage.png)
+![man page](/images/new-maas-cli/manPage.png)
 
 
 #### Waiting States
@@ -143,25 +143,25 @@ The `--wait` flag block prompt for real-time progress (commission/deploy)
 
 #### Parallel Waiting state
 During commissioning, most tasks are done in parallel.
-![Commission](/images/maas-cli/commission.gif)
+![Commission](/images/new-maas-cli/commission.gif)
 
 #### Progressive Waiting state
 During deployment, most tasks are done in a progressive manner. 
-![Deploy](/images/maas-cli/Deploy.gif)
+![Deploy](/images/new-maas-cli/Deploy.gif)
 
 
 #### Interactive prompts
 We introduce the interactive prompt as a way to help users add incomplete requirements when deploying machines, the command also provides an equivalent command when the use wants to skip interactive mode.
-![Deploy](/images/maas-cli/interactive.gif)
+![Deploy](/images/new-maas-cli/interactive.gif)
 
 #### Smart Error recovery (error codes, suggestions, direct doc links)
-![flow chart](/images/maas-cli/errorState.png)
+![flow chart](/images/new-maas-cli/errorState.png)
 
 
 #### Zero State:
 When typing `maas` alone:
 Show quick tips, common commands, and link to docs
-![Zero](/images/maas-cli/stateZero.png)
+![Zero](/images/new-maas-cli/stateZero.png)
 
 ---
 
@@ -174,7 +174,7 @@ Tested with 12 internal users + shared prototype in [Discourse community](https:
 - 90% said error tolerance and help flags improved workflow
 - 45% had trouble seeing color cues due to terminal theme
 
-![Zero](/images/maas-cli/feedback.png)
+![Zero](/images/new-maas-cli/feedback.png)
 
 ---
 
