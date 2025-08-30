@@ -57,7 +57,7 @@ To get the SYSTEMID, the user need to either copy the ID from the URL or using `
 The output of the `machine read` is as below:
 It returns 82 lines in JSON format, showing information of one machine. 
 
-![flow chart](/images/maas-cli/jsonOutput.png)
+![JSON](/images/maas-cli/jsonOutput.png)
 
 While this is convenient for machines to process, they are not easily processed by humans. 
 
@@ -78,7 +78,7 @@ End-to-end UX process from research -> prototype -> internal testing.
 
 Interviewed internal Canonical Engineers across teams who are MAAS user and mapped out usage patterns.
 
-![flow chart](/images/maas-cli/extremeUsers.png)
+![Extreme](/images/maas-cli/extremeUsers.png)
 
 | **User Type** | **Behavior**|
 | --- | ---|
@@ -118,7 +118,7 @@ To read all machines in MAAS
 >$ maas list
 </pre>
 
-![flow chart](/images/maas-cli/maas-list.png)
+![maas list](/images/maas-cli/maas-list.png)
 
 
 #### Listing one machine with a typo
@@ -127,14 +127,14 @@ Auto-suggestions for typos (`did you mean...?`)
 >$ maas list [MACHINE NAME]
 </pre>
 The command will search for the nearest neighbor and provide suggestions.
-![flow chart](/images/maas-cli/fuzzySearch2.gif)
+![fuzzy search](/images/maas-cli/fuzzySearch2.gif)
 
 
 #### Command's man page
 Helpful `--help` output with structured layout and man-page style info
 `--format`: change output to `table` (default), `json`, `csv`, etc.
 
-![flow chart](/images/maas-cli/manPage.png)
+![man page](/images/maas-cli/manPage.png)
 
 
 #### Waiting States
