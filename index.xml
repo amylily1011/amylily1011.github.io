@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 12 Jun 2025 17:15:51 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://amylily1011.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AIBadge: A Weekend Experiment about AI Transparency</title>
+      <link>https://amylily1011.github.io/misc/aibadge/</link>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/misc/aibadge/</guid>
+      <description>What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI.</description>
+    </item>
     <item>
       <title>From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search</title>
       <link>https://amylily1011.github.io/projects/projectdirectory/maassearch/</link>

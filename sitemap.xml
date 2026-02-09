@@ -2,8 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://amylily1011.github.io/categories/ai/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/tags/ai/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/misc/aibadge/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://amylily1011.github.io/</loc>
-    <lastmod>2025-06-12T17:15:51+01:00</lastmod>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/categories/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/tags/experiment/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/misc/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/tags/provenance/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/tags/security/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/tags/side-project/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/tags/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/categories/ux/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/tags/ux/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://amylily1011.github.io/projects/projectdirectory/maassearch/</loc>
     <lastmod>2025-06-12T17:15:51+01:00</lastmod>
@@ -20,9 +56,6 @@
     <loc>https://amylily1011.github.io/misc/explain/</loc>
     <lastmod>2022-03-12T17:15:51+01:00</lastmod>
   </url><url>
-    <loc>https://amylily1011.github.io/misc/</loc>
-    <lastmod>2022-03-12T17:15:51+01:00</lastmod>
-  </url><url>
     <loc>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</loc>
     <lastmod>2022-03-12T17:15:51+01:00</lastmod>
   </url><url>
@@ -32,10 +65,6 @@
     <loc>https://amylily1011.github.io/misc/maas-cli/</loc>
     <lastmod>2020-09-28T17:15:51+01:00</lastmod>
   </url><url>
-    <loc>https://amylily1011.github.io/categories/</loc>
-  </url><url>
     <loc>https://amylily1011.github.io/series/</loc>
-  </url><url>
-    <loc>https://amylily1011.github.io/tags/</loc>
   </url>
 </urlset>

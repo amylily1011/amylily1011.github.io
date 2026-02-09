@@ -29,7 +29,7 @@ How might we remove the manual translation step while keeping search fast, preci
 
 
 
-  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.07ea7ac7da67e2e153a7dfa2457bc6a19cca824288d175e223fadc579041bc51.css" integrity="sha256-B&#43;p6x9pn4uFTp9&#43;iRXvGoZzKgkKI0XXiI/rcV5BBvFE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
 
 
 
@@ -239,10 +239,12 @@ MAAS 2.9 <em>(June 15, 2021)</em></p>
 <p><img src="https://amylily1011.github.io/images/maas-search/machine-sqlalchemy-table.png" alt="SQLAlchemy Table"></p>
 <p>Our initial goal:</p>
 <blockquote>
-<p>We want to reduce the load time from 2 mins to 10 secs / 1000 machines</p></blockquote>
+<p>We want to reduce the load time from 2 mins to 10 secs / 1000 machines</p>
+</blockquote>
 <p>Based on our implementation result:</p>
 <blockquote>
-<p>We reduced the load time from 2 mins to 2 secs / 1000 machines</p></blockquote>
+<p>We reduced the load time from 2 mins to 2 secs / 1000 machines</p>
+</blockquote>
 <p><strong>What did we learn?</strong></p>
 <ol>
 <li>Reimplementing the listing handler exposed that sometimes the database model was incorrect and overly complex, which resulted in slow and confusing queires.</li>
@@ -298,7 +300,8 @@ We evaluate the interaction based on 4 elements:</p>
 <li>The <code>search saving functionality</code> was one of many users&rsquo; <code>favorite</code>, 9 out of 11 users quoted how they felt this solves their problem because they never remember the syntax and having to relearn this every time.</li>
 </ol>
 <blockquote>
-<p>The problem here is although the UI felt easier to use. <em>People are still making a lot of mistakes</em> during the syntax creation/translation process. And even with all the fancy helper chip, 7 users still go back to the doc to find reference for the syntax.</p></blockquote>
+<p>The problem here is although the UI felt easier to use. <em>People are still making a lot of mistakes</em> during the syntax creation/translation process. And even with all the fancy helper chip, 7 users still go back to the doc to find reference for the syntax.</p>
+</blockquote>
 <hr>
 <h2 id="iteration-3--removing-translation-entirely">Iteration 3 — <strong>Removing Translation Entirely</strong></h2>
 <p><strong>Concept:</strong> A Natural Language Processing (NLP) layer that converts plain English into valid MAAS DSL queries.</p>

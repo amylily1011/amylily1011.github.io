@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 12 Mar 2022 17:15:51 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://amylily1011.github.io/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AIBadge: A Weekend Experiment about AI Transparency</title>
+      <link>https://amylily1011.github.io/misc/aibadge/</link>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/misc/aibadge/</guid>
+      <description>What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI.</description>
+    </item>
     <item>
       <title>From Confusion to Clarity: Designing `/explain` to Make Concepts Click</title>
       <link>https://amylily1011.github.io/misc/explain/</link>

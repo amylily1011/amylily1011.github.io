@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI." />
+<meta name="keywords" content=", AI, UX, Experiment, Security, Provenance, Side Project" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/misc/aibadge/" />
+
+
+    <title>
+        
+            AIBadge: A Weekend Experiment about AI Transparency :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://amylily1011.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://amylily1011.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://amylily1011.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://amylily1011.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://amylily1011.github.io/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://amylily1011.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="AIBadge: A Weekend Experiment about AI Transparency">
+  <meta itemprop="description" content="What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI.">
+  <meta itemprop="datePublished" content="2026-02-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="861">
+  <meta itemprop="image" content="https://amylily1011.github.io/">
+  <meta itemprop="keywords" content="AI,UX,Experiment,Security,Provenance,Side Project">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://amylily1011.github.io/">
+  <meta name="twitter:title" content="AIBadge: A Weekend Experiment about AI Transparency">
+  <meta name="twitter:description" content="What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/misc/aibadge/">
+  <meta property="og:site_name" content="Amy Lily">
+  <meta property="og:title" content="AIBadge: A Weekend Experiment about AI Transparency">
+  <meta property="og:description" content="What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="misc">
+    <meta property="article:published_time" content="2026-02-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-09T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="UX">
+    <meta property="article:tag" content="Experiment">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Provenance">
+    <meta property="article:tag" content="Side Project">
+    <meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+    <meta property="article:section" content="UX" />
+
+    <meta property="article:section" content="AI" />
+
+
+
+    <meta property="article:published_time" content="2026-02-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amylily1011.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amylily1011.github.io/about/">whoami</a></li><li><a href="https://amylily1011.github.io/misc">Miscs</a></li><li><a href="https://amylily1011.github.io/projects">Projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://amylily1011.github.io/misc/aibadge/">AIBadge: A Weekend Experiment about AI Transparency</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="the-question-that-started-it">The question that started it</h2>
+<p>In a management meeting recently, a colleague asked a simple question:</p>
+<blockquote>
+<p><em>“Should we add a badge to indicate that AI was used to write this?”</em></p>
+</blockquote>
+<p>What followed wasn’t simple &ldquo;yes&rdquo; or &ldquo;no&rdquo;.</p>
+<p>Some people felt transparency was important. Others worried that admitting AI use might undermine credibility, create unnecessary scrutiny, or send the wrong signal from a company perspective.</p>
+<p>The conversation quickly became less about design and more about culture, perception, and trust.</p>
+<p>That question stayed with me after the meeting.</p>
+<p>Not because I thought a badge was the right solution — but because it revealed a deeper tension:</p>
+<p><strong>In a world where AI is everywhere, what does honesty about authorship actually look like?</strong></p>
+<hr>
+<h2 id="isnt-this-just-another-ai-detector">Isn&rsquo;t this just another AI detector?</h2>
+<p>I didn&rsquo;t want to build another AI detector.</p>
+<p>Most AI detectors can provide a probability that this is written by AI and often produce high rates of false positives.</p>
+<ul>
+<li>You can edit AI text to sound human</li>
+<li>You can rewrite human text to sound like AI</li>
+<li>Models change constantly</li>
+<li>AI detection is somewhat guessing</li>
+</ul>
+<p>So instead of asking:</p>
+<blockquote>
+<p><em>“Can we detect AI?”</em></p>
+</blockquote>
+<p>What if the question is:</p>
+<blockquote>
+<p><em>“What if authors simply tell the truth and stand behind it?”</em></p>
+</blockquote>
+<hr>
+<h2 id="the-idea-signed-content">The idea: signed content</h2>
+<p>In many domains, we don’t try to detect behavior.<br>
+We rely on <strong>signed declarations</strong>.</p>
+<ul>
+<li>Authors sign their work</li>
+<li>Journalists attach bylines</li>
+<li>Developers sign software releases</li>
+<li>Organizations publish statements under their name</li>
+</ul>
+<p>These systems work because of <strong>accountability</strong>, not surveillance.</p>
+<p>Can content work the same way?</p>
+<p>Instead of guessing how something was written:</p>
+<p><strong>The author declares how it was created then cryptographically signs that claim.</strong></p>
+<p>This idea became a small weekend experiment.</p>
+<hr>
+<h2 id="aibadge-a-proof-of-integrity-experiment">AIBadge: a proof-of-integrity experiment</h2>
+<p>Let&rsquo;s call this simple prototype <strong>AIBadge</strong>. Since I couldn&rsquo;t think of a better name yet.</p>
+<p>The idea:</p>
+<ol>
+<li>The author chooses a disclosure:
+<ul>
+<li>Human-written</li>
+<li>AI-assisted</li>
+<li>AI-generated</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://amylily1011.github.io/images/aibadge/select-sign.gif" alt="select"></p>
+<ol start="2">
+<li>The system creates a cryptographic signature of:
+<ul>
+<li>The content (via a hash)</li>
+<li>The disclosure label</li>
+<li>Metadata (time, model, issuer)</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://amylily1011.github.io/images/aibadge/signature.png" alt="hashSignature"></p>
+<ol start="3">
+<li>A token can be shared alongside the content.</li>
+</ol>
+<p>Anyone can verify:</p>
+<ul>
+<li>The claim was signed</li>
+<li>The content has not been modified since it was signed</li>
+</ul>
+<p><img src="https://amylily1011.github.io/images/aibadge/verify.gif" alt="verify"></p>
+<p>If even one character changes, verification fails.
+<img src="https://amylily1011.github.io/images/aibadge/mismatch.gif" alt="mismatch"></p>
+<p>This isn’t AI detection.</p>
+<p>It’s <strong>content integrity + declared provenance</strong>.</p>
+<hr>
+<h2 id="adding-the-chrome-extension-to-this-prototype">Adding the Chrome extension to this Prototype</h2>
+<p>I used Pastebin as a playground, but imaging writing an article on google docs or your blog post.</p>
+<p>As an auther who wants to declare your content&rsquo;s integrity, you upload the written content on the blog with a crytograhic signature.</p>
+<p><img src="https://amylily1011.github.io/images/aibadge/chrome.gif" alt="chrome"></p>
+<p>The chrome extension then checks the signature and the text to verifies that <strong>the content matches</strong> with what&rsquo;s on the token.</p>
+<p>Otherwise, it will flag as <strong>content mismatch</strong> when there is a modification to the text.
+<img src="https://amylily1011.github.io/images/aibadge/mismatch-chrome.png" alt="chrome-error"></p>
+<hr>
+<h2 id="what-this-proves-and-what-it-doesnt">What this proves (and what it doesn’t)</h2>
+<p>The system does <strong>not</strong> prove that content is truly human.</p>
+<p>It proves that:</p>
+<blockquote>
+<p>The author is willing to stand behind a claim about this exact content.</p>
+</blockquote>
+<p>This is closer to:</p>
+<ul>
+<li>A signed statement</li>
+<li>A byline with accountability</li>
+<li>A tamper-evident seal</li>
+</ul>
+<p>Trust still comes from identity and reputation.<br>
+The signature simply ensures the claim cannot be altered.</p>
+<hr>
+<h2 id="why-this-matters">Why this matters?</h2>
+<p>The original meeting question was about a badge.</p>
+<p>But the real design question is:</p>
+<p><strong>How do we design for trust when the boundary between human and AI is blurry?</strong></p>
+<p>We are moving into a world where anyone can generate anything. When content can be rewritten endlessly. And when authenticity becomes harder to judge.</p>
+<p>Perhaps the future of trust should also include:
+<strong>Explicit claims and verifyable integrity</strong></p>
+<p>Instead of:</p>
+<ul>
+<li>“We will try to catch AI use”</li>
+</ul>
+<p>Perhaps we are moving to toward:</p>
+<ul>
+<li>“Authors choose what to disclose — and stand behind it”</li>
+</ul>
+<p>This shifts the experience from <strong>surveillance to responsibility</strong>.</p>
+<hr>
+<h2 id="the-reverse-captcha-idea">The Reverse CAPTCHA idea</h2>
+<p>Traditional CAPTCHAs ask:</p>
+<p><em>Prove you are human.</em></p>
+<p>This experiment explores a flip of model where:</p>
+<p><strong>If you make a claim about your content, prove the claim hasn’t been altered.</strong></p>
+<p>Not proof of humanity, but
+Proof of integrity.</p>
+<hr>
+<h2 id="what-i-learned">What I learned</h2>
+<p>The technical part is actually simple, but the interesting part is the interaction design:</p>
+<p>During the meeting discussion, I realized that:</p>
+<ul>
+<li>Transparency is cultural as much as technical</li>
+<li>Trust signals must balance honesty and reputation risk</li>
+<li>The future of AI UX in security may be about <strong>provenance</strong>, not just detection</li>
+<li>The most interesting problems sit at the intersection of technology, incentives, and human behavior</li>
+</ul>
+<p>The meeting debate made sense.</p>
+<p>People aren’t necessarily resisting transparency.</p>
+<p>They’re navigating a new social contract around AI.</p>
+<p>I guess what comes to mind, while putting this together was:</p>
+<ul>
+<li>How might we make provenance visible without adding friction?</li>
+<li>How might we signal trust without creating a stigma around AI?</li>
+<li>How might we make verification feel lightweight and contextual?</li>
+</ul>
+<hr>
+<h2 id="whats-next">What’s next</h2>
+<p>This AIBadge was just a tiny exploration of a bigger idea.</p>
+<blockquote>
+<p>What would the future look like for content authorship and integrity. Could provenance be part of this equation?</p>
+</blockquote>
+<p>A future where:</p>
+<ul>
+<li>Content carries verifiable provenance</li>
+<li>AI use is disclosed intentionally, not inferred</li>
+<li>Trust comes from accountability, not guessing</li>
+</ul>
+<p>Because in the age of generative AI, the real question isn’t just whether:</p>
+<p><em>“Was this written by AI?”</em></p>
+<p>Maybe, it’s:</p>
+<p><strong>Who is willing to stand behind this content?</strong></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://amylily1011.github.io/tags/ai/">AI</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/ux/">UX</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/experiment/">Experiment</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/security/">Security</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/provenance/">Provenance</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/side-project/">Side Project</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://amylily1011.github.io/categories/ux/">UX</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/categories/ai/">AI</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://amylily1011.github.io/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>
