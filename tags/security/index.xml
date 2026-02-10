@@ -10,11 +10,11 @@
     <lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://amylily1011.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AIBadge: A Weekend Experiment about AI Transparency</title>
+      <title>AIBadge: A Weekend Experiment about AI Provenance</title>
       <link>https://amylily1011.github.io/misc/aibadge/</link>
       <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://amylily1011.github.io/misc/aibadge/</guid>
-      <description>What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI.</description>
+      <description>summary: A meeting question about AI disclosure led to a weekend experiment exploring trust, authorship, and verifiable integrity in the age of generative AI.</description>
     </item>
   </channel>
 </rss>
