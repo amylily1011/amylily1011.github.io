@@ -1,10 +1,10 @@
 ---
-title: "AIBadge: A Weekend Experiment about AI Transparency"
+title: "AIBadge: A Weekend Experiment about AI Provenance"
 date: 2026-02-09
 draft: false
 tags: ["AI", "UX", "Experiment", "Security", "Provenance", "Side Project"]
 categories: ["UX", "AI"]
-summary: "What started as a meeting question about AI disclosure turned into a weekend experiment about trust, authorship, and integrity in the age of generative AI."
+summary: "summary: A meeting question about AI disclosure led to a weekend experiment exploring trust, authorship, and verifiable integrity in the age of generative AI."
 ---
 
 ## The question that started it
