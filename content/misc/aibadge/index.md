@@ -60,7 +60,7 @@ We rely on **signed declarations**.
 
 These systems work because of **accountability**, not surveillance.
 
-Can content work the same way?
+Could content work the same way?
 
 Instead of guessing how something was written:
 
@@ -111,11 +111,11 @@ It’s **content integrity + declared provenance**.
 
 I used Pastebin as a playground, but imagine writing an article on google docs or your blog post. 
 
-As an author who wants to declare your content's integrity, you upload the written content on the blog with a crytographic signature.
+As an author who wants to declare your content's integrity, you upload the written content on the blog with a cryptographic signature.
 
 ![chrome](/images/aibadge/chrome.gif)
 
-The chrome extension then checks the signature and the text to verifies that **the content matches** with what's on the token. 
+The Chrome extension checks the signature and the text to verifies that **the content matches** the token. 
 
 Otherwise, it will flag as **content mismatch** when there is a modification to the text.
 ![chrome-error](/images/aibadge/mismatch-chrome.png)
@@ -137,11 +137,11 @@ This is closer to:
 - A tamper-evident seal  
 
 Trust still comes from identity and reputation.  
-The signature simply ensures the claim cannot be altered.
+The signature simply ensures the claim cannot be altered. This is accountability. 
 
 ---
 
-## Why this matters?
+## Why this matters
 
 The original meeting question was about a badge.
 
