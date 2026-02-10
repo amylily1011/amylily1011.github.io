@@ -109,9 +109,9 @@ It’s **content integrity + declared provenance**.
 
 ## Adding the Chrome extension to this Prototype
 
-I used Pastebin as a playground, but imaging writing an article on google docs or your blog post. 
+I used Pastebin as a playground, but imagine writing an article on google docs or your blog post. 
 
-As an auther who wants to declare your content's integrity, you upload the written content on the blog with a crytograhic signature.
+As an author who wants to declare your content's integrity, you upload the written content on the blog with a crytographic signature.
 
 ![chrome](/images/aibadge/chrome.gif)
 
@@ -152,12 +152,12 @@ But the real design question is:
 We are moving into a world where anyone can generate anything. When content can be rewritten endlessly. And when authenticity becomes harder to judge. 
 
 Perhaps the future of trust should also include:
-**Explicit claims and verifyable integrity**
+**Explicit claims and verifiable integrity**
 
 Instead of:
 - “We will try to catch AI use”
 
-Perhaps we are moving to toward:
+Perhaps we are moving toward:
 - “Authors choose what to disclose — and stand behind it”
 
 
@@ -171,7 +171,7 @@ Traditional CAPTCHAs ask:
 
 *Prove you are human.*
 
-This experiment explores a flip of model where:
+This experiment explores a flip of the model where:
 
 **If you make a claim about your content, prove the claim hasn’t been altered.**
 
