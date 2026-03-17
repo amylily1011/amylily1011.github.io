@@ -141,7 +141,7 @@ The signature simply ensures the claim cannot be altered. This is accountability
 
 ---
 
-## Does any of this matter?
+## Does this matter?
 
 The original meeting question was about a badge.
 
