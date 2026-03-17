@@ -141,7 +141,7 @@ The signature simply ensures the claim cannot be altered. This is accountability
 
 ---
 
-## Why this matters
+## Does any of this matter?
 
 The original meeting question was about a badge.
 
@@ -152,7 +152,7 @@ But the real design question is:
 We are moving into a world where anyone can generate anything. When content can be rewritten endlessly. And when authenticity becomes harder to judge. 
 
 Perhaps the future of trust should also include:
-**Explicit claims and verifiable integrity**
+**explicit claims and verifiable integrity**
 
 Instead of:
 - “We will try to catch AI use”
