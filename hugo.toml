@@ -254,6 +254,11 @@ disableHugoGeneratorInject = false
     name       = "Miscs"
     url        = "/misc"
 
+  [[menu.main]]
+    identifier = "ai-security"
+    name       = "AI Security"
+    url        = "/ai-security"
+
   
 
 [markup]
