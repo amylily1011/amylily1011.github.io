@@ -1,5 +1,5 @@
 ---
-title: "Prompt Injection: I Got an LLM to Leak a Secret Key in Under 3 Minutes"
+title: "Prompt Injection: Hijack LLM Instructions"
 date: 2026-03-26
 draft: false
 tags: ["AI Security", "Prompt Injection", "LLM", "HTB"]
@@ -7,7 +7,7 @@ categories: ["AI Security"]
 summary: "I started a Hack The Box AI security lab with zero expectations. Three minutes later, I had leaked a secret key the model had been explicitly told never to reveal. Here's what I learned — and why it matters if you build with LLMs."
 ---
 
-I started this Hack The Box lab with zero expectations.
+I started this [Hack The Box lab](https://academy.hackthebox.com/course/preview/introduction-to-red-teaming-ai) with zero expectations.
 
 The task: *get an LLM to leak a secret key it had been explicitly told never to reveal.* I figured it would take me a while to figure out. It took under three minutes.
 
