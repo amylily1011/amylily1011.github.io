@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AI on Amy Lily</title>
-    <link>https://amylily1011.github.io/tags/ai/</link>
-    <description>Recent content in AI on Amy Lily</description>
+    <title>OpenClaw on Amy Lily</title>
+    <link>https://amylily1011.github.io/tags/openclaw/</link>
+    <description>Recent content in OpenClaw on Amy Lily</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://amylily1011.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://amylily1011.github.io/tags/openclaw/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From Infra Chaos to a Personal AI Operator: Building with OpenClaw</title>
       <link>https://amylily1011.github.io/misc/openclaw-setup/</link>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://amylily1011.github.io/misc/openclaw-setup/</guid>
       <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;Built a personal AI operator using OpenClaw + Telegram + Claude.&#xA;Got stuck optimizing too early (local models, networking).&#xA;Reset everything.&#xA;Used OpenClaw onboarding + Anthropic API.&#xA;Connected Telegram.&#xA;System worked instantly.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Biggest lesson: Getting something working &amp;gt; getting everything perfect.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Over the past few days, I set out to build something simple:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;a personal AI operator I could interact with through Telegram.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;What I ended up building was not just a chatbot, but a small system:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AIBadge: A Weekend Experiment about AI Provenance</title>
-      <link>https://amylily1011.github.io/misc/aibadge/</link>
-      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/misc/aibadge/</guid>
-      <description>summary: A meeting question about AI disclosure led to a weekend experiment exploring trust, authorship, and verifiable integrity in the age of generative AI.</description>
     </item>
   </channel>
 </rss>

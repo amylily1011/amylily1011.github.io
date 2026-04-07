@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Amy Lily">
+<meta name="description" content="TL;DR Built a personal AI operator using OpenClaw &#43; Telegram &#43; Claude. Got stuck optimizing too early (local models, networking). Reset everything. Used OpenClaw onboarding &#43; Anthropic API. Connected Telegram. System worked instantly.
+Biggest lesson: Getting something working &gt; getting everything perfect.
+Introduction Over the past few days, I set out to build something simple:
+a personal AI operator I could interact with through Telegram.
+What I ended up building was not just a chatbot, but a small system:
+" />
+<meta name="keywords" content=", AI, Agents, OpenClaw, Anthropic, Systems, Infra" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/misc/openclaw-setup/" />
+
+
+    <title>
+        
+            From Infra Chaos to a Personal AI Operator: Building with OpenClaw :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://amylily1011.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://amylily1011.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://amylily1011.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://amylily1011.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://amylily1011.github.io/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://amylily1011.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="From Infra Chaos to a Personal AI Operator: Building with OpenClaw">
+  <meta itemprop="description" content="TL;DR Built a personal AI operator using OpenClaw &#43; Telegram &#43; Claude. Got stuck optimizing too early (local models, networking). Reset everything. Used OpenClaw onboarding &#43; Anthropic API. Connected Telegram. System worked instantly.
+Biggest lesson: Getting something working &gt; getting everything perfect.
+Introduction Over the past few days, I set out to build something simple:
+a personal AI operator I could interact with through Telegram.
+What I ended up building was not just a chatbot, but a small system:">
+  <meta itemprop="datePublished" content="2026-04-07T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-04-07T00:00:00+00:00">
+  <meta itemprop="wordCount" content="594">
+  <meta itemprop="image" content="https://amylily1011.github.io/">
+  <meta itemprop="keywords" content="AI,Agents,OpenClaw,Anthropic,Systems,Infra">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://amylily1011.github.io/">
+  <meta name="twitter:title" content="From Infra Chaos to a Personal AI Operator: Building with OpenClaw">
+  <meta name="twitter:description" content="TL;DR Built a personal AI operator using OpenClaw &#43; Telegram &#43; Claude. Got stuck optimizing too early (local models, networking). Reset everything. Used OpenClaw onboarding &#43; Anthropic API. Connected Telegram. System worked instantly.
+Biggest lesson: Getting something working &gt; getting everything perfect.
+Introduction Over the past few days, I set out to build something simple:
+a personal AI operator I could interact with through Telegram.
+What I ended up building was not just a chatbot, but a small system:">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/misc/openclaw-setup/">
+  <meta property="og:site_name" content="Amy Lily">
+  <meta property="og:title" content="From Infra Chaos to a Personal AI Operator: Building with OpenClaw">
+  <meta property="og:description" content="TL;DR Built a personal AI operator using OpenClaw &#43; Telegram &#43; Claude. Got stuck optimizing too early (local models, networking). Reset everything. Used OpenClaw onboarding &#43; Anthropic API. Connected Telegram. System worked instantly.
+Biggest lesson: Getting something working &gt; getting everything perfect.
+Introduction Over the past few days, I set out to build something simple:
+a personal AI operator I could interact with through Telegram.
+What I ended up building was not just a chatbot, but a small system:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="misc">
+    <meta property="article:published_time" content="2026-04-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-07T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Agents">
+    <meta property="article:tag" content="OpenClaw">
+    <meta property="article:tag" content="Anthropic">
+    <meta property="article:tag" content="Systems">
+    <meta property="article:tag" content="Infra">
+    <meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-04-07 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amylily1011.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amylily1011.github.io/about/">whoami</a></li><li><a href="https://amylily1011.github.io/ai-security">AI Security</a></li><li><a href="https://amylily1011.github.io/misc">Miscs</a></li><li><a href="https://amylily1011.github.io/projects">Projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://amylily1011.github.io/misc/openclaw-setup/">From Infra Chaos to a Personal AI Operator: Building with OpenClaw</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="tldr">TL;DR</h2>
+<p>Built a personal AI operator using OpenClaw + Telegram + Claude.
+Got stuck optimizing too early (local models, networking).
+Reset everything.
+Used OpenClaw onboarding + Anthropic API.
+Connected Telegram.
+System worked instantly.</p>
+<blockquote>
+<p>Biggest lesson: Getting something working &gt; getting everything perfect.</p>
+</blockquote>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Over the past few days, I set out to build something simple:</p>
+<blockquote>
+<p>a personal AI operator I could interact with through Telegram.</p>
+</blockquote>
+<p>What I ended up building was not just a chatbot, but a small system:</p>
+<ul>
+<li>a remote agent</li>
+<li>backed by a model provider</li>
+<li>connected through a messaging interface</li>
+<li>with the potential to evolve into something far more autonomous</li>
+</ul>
+<p>This post is not a tutorial. It&rsquo;s a reflection on what it actually takes to go from idea → working system, and what I learned along the way.</p>
+<hr>
+<h2 id="the-goal">The Goal</h2>
+<p>I wasn&rsquo;t trying to &ldquo;use AI&rdquo;.</p>
+<p>I wanted to answer a more interesting question:</p>
+<blockquote>
+<p>What does it mean to <em>own</em> an AI operator?</p>
+</blockquote>
+<p>Not just prompt it, but:</p>
+<ul>
+<li>configure it</li>
+<li>route it through interfaces</li>
+<li>control its behavior</li>
+<li>eventually, delegate work to it</li>
+</ul>
+<hr>
+<h2 id="final-architecture">Final Architecture</h2>
+<pre tabindex="0"><code>Telegram
+   ↓
+OpenClaw (VPS on DigitalOcean)
+   ↓
+Claude (Anthropic API)
+</code></pre><p>At a glance, it’s simple. In practice, each layer introduces a different kind of complexity:</p>
+<ul>
+<li><strong>Interface layer (Telegram)</strong> → async, user-facing interaction</li>
+<li><strong>Agent layer (OpenClaw)</strong> → orchestration, routing, memory</li>
+<li><strong>Model layer (Anthropic)</strong> → reasoning and generation</li>
+</ul>
+<p>The interesting part isn’t any single layer — it’s what happens when they talk to each other.</p>
+<hr>
+<h2 id="what-actually-worked">What Actually Worked</h2>
+<p>I went through a messy first attempt before landing on a clean path. Here’s what I’d do from scratch.</p>
+<p><strong>Start fresh.</strong> I wasted time trying to debug a broken state — leftover configs, half-installed tools, conflicting setups (Ollama, Tailscale). Resetting the droplet and starting clean was faster than untangling the mess.</p>
+<blockquote>
+<p>Lesson: don’t debug a messy state — reset.</p>
+</blockquote>
+<p><strong>Use the DigitalOcean console, not SSH.</strong> During setup, SSH key issues and connection latency added unnecessary friction. The browser console just works.</p>
+<blockquote>
+<p>Lesson: reduce friction during setup.</p>
+</blockquote>
+<p><strong>Install Node, then OpenClaw:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update <span style="color:#f92672">&amp;&amp;</span> apt install -y curl git
+</span></span><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
+</span></span><span style="display:flex;"><span>apt install -y nodejs
+</span></span><span style="display:flex;"><span>npm install -g openclaw
+</span></span></code></pre></div><p><strong>Run onboarding — don’t skip it:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw onboard --install-daemon
+</span></span></code></pre></div><p>The onboarding wizard handles what would otherwise require manual config edits. I selected Express, chose Anthropic as the model provider, pasted my API key, enabled Telegram, and pasted the bot token. Done.</p>
+<blockquote>
+<p>Lesson: use onboarding — don’t hand-edit config.</p>
+</blockquote>
+<p><strong>Pair Telegram.</strong> The bot returns a pairing code:</p>
+<pre tabindex="0"><code>Pairing code: XXXXX
+</code></pre><p>Approve it on the VPS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw pairing approve telegram &lt;CODE&gt;
+</span></span></code></pre></div><p><strong>The billing error I didn’t expect.</strong> At some point I hit this:</p>
+<pre tabindex="0"><code>API provider returned a billing error
+</code></pre><p>The root cause surprised me: Claude Pro and Anthropic API credits are separate. Having an active Claude subscription doesn’t give you API access. I had to add credits in the Anthropic console, generate a new API key, and re-run onboarding.</p>
+<blockquote>
+<p>Lesson: always create a fresh API key after enabling billing. Old keys don’t pick up new credit balances reliably.</p>
+</blockquote>
+<p><strong>Verify the system is running:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openclaw gateway status | cat
+</span></span></code></pre></div><p>You want to see:</p>
+<pre tabindex="0"><code>Runtime: running
+RPC probe: ok
+</code></pre><hr>
+<h2 id="the-first-working-moment">The First Working Moment</h2>
+<p>After all of it — the reset, the installs, the billing detour — I opened Telegram and sent:</p>
+<pre tabindex="0"><code>Hello
+</code></pre><p><img src="https://amylily1011.github.io/images/OpenClawSetup/Hello.png" alt="OpenClaw"></p>
+<p>It responded. The system worked.</p>
+<p>That moment is smaller than it sounds, and also larger than it sounds. It’s the difference between reading about agentic AI and having one running somewhere that is yours on your server, connected to your account, ready to be shaped into whatever you decide to build next.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://amylily1011.github.io/tags/ai/">AI</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/agents/">Agents</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/openclaw/">OpenClaw</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/anthropic/">Anthropic</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/systems/">Systems</a></span>
+        <span class="tag"><a href="https://amylily1011.github.io/tags/infra/">Infra</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://amylily1011.github.io/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>
