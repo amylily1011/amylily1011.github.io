@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AI Security on Amy Lily</title>
-    <link>https://amylily1011.github.io/ai-security/</link>
-    <description>Recent content in AI Security on Amy Lily</description>
+    <title>Anthropic on Amy Lily</title>
+    <link>https://amylily1011.github.io/tags/anthropic/</link>
+    <description>Recent content in Anthropic on Amy Lily</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://amylily1011.github.io/ai-security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://amylily1011.github.io/tags/anthropic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Same Model, Different Answer — What System Prompts Actually Do</title>
       <link>https://amylily1011.github.io/ai-security/same-model-different-answer/</link>
       <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://amylily1011.github.io/ai-security/same-model-different-answer/</guid>
       <description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here&amp;rsquo;s what that reveals.</description>
-    </item>
-    <item>
-      <title>Prompt Injection: Hijack LLM Instructions</title>
-      <link>https://amylily1011.github.io/ai-security/prompt-injection/</link>
-      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/ai-security/prompt-injection/</guid>
-      <description>I started a Hack The Box AI security lab with zero expectations. Three minutes later, I had leaked a secret key the model had been explicitly told never to reveal. Here&amp;rsquo;s what I learned — and why it matters if you build with LLMs.</description>
     </item>
   </channel>
 </rss>

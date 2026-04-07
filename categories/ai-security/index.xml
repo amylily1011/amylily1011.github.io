@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://amylily1011.github.io/categories/ai-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Same Model, Different Answer — What System Prompts Actually Do</title>
+      <link>https://amylily1011.github.io/ai-security/same-model-different-answer/</link>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/ai-security/same-model-different-answer/</guid>
+      <description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here&amp;rsquo;s what that reveals.</description>
+    </item>
     <item>
       <title>Prompt Injection: Hijack LLM Instructions</title>
       <link>https://amylily1011.github.io/ai-security/prompt-injection/</link>
