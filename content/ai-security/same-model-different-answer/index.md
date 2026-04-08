@@ -18,9 +18,9 @@ In the midst of solving the prompt injection exercise, I got stuck and ran out o
 
 Let's walk through the set of all my three tools.
 
-- **OpenClaw** — a tool I use that connects directly to the Anthropic API and is set up via a VPS in Digital Ocean.
+- **OpenClaw** - a tool I use that connects directly to the Anthropic API and is set up via a VPS in Digital Ocean.
 - **Claude CoWork** - I used the Desktop Co-work mode for random things that comes to mind
-- **Claude Code** — the CLI tool I use for development connected via my IDE
+- **Claude Code** - the CLI tool I use for development connected via my IDE
 
 Task
 ```
@@ -61,7 +61,7 @@ Even when you struggle with getting the flag, it will push further and provide o
 ## How does Claude CoWork respond?
 **Claude CoWork:** Same as Claude Code. Clear, accurate explanation, then a polite refusal to go further into actionable technique.
 
-![ClaudeCoWork](/images/3LLM-models/CoWork.png)
+![ClaudeCoWork](/images/3LLM-models/Cowork.png)
 
 At first attempt, it rejects me right away. This is what I expected. 
 
