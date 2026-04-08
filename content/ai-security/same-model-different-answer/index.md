@@ -140,7 +140,7 @@ Neither is wrong. They're just calibrated for different risk profiles and use ca
 
 When people say "Claude said X" or "GPT refused to do Y," they're usually talking about a specific deployment of a model, but not the model itself.
 
-When the model refuses. it's not the model hitting a wall. It is the product doing what it's designed to do.
+When the model refuses, it's not the model hitting a wall. It is the product doing what it's designed to do.
 
 This is why prompt injection is interesting not just as an attack surface, but as a lens. When you probe the edges of what a model will and won't do, you're often learning as much about the system prompt as you are about the model. 
 
