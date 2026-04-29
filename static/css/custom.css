@@ -1,0 +1,30 @@
+.post {
+  width: 95%;
+  max-width: 1500px;
+}
+
+@media (max-width: 900px) {
+  .post {
+    width: 95%;
+  }
+}
+
+/* Plain code blocks (no syntax highlighting) */
+pre {
+  white-space: pre-wrap;
+  overflow-x: hidden;
+}
+
+/* Pygments-highlighted blocks — each line is a display:flex span,
+   so we need to allow wrapping at the flex level */
+.highlight {
+  overflow-x: hidden;
+}
+
+.highlight pre {
+  white-space: pre-wrap;
+}
+
+.highlight pre code > span {
+  flex-wrap: wrap;
+}
