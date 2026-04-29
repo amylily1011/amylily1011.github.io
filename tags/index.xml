@@ -7,8 +7,43 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://amylily1011.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adversarial ML</title>
+      <link>https://amylily1011.github.io/tags/adversarial-ml/</link>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/tags/adversarial-ml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Security</title>
+      <link>https://amylily1011.github.io/tags/ai-security/</link>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/tags/ai-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jailbreaking</title>
+      <link>https://amylily1011.github.io/tags/jailbreaking/</link>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/tags/jailbreaking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>https://amylily1011.github.io/tags/llm/</link>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Red Teaming</title>
+      <link>https://amylily1011.github.io/tags/red-teaming/</link>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://amylily1011.github.io/tags/red-teaming/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Agents</title>
       <link>https://amylily1011.github.io/tags/agents/</link>
@@ -49,20 +84,6 @@
       <link>https://amylily1011.github.io/tags/systems/</link>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://amylily1011.github.io/tags/systems/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AI Security</title>
-      <link>https://amylily1011.github.io/tags/ai-security/</link>
-      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/tags/ai-security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LLM</title>
-      <link>https://amylily1011.github.io/tags/llm/</link>
-      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/tags/llm/</guid>
       <description></description>
     </item>
     <item>
