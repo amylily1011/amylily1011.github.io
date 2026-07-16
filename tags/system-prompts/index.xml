@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>System Prompts on Amy Lily</title>
-    <link>https://amylily1011.github.io/tags/system-prompts/</link>
-    <description>Recent content in System Prompts on Amy Lily</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://amylily1011.github.io/tags/system-prompts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Same Model, Different Answer: What System Prompts Actually Do</title>
-      <link>https://amylily1011.github.io/ai-security/same-model-different-answer/</link>
-      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/ai-security/same-model-different-answer/</guid>
-      <description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here&amp;rsquo;s what that reveals.</description>
-    </item>
-  </channel>
+	<channel>
+		<title>System Prompts on Amy Lily</title>
+		<link>https://amylily1011.github.io/tags/system-prompts/</link>
+		<description>Recent content in System Prompts on Amy Lily</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		
+		
+			<lastBuildDate>Mon, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://amylily1011.github.io/tags/system-prompts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Same Model, Different Answer: What System Prompts Actually Do</title>
+				<link>https://amylily1011.github.io/ai-security/same-model-different-answer/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>https://amylily1011.github.io/ai-security/same-model-different-answer/</guid>
+				<description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here&amp;rsquo;s what that reveals.</description>
+			</item>
+	</channel>
 </rss>

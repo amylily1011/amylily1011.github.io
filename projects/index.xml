@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Projects on Amy Lily</title>
-    <link>https://amylily1011.github.io/projects/</link>
-    <description>Recent content in Projects on Amy Lily</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 12 Jun 2025 17:15:51 +0100</lastBuildDate>
-    <atom:link href="https://amylily1011.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/maassearch/</link>
-      <pubDate>Thu, 12 Jun 2025 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/maassearch/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but &lt;strong&gt;intimidating and error-prone&lt;/strong&gt; for both expert and new users.&lt;br&gt;&#xA;The &lt;strong&gt;translation step&lt;/strong&gt; (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.&lt;br&gt;&#xA;Users frequently forgot query syntax between sessions, making search &lt;strong&gt;a recurring learning curve&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we &lt;strong&gt;remove the manual translation step&lt;/strong&gt; while keeping search &lt;strong&gt;fast, precise, and scalable&lt;/strong&gt;?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</link>
-      <pubDate>Fri, 12 Apr 2024 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The &lt;code&gt;pro status&lt;/code&gt; CLI is the &lt;strong&gt;primary entry point&lt;/strong&gt; for human operators to check subscription status, security coverage, vulnerabilities, and service health.&lt;/p&gt;&#xA;&lt;p&gt;As the service portfolio grew across &lt;strong&gt;LTS, EOSS, non-LTS, and cloud-attached systems&lt;/strong&gt;, outputs became &lt;strong&gt;inconsistent, hard to parse, and difficult to act on&lt;/strong&gt; — especially for operators managing dozens or hundreds of machines.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scaling Infra UX: Designing a Centralized Control Platform for 60K MAAS Sites</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</link>
-      <pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines.&lt;br&gt;&#xA;As deployments scaled to &lt;strong&gt;60,000+ edge sites&lt;/strong&gt; across multi-region infrastructures, operators struggled with:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fragmented management&lt;/strong&gt; across thousands of MAAS instances&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual, redundant image handling&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Delayed observability&lt;/strong&gt; and no single source of truth&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Inconsistent UX&lt;/strong&gt; between sites&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I led the design of &lt;strong&gt;MAAS Site Manager&lt;/strong&gt; — a centralized control platform to unify monitoring, troubleshooting, and configuration at scale.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</link>
-      <pubDate>Fri, 01 Oct 2021 14:53:41 +0000</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;br&gt;&#xA;MAAS 2.8’s UI &lt;strong&gt;struggled to scale.&lt;/strong&gt; Navigation was unintuitive, actions were buried far from context, and real-time status was hard to see. We set out to modernize MAAS and align the layout across Canonical’s Cloud &amp;amp; Infra products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;br&gt;&#xA;How might we create a &lt;strong&gt;functional, scalable application layout&lt;/strong&gt; that:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Improves &lt;strong&gt;learnability, efficiency, and error tolerance&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Scales to &lt;strong&gt;large environments&lt;/strong&gt; (100–1800+ machines)&lt;/li&gt;&#xA;&lt;li&gt;Serves as a &lt;strong&gt;foundation for the division’s design system&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;strong&gt;UX Lead&lt;/strong&gt; partnering with Engineering &amp;amp; PM.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Projects on Amy Lily</title>
+		<link>https://amylily1011.github.io/projects/</link>
+		<description>Recent content in Projects on Amy Lily</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		
+		
+			<lastBuildDate>Thu, 12 Jun 2025 17:15:51 +0100</lastBuildDate>
+		
+			<atom:link href="https://amylily1011.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/maassearch/</link>
+				<pubDate>Thu, 12 Jun 2025 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/maassearch/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but &lt;strong&gt;intimidating and error-prone&lt;/strong&gt; for both expert and new users.&lt;br&gt;&#xA;The &lt;strong&gt;translation step&lt;/strong&gt; (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.&lt;br&gt;&#xA;Users frequently forgot query syntax between sessions, making search &lt;strong&gt;a recurring learning curve&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we &lt;strong&gt;remove the manual translation step&lt;/strong&gt; while keeping search &lt;strong&gt;fast, precise, and scalable&lt;/strong&gt;?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</link>
+				<pubDate>Fri, 12 Apr 2024 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The &lt;code&gt;pro status&lt;/code&gt; CLI is the &lt;strong&gt;primary entry point&lt;/strong&gt; for human operators to check subscription status, security coverage, vulnerabilities, and service health.&lt;/p&gt;&#xA;&lt;p&gt;As the service portfolio grew across &lt;strong&gt;LTS, EOSS, non-LTS, and cloud-attached systems&lt;/strong&gt;, outputs became &lt;strong&gt;inconsistent, hard to parse, and difficult to act on&lt;/strong&gt; — especially for operators managing dozens or hundreds of machines.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scaling Infra UX: Designing a Centralized Control Platform for 60K MAAS Sites</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</link>
+				<pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines.&lt;br&gt;&#xA;As deployments scaled to &lt;strong&gt;60,000+ edge sites&lt;/strong&gt; across multi-region infrastructures, operators struggled with:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fragmented management&lt;/strong&gt; across thousands of MAAS instances&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual, redundant image handling&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Delayed observability&lt;/strong&gt; and no single source of truth&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Inconsistent UX&lt;/strong&gt; between sites&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I led the design of &lt;strong&gt;MAAS Site Manager&lt;/strong&gt; — a centralized control platform to unify monitoring, troubleshooting, and configuration at scale.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</link>
+				<pubDate>Fri, 01 Oct 2021 14:53:41 +0000</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;br&gt;&#xA;MAAS 2.8’s UI &lt;strong&gt;struggled to scale.&lt;/strong&gt; Navigation was unintuitive, actions were buried far from context, and real-time status was hard to see. We set out to modernize MAAS and align the layout across Canonical’s Cloud &amp;amp; Infra products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;br&gt;&#xA;How might we create a &lt;strong&gt;functional, scalable application layout&lt;/strong&gt; that:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Improves &lt;strong&gt;learnability, efficiency, and error tolerance&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Scales to &lt;strong&gt;large environments&lt;/strong&gt; (100–1800+ machines)&lt;/li&gt;&#xA;&lt;li&gt;Serves as a &lt;strong&gt;foundation for the division’s design system&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;strong&gt;UX Lead&lt;/strong&gt; partnering with Engineering &amp;amp; PM.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

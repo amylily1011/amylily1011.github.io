@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Amy Lily">
+<meta name="description" content="Having designed, audited, and created guidelines for command-line interfaces over the past six years, the most common question I get is: &ldquo;What makes a good CLI?&rdquo;
+The annoying, consultant-brained answer is: it depends. Not because I&rsquo;m dodging the question, but because &ldquo;good&rdquo; depends entirely on who OR what is running the command. A CLI that delights a human can absolutely wreck a CI pipeline, and vice versa. Anyone who tells you there&rsquo;s One True Way to design a CLI is either selling something or has never had to grep their own error messages at 2am.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/misc/clux/" />
+
+
+    <title>
+        
+            CLUX: A Roast-Proof Scorecard for Your Sad Little CLI :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://amylily1011.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://amylily1011.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://amylily1011.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://amylily1011.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://amylily1011.github.io/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://amylily1011.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+	<meta itemprop="name" content="CLUX: A Roast-Proof Scorecard for Your Sad Little CLI">
+	<meta itemprop="description" content="Having designed, audited, and created guidelines for command-line interfaces over the past six years, the most common question I get is: “What makes a good CLI?”
+The annoying, consultant-brained answer is: it depends. Not because I’m dodging the question, but because “good” depends entirely on who OR what is running the command. A CLI that delights a human can absolutely wreck a CI pipeline, and vice versa. Anyone who tells you there’s One True Way to design a CLI is either selling something or has never had to grep their own error messages at 2am.">
+	<meta itemprop="datePublished" content="2026-07-16T16:41:00+01:00">
+	<meta itemprop="dateModified" content="2026-07-16T16:41:00+01:00">
+	<meta itemprop="wordCount" content="1060">
+	<meta itemprop="image" content="https://amylily1011.github.io/">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://amylily1011.github.io/">
+	<meta name="twitter:title" content="CLUX: A Roast-Proof Scorecard for Your Sad Little CLI">
+	<meta name="twitter:description" content="Having designed, audited, and created guidelines for command-line interfaces over the past six years, the most common question I get is: “What makes a good CLI?”
+The annoying, consultant-brained answer is: it depends. Not because I’m dodging the question, but because “good” depends entirely on who OR what is running the command. A CLI that delights a human can absolutely wreck a CI pipeline, and vice versa. Anyone who tells you there’s One True Way to design a CLI is either selling something or has never had to grep their own error messages at 2am.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/misc/clux/">
+	<meta property="og:site_name" content="Amy Lily">
+	<meta property="og:title" content="CLUX: A Roast-Proof Scorecard for Your Sad Little CLI">
+	<meta property="og:description" content="Having designed, audited, and created guidelines for command-line interfaces over the past six years, the most common question I get is: “What makes a good CLI?”
+The annoying, consultant-brained answer is: it depends. Not because I’m dodging the question, but because “good” depends entirely on who OR what is running the command. A CLI that delights a human can absolutely wreck a CI pipeline, and vice versa. Anyone who tells you there’s One True Way to design a CLI is either selling something or has never had to grep their own error messages at 2am.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="misc">
+		<meta property="article:published_time" content="2026-07-16T16:41:00+01:00">
+		<meta property="article:modified_time" content="2026-07-16T16:41:00+01:00">
+		<meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-07-16 16:41:00 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://amylily1011.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://amylily1011.github.io/about/">whoami</a></li><li><a href="https://amylily1011.github.io/ai-security">AI Security</a></li><li><a href="https://amylily1011.github.io/misc">Miscs</a></li><li><a href="https://amylily1011.github.io/projects">Projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://amylily1011.github.io/misc/clux/">CLUX: A Roast-Proof Scorecard for Your Sad Little CLI</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Having designed, audited, and created guidelines for command-line interfaces over the past six years, the most common question I get is: <em>&ldquo;What makes a good CLI?&rdquo;</em></p>
+<p>The annoying, consultant-brained answer is: <strong>it depends.</strong> Not because I&rsquo;m dodging the question, but because &ldquo;good&rdquo; depends entirely on who OR what is running the command. A CLI that delights a human can absolutely wreck a CI pipeline, and vice versa. Anyone who tells you there&rsquo;s One True Way to design a CLI is either selling something or has never had to <code>grep</code> their own error messages at 2am.</p>
+<p>Here&rsquo;s the real problem, though: in GUIs, designers get analytics, heatmaps, session recordings&hellip;an entire surveillance apparatus dedicated to catching you the moment you rage-click. The terminal offers none of that mercy. Bad CLI UX is basically invisible, which means it festers. Roughly <strong>88% of users won&rsquo;t file an issue</strong> when your tool confuses them. They just quietly ghost you and go install the competitor. No breakup text, no feedback form - just silence, and a <code>brew uninstall</code>.</p>
+<hr>
+<h3 id="defining-quality-in-the-terminal-no-vibes-dont-count">Defining quality in the terminal (no, vibes don&rsquo;t count)</h3>
+<p>There&rsquo;s no universal blueprint for a perfect CLI, but &ldquo;ease of use&rdquo; isn&rsquo;t a mystery either. It comes down to three criteria you can actually measure instead of guessing:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Criteria</th>
+					<th>What it asks</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Learnability</strong></td>
+					<td>Can a human find your commands without spelunking through the source? Does <code>--help</code> actually help?</td>
+			</tr>
+			<tr>
+					<td><strong>Efficiency</strong></td>
+					<td>Shortcuts, pipe-friendliness, <code>--json</code> output - or does every interaction cost the user three extra flags and a prayer?</td>
+			</tr>
+			<tr>
+					<td><strong>Error Tolerance</strong></td>
+					<td>When it breaks (it will break), does the tool tell the user <em>why</em> and <em>what to do next</em> - or just hurl a stack trace and call it a day?</td>
+			</tr>
+	</tbody>
+</table>
+<p>Beyond those three, I also weigh four more criteria that matter just as much, even if they get talked about less:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Criteria</th>
+					<th>What it asks</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Pleasantness</strong></td>
+					<td>Is the naming consistent, is the output formatted like someone thought about it - or does every subcommand feel like it was designed by a different committee on a different decade?</td>
+			</tr>
+			<tr>
+					<td><strong>Safety</strong></td>
+					<td>Is there a <code>--dry-run</code>? Does anything destructive make you confirm first? Or can one fat-fingered flag delete prod before you&rsquo;ve finished your coffee?</td>
+			</tr>
+			<tr>
+					<td><strong>Security</strong></td>
+					<td>Where do credentials go — a <code>.env</code>, a config file with sane permissions, a secrets manager? Or straight into your shell history and every process list on the box?</td>
+			</tr>
+			<tr>
+					<td><strong>Accessibility</strong></td>
+					<td>Does it work with <code>--no-color</code> and screen readers, or does it assume everyone&rsquo;s staring at a high-contrast terminal on a 4K monitor with perfect color vision?</td>
+			</tr>
+	</tbody>
+</table>
+<p>The plot twist: all seven of these criteria fight each other depending on who&rsquo;s on the other end. A confirmation prompt (<code>Are you sure you want to delete this? [y/N]</code>) is thoughtful error tolerance — and great safety — for a human hovering over the delete button, and an absolute pipeline-killer for a script that just wanted to run unattended at 3am. Design for one, betray the other. This is the tension every CLI eventually has to pick a side on.</p>
+<hr>
+<h3 id="automating-the-ux-audit-with-clux">Automating the UX audit with CLUX</h3>
+<p>Manually auditing every command against a pile of usability heuristics is the kind of tedious that makes you question your career choices. So instead of doing that by hand forever, I built <strong>CLUX (CLI UX Evaluator)</strong>: an open-source scoring system that benchmarks how usable your CLI actually is, so you don&rsquo;t have to rely on vibes, Slack polls, or the one loud user who emails you in all caps.</p>
+<p>→ <strong><a href="https://clux-eta.vercel.app/">Try the live prototype</a></strong>
+→ <strong><a href="https://github.com/amylily1011/clux">View the project on GitHub</a></strong></p>
+<p>No more guessing whether a command is well-designed or a war crime. Paste your CLI&rsquo;s <code>--help</code> output - or a raw command result - into CLUX and let it do the judging for you. Here&rsquo;s how it works:</p>
+<ul>
+<li><strong>Contextual weights:</strong> Tell it whether your CLI is built for humans or for scripts, and the scoring shifts accordingly — because CLUX isn&rsquo;t naive enough to hold a <code>curl | bash</code> pipeline to the same manners as a first-time user.</li>
+<li><strong>Heuristic breakdown:</strong> It scores your output across eight dimensions - learnability, error tolerance, efficiency, safety, UNIX compliance, and accessibility (yes, your neon-green-on-white output is an accessibility problem, not a &ldquo;brand choice&rdquo;).</li>
+<li><strong>Custom standards:</strong> Got an internal CLI style guide gathering dust in a wiki nobody reads? Paste it in and CLUX will check your tool against it too — so your &ldquo;guidelines&rdquo; can finally do something besides exist.</li>
+</ul>
+<p><img src="https://amylily1011.github.io/images/clux/clux_demo.gif" alt="CLUX demo"></p>
+<p>Every org has that one CLI style guide nobody follows - the fifteen-page doc about consistent flag naming that gets cited once in onboarding and never opened again. CLUX lets you upload it as a custom rule set, so instead of policing consistency in code review with a link nobody clicks, the scorecard enforces it for you. Required <code>--dry-run</code> flags, banned emoji in output, whatever naming convention your team argued about for two hours in a meeting that could&rsquo;ve been a Slack message - CLUX will hold every CLI in your org to it, automatically, every time, without getting tired or petty about it.</p>
+<p><img src="https://amylily1011.github.io/images/clux/OrgRules.png" alt="CLUX org rules"></p>
+<hr>
+<h3 id="comparison-and-recommendations">Comparison and recommendations</h3>
+<p>This isn&rsquo;t a smug checklist that just tells you &ldquo;bad&rdquo; and walks away. It&rsquo;s meant to teach <em>why</em> something is bad, using real usability heuristics instead of hunches. It flags friction points and hands you actionable fixes, ranked by severity, so you know whether to panic now or add it to the backlog you&rsquo;ll never revisit.</p>
+<p><img src="https://amylily1011.github.io/images/clux/summary.gif" alt="CLUX summary output"></p>
+<hr>
+<h3 id="a-note-on-human-judgment-aka-dont-get-lazy">A note on human judgment (a.k.a. don&rsquo;t get lazy)</h3>
+<p>CLUX has a <strong>confidence score</strong> baked in, and it&rsquo;s there on purpose to be a little annoying. We all have a tendency to get cozy with AI output and start nodding along without reading closely — the confidence score exists specifically to interrupt that. It&rsquo;s a nudge to actually review the suggested fixes and apply your own judgment, instead of treating an AI&rsquo;s opinion of your CLI as gospel. The machine can flag the smell; you still have to decide if it&rsquo;s worth fixing.</p>
+<p><img src="https://amylily1011.github.io/images/clux/confidence.png" alt="CLUX confidence score"></p>
+<hr>
+<h3 id="try-it-out">Try it out</h3>
+<p>If you want to put your own CLI on trial, the project is <a href="https://github.com/amylily1011/clux">on GitHub</a>. Clone it, plug in your own API tokens (Anthropic, Google, or Kimi), and run it locally — no excuses left for shipping another CLI that only its creator can use without crying.</p>
+<p><strong>Tools &amp; Tech:</strong> Next.js, Vercel AI SDK, Supabase, Recharts, shadcn/ui</p>
+<p><strong>Keywords:</strong> Command Line UX, Developer Experience, CLI Heuristics, Usability Auditing, AI-assisted Evaluation</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://amylily1011.github.io/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

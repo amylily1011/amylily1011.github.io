@@ -1,97 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Amy Lily</title>
-    <link>https://amylily1011.github.io/</link>
-    <description>Recent content on Amy Lily</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://amylily1011.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Jailbreaking LLMs: When the Chef Decides to Go Rogue</title>
-      <link>https://amylily1011.github.io/ai-security/jailbreaking/</link>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/ai-security/jailbreaking/</guid>
-      <description>Prompt injection tricks the chef with a fake note. Jailbreaking convinces the chef to want to break the rules. Here&amp;rsquo;s the theory, the research, and the tools that show why no model is fully immune.</description>
-    </item>
-    <item>
-      <title>From Infra Chaos to a Personal AI Operator: Building with OpenClaw</title>
-      <link>https://amylily1011.github.io/misc/openclaw-setup/</link>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/misc/openclaw-setup/</guid>
-      <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;Built a personal AI operator using OpenClaw + Telegram + Claude.&#xA;Got stuck optimizing too early (local models, networking).&#xA;Reset everything.&#xA;Used OpenClaw onboarding + Anthropic API.&#xA;Connected Telegram.&#xA;System worked instantly.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Biggest lesson: Getting something working &amp;gt; getting everything perfect.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Over the past few days, I set out to build something simple:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;a personal AI operator I could interact with through Telegram.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;What I ended up building was not just a chatbot, but a small system:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Same Model, Different Answer: What System Prompts Actually Do</title>
-      <link>https://amylily1011.github.io/ai-security/same-model-different-answer/</link>
-      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/ai-security/same-model-different-answer/</guid>
-      <description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here&amp;rsquo;s what that reveals.</description>
-    </item>
-    <item>
-      <title>Prompt Injection: Hijack LLM Instructions</title>
-      <link>https://amylily1011.github.io/ai-security/prompt-injection/</link>
-      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/ai-security/prompt-injection/</guid>
-      <description>I started a Hack The Box AI security lab with zero expectations. Three minutes later, I had leaked a secret key the model had been explicitly told never to reveal. Here&amp;rsquo;s what I learned — and why it matters if you build with LLMs.</description>
-    </item>
-    <item>
-      <title>AIBadge: A Weekend Experiment about AI Provenance</title>
-      <link>https://amylily1011.github.io/misc/aibadge/</link>
-      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/misc/aibadge/</guid>
-      <description>summary: A meeting question about AI disclosure led to a weekend experiment exploring trust, authorship, and verifiable integrity in the age of generative AI.</description>
-    </item>
-    <item>
-      <title>From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/maassearch/</link>
-      <pubDate>Thu, 12 Jun 2025 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/maassearch/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but &lt;strong&gt;intimidating and error-prone&lt;/strong&gt; for both expert and new users.&lt;br&gt;&#xA;The &lt;strong&gt;translation step&lt;/strong&gt; (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.&lt;br&gt;&#xA;Users frequently forgot query syntax between sessions, making search &lt;strong&gt;a recurring learning curve&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we &lt;strong&gt;remove the manual translation step&lt;/strong&gt; while keeping search &lt;strong&gt;fast, precise, and scalable&lt;/strong&gt;?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>whoami</title>
-      <link>https://amylily1011.github.io/about/</link>
-      <pubDate>Sun, 01 Dec 2024 16:20:00 +0000</pubDate>
-      <guid>https://amylily1011.github.io/about/</guid>
-      <description>&lt;p&gt;👋 Hi, I’m Amy!&lt;/p&gt;&#xA;&lt;p&gt;UX explorer by day, dumpling enthusiast by night 🥟✨&lt;/p&gt;&#xA;&lt;p&gt;I’m a London-based UX Design Manager with a soft spot for elegant systems, bold ideas, and anything that makes complex things feel delightfully simple. I’ve spent the last 10+ years designing products and experiences that live at the intersection of cloud infrastructure, AI, and open source — making the technical feel human.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/about-me/tangbao.jpg&#34; alt=&#34;tangbao&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;My favorite things include:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</link>
-      <pubDate>Fri, 12 Apr 2024 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The &lt;code&gt;pro status&lt;/code&gt; CLI is the &lt;strong&gt;primary entry point&lt;/strong&gt; for human operators to check subscription status, security coverage, vulnerabilities, and service health.&lt;/p&gt;&#xA;&lt;p&gt;As the service portfolio grew across &lt;strong&gt;LTS, EOSS, non-LTS, and cloud-attached systems&lt;/strong&gt;, outputs became &lt;strong&gt;inconsistent, hard to parse, and difficult to act on&lt;/strong&gt; — especially for operators managing dozens or hundreds of machines.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>From Confusion to Clarity: Designing `/explain` to Make Concepts Click</title>
-      <link>https://amylily1011.github.io/misc/explain/</link>
-      <pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/misc/explain/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;&#xA;&lt;p&gt;During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/explain/maas-explain.png&#34; alt=&#34;explain lxd in MAAS&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Little did I know, this was how other designers understood my explanation.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scaling Infra UX: Designing a Centralized Control Platform for 60K MAAS Sites</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</link>
-      <pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines.&lt;br&gt;&#xA;As deployments scaled to &lt;strong&gt;60,000+ edge sites&lt;/strong&gt; across multi-region infrastructures, operators struggled with:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fragmented management&lt;/strong&gt; across thousands of MAAS instances&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual, redundant image handling&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Delayed observability&lt;/strong&gt; and no single source of truth&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Inconsistent UX&lt;/strong&gt; between sites&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I led the design of &lt;strong&gt;MAAS Site Manager&lt;/strong&gt; — a centralized control platform to unify monitoring, troubleshooting, and configuration at scale.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift</title>
-      <link>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</link>
-      <pubDate>Fri, 01 Oct 2021 14:53:41 +0000</pubDate>
-      <guid>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;br&gt;&#xA;MAAS 2.8’s UI &lt;strong&gt;struggled to scale.&lt;/strong&gt; Navigation was unintuitive, actions were buried far from context, and real-time status was hard to see. We set out to modernize MAAS and align the layout across Canonical’s Cloud &amp;amp; Infra products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;br&gt;&#xA;How might we create a &lt;strong&gt;functional, scalable application layout&lt;/strong&gt; that:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Improves &lt;strong&gt;learnability, efficiency, and error tolerance&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Scales to &lt;strong&gt;large environments&lt;/strong&gt; (100–1800+ machines)&lt;/li&gt;&#xA;&lt;li&gt;Serves as a &lt;strong&gt;foundation for the division’s design system&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;strong&gt;UX Lead&lt;/strong&gt; partnering with Engineering &amp;amp; PM.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The new MAAS CLI that changes Ubuntu CLI Guideline</title>
-      <link>https://amylily1011.github.io/misc/maas-cli/</link>
-      <pubDate>Mon, 28 Sep 2020 17:15:51 +0100</pubDate>
-      <guid>https://amylily1011.github.io/misc/maas-cli/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;MAAS (Metal-as-a-service) is Canonical&amp;rsquo;s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Over time, users either abandoned the CLI or built their own wrappers — indicating a breakdown in usability and trust. We set out to reimagine what a CLI could feel like when designed with empathy, efficiency, and accessibility in mind.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Amy Lily</title>
+		<link>https://amylily1011.github.io/</link>
+		<description>Recent content on Amy Lily</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		
+		
+			<lastBuildDate>Thu, 16 Jul 2026 16:41:00 +0100</lastBuildDate>
+		
+			<atom:link href="https://amylily1011.github.io/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>CLUX: A Roast-Proof Scorecard for Your Sad Little CLI</title>
+				<link>https://amylily1011.github.io/misc/clux/</link>
+				<pubDate>Thu, 16 Jul 2026 16:41:00 +0100</pubDate>
+				<guid>https://amylily1011.github.io/misc/clux/</guid>
+				<description>&lt;p&gt;Having designed, audited, and created guidelines for command-line interfaces over the past six years, the most common question I get is: &lt;em&gt;&amp;ldquo;What makes a good CLI?&amp;rdquo;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;The annoying, consultant-brained answer is: &lt;strong&gt;it depends.&lt;/strong&gt; Not because I&amp;rsquo;m dodging the question, but because &amp;ldquo;good&amp;rdquo; depends entirely on who OR what is running the command. A CLI that delights a human can absolutely wreck a CI pipeline, and vice versa. Anyone who tells you there&amp;rsquo;s One True Way to design a CLI is either selling something or has never had to &lt;code&gt;grep&lt;/code&gt; their own error messages at 2am.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Jailbreaking LLMs: When the Chef Decides to Go Rogue</title>
+				<link>https://amylily1011.github.io/ai-security/jailbreaking/</link>
+				<pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>https://amylily1011.github.io/ai-security/jailbreaking/</guid>
+				<description>Prompt injection tricks the chef with a fake note. Jailbreaking convinces the chef to want to break the rules. Here&amp;rsquo;s the theory, the research, and the tools that show why no model is fully immune.</description>
+			</item>
+			<item>
+				<title>From Infra Chaos to a Personal AI Operator: Building with OpenClaw</title>
+				<link>https://amylily1011.github.io/misc/openclaw-setup/</link>
+				<pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>https://amylily1011.github.io/misc/openclaw-setup/</guid>
+				<description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;Built a personal AI operator using OpenClaw + Telegram + Claude.&#xA;Got stuck optimizing too early (local models, networking).&#xA;Reset everything.&#xA;Used OpenClaw onboarding + Anthropic API.&#xA;Connected Telegram.&#xA;System worked instantly.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Biggest lesson: Getting something working &amp;gt; getting everything perfect.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Over the past few days, I set out to build something simple:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;a personal AI operator I could interact with through Telegram.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;What I ended up building was not just a chatbot, but a small system:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Same Model, Different Answer: What System Prompts Actually Do</title>
+				<link>https://amylily1011.github.io/ai-security/same-model-different-answer/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>https://amylily1011.github.io/ai-security/same-model-different-answer/</guid>
+				<description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here&amp;rsquo;s what that reveals.</description>
+			</item>
+			<item>
+				<title>Prompt Injection: Hijack LLM Instructions</title>
+				<link>https://amylily1011.github.io/ai-security/prompt-injection/</link>
+				<pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>https://amylily1011.github.io/ai-security/prompt-injection/</guid>
+				<description>I started a Hack The Box AI security lab with zero expectations. Three minutes later, I had leaked a secret key the model had been explicitly told never to reveal. Here&amp;rsquo;s what I learned — and why it matters if you build with LLMs.</description>
+			</item>
+			<item>
+				<title>AIBadge: A Weekend Experiment about AI Provenance</title>
+				<link>https://amylily1011.github.io/misc/aibadge/</link>
+				<pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>https://amylily1011.github.io/misc/aibadge/</guid>
+				<description>summary: A meeting question about AI disclosure led to a weekend experiment exploring trust, authorship, and verifiable integrity in the age of generative AI.</description>
+			</item>
+			<item>
+				<title>From Syntax to Semantics: Prototyping a Natural Language Interface for Secure Infrastructure Search</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/maassearch/</link>
+				<pubDate>Thu, 12 Jun 2025 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/maassearch/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;MAAS search historically relied on a custom Domain Specific Language (DSL) — precise but &lt;strong&gt;intimidating and error-prone&lt;/strong&gt; for both expert and new users.&lt;br&gt;&#xA;The &lt;strong&gt;translation step&lt;/strong&gt; (from human intent to DSL syntax) was the biggest source of mistakes, rework, and delays.&lt;br&gt;&#xA;Users frequently forgot query syntax between sessions, making search &lt;strong&gt;a recurring learning curve&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;How might we &lt;strong&gt;remove the manual translation step&lt;/strong&gt; while keeping search &lt;strong&gt;fast, precise, and scalable&lt;/strong&gt;?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>whoami</title>
+				<link>https://amylily1011.github.io/about/</link>
+				<pubDate>Sun, 01 Dec 2024 16:20:00 +0000</pubDate>
+				<guid>https://amylily1011.github.io/about/</guid>
+				<description>&lt;p&gt;👋 Hi, I’m Amy!&lt;/p&gt;&#xA;&lt;p&gt;UX explorer by day, dumpling enthusiast by night 🥟✨&lt;/p&gt;&#xA;&lt;p&gt;I’m a London-based UX Design Manager with a soft spot for elegant systems, bold ideas, and anything that makes complex things feel delightfully simple. I’ve spent the last 10+ years designing products and experiences that live at the intersection of cloud infrastructure, AI, and open source — making the technical feel human.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/about-me/tangbao.jpg&#34; alt=&#34;tangbao&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;My favorite things include:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</link>
+				<pubDate>Fri, 12 Apr 2024 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;Ubuntu Pro provides security, compliance, and extended maintenance services for enterprise and developer environments. The &lt;code&gt;pro status&lt;/code&gt; CLI is the &lt;strong&gt;primary entry point&lt;/strong&gt; for human operators to check subscription status, security coverage, vulnerabilities, and service health.&lt;/p&gt;&#xA;&lt;p&gt;As the service portfolio grew across &lt;strong&gt;LTS, EOSS, non-LTS, and cloud-attached systems&lt;/strong&gt;, outputs became &lt;strong&gt;inconsistent, hard to parse, and difficult to act on&lt;/strong&gt; — especially for operators managing dozens or hundreds of machines.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>From Confusion to Clarity: Designing `/explain` to Make Concepts Click</title>
+				<link>https://amylily1011.github.io/misc/explain/</link>
+				<pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/misc/explain/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;At Canonical, internal teams often work in highly specialized domains — cloud infrastructure, AI, enterprise support, etc. As a product designer, I frequently saw confusion arise when teams shared updates full of acronyms, assumptions, and product-specific jargon.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;&#xA;&lt;p&gt;During a design review, I realized that while I thought I had clearly explained the mental model behind LXD integration in MAAS, my colleagues didn’t follow.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://amylily1011.github.io/images/explain/maas-explain.png&#34; alt=&#34;explain lxd in MAAS&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Little did I know, this was how other designers understood my explanation.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Scaling Infra UX: Designing a Centralized Control Platform for 60K MAAS Sites</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</link>
+				<pubDate>Sat, 12 Mar 2022 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&#xA;MAAS is Canonical’s bare metal provisioning tool used by enterprise and telco clients to manage thousands of machines.&lt;br&gt;&#xA;As deployments scaled to &lt;strong&gt;60,000+ edge sites&lt;/strong&gt; across multi-region infrastructures, operators struggled with:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fragmented management&lt;/strong&gt; across thousands of MAAS instances&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual, redundant image handling&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Delayed observability&lt;/strong&gt; and no single source of truth&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Inconsistent UX&lt;/strong&gt; between sites&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I led the design of &lt;strong&gt;MAAS Site Manager&lt;/strong&gt; — a centralized control platform to unify monitoring, troubleshooting, and configuration at scale.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Redesigning MAAS: Scalable Infrastructure UI That Inspired a Design System Shift</title>
+				<link>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</link>
+				<pubDate>Fri, 01 Oct 2021 14:53:41 +0000</pubDate>
+				<guid>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;br&gt;&#xA;MAAS 2.8’s UI &lt;strong&gt;struggled to scale.&lt;/strong&gt; Navigation was unintuitive, actions were buried far from context, and real-time status was hard to see. We set out to modernize MAAS and align the layout across Canonical’s Cloud &amp;amp; Infra products.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt;&lt;br&gt;&#xA;How might we create a &lt;strong&gt;functional, scalable application layout&lt;/strong&gt; that:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Improves &lt;strong&gt;learnability, efficiency, and error tolerance&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Scales to &lt;strong&gt;large environments&lt;/strong&gt; (100–1800+ machines)&lt;/li&gt;&#xA;&lt;li&gt;Serves as a &lt;strong&gt;foundation for the division’s design system&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;My Role:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;strong&gt;UX Lead&lt;/strong&gt; partnering with Engineering &amp;amp; PM.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The new MAAS CLI that changes Ubuntu CLI Guideline</title>
+				<link>https://amylily1011.github.io/misc/maas-cli/</link>
+				<pubDate>Mon, 28 Sep 2020 17:15:51 +0100</pubDate>
+				<guid>https://amylily1011.github.io/misc/maas-cli/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;MAAS (Metal-as-a-service) is Canonical&amp;rsquo;s bare-metal provisioning tool. The CLI was originally created for machines to interface with machines via the Foundations Cloud Engine (FCE) making it difficult for human to use. Over time, users either abandoned the CLI or built their own wrappers — indicating a breakdown in usability and trust. We set out to reimagine what a CLI could feel like when designed with empathy, efficiency, and accessibility in mind.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
