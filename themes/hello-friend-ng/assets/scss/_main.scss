@@ -270,15 +270,15 @@ pre {
     }
   
     @media (prefers-color-scheme: light) {
-      color: #ccc;
+      color: $light-color;
     }
-  
+
     [data-theme=dark] & {
       color: inherit;
     }
-  
+
     [data-theme=light] & {
-      color: #ccc;
+      color: $light-color;
     }
   }
 }

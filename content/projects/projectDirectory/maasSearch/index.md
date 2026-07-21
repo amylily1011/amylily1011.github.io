@@ -176,6 +176,80 @@ We evaluate the interaction based on 4 elements:
 - Mapped fallback behaviors for underspecified requests
 - Created **feedback loops** to resolve ambiguity before execution
 
+**The DSL it had to translate into**
+
+To scope the NLP layer, we first had to formalize what the existing DSL actually looked like — it treats every machine attribute as an object, so a query is really a set of attribute filters chained together with logical operators.
+
+```
+# Basic usage
+ATTRIBUTE(KEY=VALUE|function() [AND|OR|NOT] KEY=VALUE|function() [AND|OR|NOT] RANGE=[MIN,MAX]|{MIN,MAX})
+
+# Example
+status(type="deployed" AND date=[30-05-2024,12-06-2024]) AND hostname(value=contains("us-west-2")) AND storage(size=["2TB","8TB"])
+
+# Multiple values on the same key = OR
+ATTRIBUTE(KEY=VALUE1 OR KEY=VALUE2)
+
+# Multiple elements within an attribute
+ATTRIBUTE(KEY1=VALUE1 AND|OR|NOT KEY2=VALUE2 AND|OR|NOT KEY3=VALUE3)
+```
+
+`AND`, `OR`, and `NOT` behave exactly like their set-theory counterparts — which sounds simple until a user has to hold three Venn diagrams in their head just to know whether their query will over- or under-match:
+
+![Logical operations and operational precedence](/images/maas-search/logicOps.png)
+
+It gets worse once operations start mixing. Without brackets, `AND` silently takes precedence over `OR`, so the same clause can resolve to two different result sets depending on whether the user remembered to group it:
+
+![Mixing operations and precedence with and without brackets](/images/maas-search/logicOpsMix.png)
+
+Values are typed implicitly, which was itself a source of confusion — a bare number is a number, anything with quotes (or units) is a string, and dates are stored as integers:
+
+```
+count = 2            # number
+type = "SSD"          # string
+size = "2 TB"          # string, because size carries units
+date = 22-05-2024      # date, stored as an integer
+```
+
+Units compounded the problem further — "2TB" and "2TiB" are not the same number of bytes, and the DSL expected users to know exactly which base (1000 vs. 1024) a given unit implied before their range query would match anything:
+
+![Working with storage units and byte conversions](/images/maas-search/workingUnits.png)
+
+A handful of helper functions and range operators extended the grammar further:
+
+```
+# contains() — partial string match
+values = contains("sparkiegeek")
+
+# Inclusive range
+size = ["2TB","8TB"]
+date = [22-05-2023,22-06-2023]
+
+# Exclusive range
+size = {"2TB","8TB"}
+date = {22-05-2023,22-06-2023}
+```
+
+This is the exact surface area the natural-language layer needed to resolve down to — every "AND vs OR", every quote, every bracket-vs-brace range was a place a user could get it wrong, and a place the NLP prototype had to get right on their behalf.
+
+**What this looked like as real search scenarios**
+
+Mapping plain-English requests to this grammar is what the prototype was actually tested against. A few representative scenarios:
+
+- *"Show me machines deployed between May 30th and June 12th 2024, hosted in us-west-2, with 2 to 8 TB of storage."*
+  → `status(type="deployed" AND date=[30-05-2024,12-06-2024]) AND hostname(value=contains("us-west-2")) AND storage(size=["2TB","8TB"])`
+
+- *"Any machine with a hostname like sparkiegeek."*
+  → `hostname(value=contains("sparkiegeek"))`
+
+- *"Machines running either SSD or NVMe storage."*
+  → `storage(type="SSD" OR type="NVMe")`
+
+- *"Machines with storage strictly between 2TB and 8TB, not inclusive."*
+  → `storage(size={"2TB","8TB"})`
+
+These are the same kind of ambiguous, partially-specified requests referenced earlier (`"all Ubuntu machines not running"`) — the prototype had to infer the right attribute, the right operator, and the right value type (string vs. number vs. date) from a sentence that gave none of that explicitly.
+
 **Goals:**
 1. Identify **reusable search intents** across Canonical’s infra products
 2. Map trade-offs between **precision vs ambiguity**
