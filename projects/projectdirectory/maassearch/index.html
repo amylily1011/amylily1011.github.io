@@ -29,7 +29,7 @@ How might we remove the manual translation step while keeping search fast, preci
 
 
 
-  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.9abac49fd497ef4ac370c437eea2c982082c90c232db50d04365a0b2480e247c.css" integrity="sha256-mrrEn9SX70rDcMQ37qLJgggskMIy21DQQ2WgskgOJHw=" crossorigin="anonymous">
 
 
 
@@ -58,7 +58,7 @@ Challenge:
 How might we remove the manual translation step while keeping search fast, precise, and scalable?">
 	<meta itemprop="datePublished" content="2025-06-12T17:15:51+01:00">
 	<meta itemprop="dateModified" content="2025-06-12T17:15:51+01:00">
-	<meta itemprop="wordCount" content="1471">
+	<meta itemprop="wordCount" content="1950">
 	<meta itemprop="image" content="https://amylily1011.github.io/">
 
 	<meta name="twitter:card" content="summary_large_image">
@@ -316,6 +316,63 @@ We evaluate the interaction based on 4 elements:</p>
 <li>Mapped fallback behaviors for underspecified requests</li>
 <li>Created <strong>feedback loops</strong> to resolve ambiguity before execution</li>
 </ul>
+<p><strong>The DSL it had to translate into</strong></p>
+<p>To scope the NLP layer, we first had to formalize what the existing DSL actually looked like — it treats every machine attribute as an object, so a query is really a set of attribute filters chained together with logical operators.</p>
+<pre tabindex="0"><code># Basic usage
+ATTRIBUTE(KEY=VALUE|function() [AND|OR|NOT] KEY=VALUE|function() [AND|OR|NOT] RANGE=[MIN,MAX]|{MIN,MAX})
+
+# Example
+status(type=&#34;deployed&#34; AND date=[30-05-2024,12-06-2024]) AND hostname(value=contains(&#34;us-west-2&#34;)) AND storage(size=[&#34;2TB&#34;,&#34;8TB&#34;])
+
+# Multiple values on the same key = OR
+ATTRIBUTE(KEY=VALUE1 OR KEY=VALUE2)
+
+# Multiple elements within an attribute
+ATTRIBUTE(KEY1=VALUE1 AND|OR|NOT KEY2=VALUE2 AND|OR|NOT KEY3=VALUE3)
+</code></pre><p><code>AND</code>, <code>OR</code>, and <code>NOT</code> behave exactly like their set-theory counterparts — which sounds simple until a user has to hold three Venn diagrams in their head just to know whether their query will over- or under-match:</p>
+<p><img src="https://amylily1011.github.io/images/maas-search/logicOps.png" alt="Logical operations and operational precedence"></p>
+<p>It gets worse once operations start mixing. Without brackets, <code>AND</code> silently takes precedence over <code>OR</code>, so the same clause can resolve to two different result sets depending on whether the user remembered to group it:</p>
+<p><img src="https://amylily1011.github.io/images/maas-search/logicOpsMix.png" alt="Mixing operations and precedence with and without brackets"></p>
+<p>Values are typed implicitly, which was itself a source of confusion — a bare number is a number, anything with quotes (or units) is a string, and dates are stored as integers:</p>
+<pre tabindex="0"><code>count = 2            # number
+type = &#34;SSD&#34;          # string
+size = &#34;2 TB&#34;          # string, because size carries units
+date = 22-05-2024      # date, stored as an integer
+</code></pre><p>Units compounded the problem further — &ldquo;2TB&rdquo; and &ldquo;2TiB&rdquo; are not the same number of bytes, and the DSL expected users to know exactly which base (1000 vs. 1024) a given unit implied before their range query would match anything:</p>
+<p><img src="https://amylily1011.github.io/images/maas-search/workingUnits.png" alt="Working with storage units and byte conversions"></p>
+<p>A handful of helper functions and range operators extended the grammar further:</p>
+<pre tabindex="0"><code># contains() — partial string match
+values = contains(&#34;sparkiegeek&#34;)
+
+# Inclusive range
+size = [&#34;2TB&#34;,&#34;8TB&#34;]
+date = [22-05-2023,22-06-2023]
+
+# Exclusive range
+size = {&#34;2TB&#34;,&#34;8TB&#34;}
+date = {22-05-2023,22-06-2023}
+</code></pre><p>This is the exact surface area the natural-language layer needed to resolve down to — every &ldquo;AND vs OR&rdquo;, every quote, every bracket-vs-brace range was a place a user could get it wrong, and a place the NLP prototype had to get right on their behalf.</p>
+<p><strong>What this looked like as real search scenarios</strong></p>
+<p>Mapping plain-English requests to this grammar is what the prototype was actually tested against. A few representative scenarios:</p>
+<ul>
+<li>
+<p><em>&ldquo;Show me machines deployed between May 30th and June 12th 2024, hosted in us-west-2, with 2 to 8 TB of storage.&rdquo;</em>
+→ <code>status(type=&quot;deployed&quot; AND date=[30-05-2024,12-06-2024]) AND hostname(value=contains(&quot;us-west-2&quot;)) AND storage(size=[&quot;2TB&quot;,&quot;8TB&quot;])</code></p>
+</li>
+<li>
+<p><em>&ldquo;Any machine with a hostname like sparkiegeek.&rdquo;</em>
+→ <code>hostname(value=contains(&quot;sparkiegeek&quot;))</code></p>
+</li>
+<li>
+<p><em>&ldquo;Machines running either SSD or NVMe storage.&rdquo;</em>
+→ <code>storage(type=&quot;SSD&quot; OR type=&quot;NVMe&quot;)</code></p>
+</li>
+<li>
+<p><em>&ldquo;Machines with storage strictly between 2TB and 8TB, not inclusive.&rdquo;</em>
+→ <code>storage(size={&quot;2TB&quot;,&quot;8TB&quot;})</code></p>
+</li>
+</ul>
+<p>These are the same kind of ambiguous, partially-specified requests referenced earlier (<code>&quot;all Ubuntu machines not running&quot;</code>) — the prototype had to infer the right attribute, the right operator, and the right value type (string vs. number vs. date) from a sentence that gave none of that explicitly.</p>
 <p><strong>Goals:</strong></p>
 <ol>
 <li>Identify <strong>reusable search intents</strong> across Canonical’s infra products</li>
