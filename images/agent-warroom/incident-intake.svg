@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Agent War Room incident intake</title>
+  <desc id="desc">The Streamlit prototype showing a critical nginx reload alert beside fleet status.</desc>
+  <rect width="1400" height="820" fill="#ffffff"/>
+  <rect width="330" height="820" fill="#f1f3f6"/>
+  <rect x="0" width="1400" height="52" fill="#ffffff"/>
+  <text x="28" y="112" fill="#22252a" font-family="Arial, sans-serif" font-size="24" font-weight="700">The war room</text>
+  <text x="28" y="150" fill="#71757d" font-family="Arial, sans-serif" font-size="16">Three AI agents in</text>
+  <text x="190" y="150" fill="#4e8d64" font-family="monospace" font-size="15">#ops-incidents</text>
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#292d32">
+    <text x="28" y="205">🎯  Decider</text><text x="28" y="252">⚡  Optimist</text><text x="28" y="299">🔍  Paranoid</text>
+  </g>
+  <line x1="28" y1="345" x2="302" y2="345" stroke="#cfd3d8"/>
+  <text x="28" y="395" fill="#71757d" font-family="Arial, sans-serif" font-size="15">Type</text>
+  <text x="70" y="395" fill="#4e8d64" font-family="monospace" font-size="15">/incident</text>
+  <text x="155" y="395" fill="#71757d" font-family="Arial, sans-serif" font-size="15">to open the war room.</text>
+  <rect x="28" y="424" width="274" height="48" rx="8" fill="#ffffff" stroke="#cfd3d8"/>
+  <text x="104" y="455" fill="#33373d" font-family="Arial, sans-serif" font-size="15">↺ Reset channel</text>
+  <line x1="28" y1="520" x2="302" y2="520" stroke="#cfd3d8"/>
+  <text x="28" y="575" fill="#22252a" font-family="Arial, sans-serif" font-size="22" font-weight="700">📊 Fleet status</text>
+  <text x="28" y="625" fill="#71757d" font-family="Arial, sans-serif" font-size="14">Fleet capacity</text>
+  <text x="28" y="657" fill="#22252a" font-family="Arial, sans-serif" font-size="29" font-weight="700">2 / 3</text>
+  <text x="120" y="657" fill="#bd4c42" font-family="Arial, sans-serif" font-size="14">−1 since 14:03</text>
+  <text x="28" y="706" fill="#71757d" font-family="Arial, sans-serif" font-size="14">AI commits unvalidated</text>
+  <text x="28" y="738" fill="#22252a" font-family="Arial, sans-serif" font-size="29" font-weight="700">1</text>
+  <text x="70" y="738" fill="#71757d" font-family="monospace" font-size="13">deploy-agent / 9f3a221</text>
+  <text x="378" y="111" fill="#22252a" font-family="Arial, sans-serif" font-size="32" font-weight="700">🚨 AI Incident Commander</text>
+  <text x="378" y="147" fill="#71757d" font-family="Arial, sans-serif" font-size="17">Three agents coordinate on an AI-caused infrastructure incident.</text>
+  <rect x="378" y="188" width="960" height="290" rx="8" fill="#ffffff" stroke="#d9dde2"/>
+  <rect x="378" y="188" width="5" height="290" fill="#c1483e"/>
+  <text x="410" y="230" fill="#c1483e" font-family="Arial, sans-serif" font-size="18" font-weight="700">🚨 prometheus-bot</text>
+  <text x="588" y="230" fill="#71757d" font-family="monospace" font-size="14">APP  14:03 UTC  ·  #ops-alerts</text>
+  <text x="410" y="274" fill="#25292e" font-family="Arial, sans-serif" font-size="22" font-weight="700">[FIRING] NginxReloadFailed · vm-web-01 · critical</text>
+  <text x="410" y="320" fill="#30343a" font-family="monospace" font-size="16">ALERT: vm-web-01 nginx reload failed.</text>
+  <text x="410" y="350" fill="#30343a" font-family="monospace" font-size="16">vm-web-02 and vm-web-03 reloaded cleanly 1 minute earlier.</text>
+  <text x="410" y="380" fill="#30343a" font-family="monospace" font-size="16">The config-update task was authored by deploy-agent (AI).</text>
+  <line x1="410" y1="410" x2="1306" y2="410" stroke="#e4e7ea"/>
+  <text x="410" y="442" fill="#71757d" font-family="Arial, sans-serif" font-size="15">1 of 3 nginx instances unhealthy · authored by deploy-agent (AI)</text>
+  <text x="410" y="522" fill="#33373d" font-family="Arial, sans-serif" font-size="19" font-weight="700">🎯 Decider</text>
+  <text x="410" y="558" fill="#34383d" font-family="Arial, sans-serif" font-size="18">Nginx reload failed on vm-web-01. Optimist, propose the fast path.</text>
+  <rect x="378" y="708" width="960" height="55" rx="27" fill="#ffffff" stroke="#d9dde2"/>
+  <text x="410" y="743" fill="#99a0a8" font-family="Arial, sans-serif" font-size="16">Type /incident — try /incident severity:critical service:nginx</text>
+</svg>

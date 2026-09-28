@@ -27,14 +27,14 @@
 				<link>https://amylily1011.github.io/ai-security/same-model-different-answer/</link>
 				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
 				<guid>https://amylily1011.github.io/ai-security/same-model-different-answer/</guid>
-				<description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here&amp;rsquo;s what that reveals.</description>
+				<description>I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model, completely different behavior. Here&amp;rsquo;s what that reveals.</description>
 			</item>
 			<item>
 				<title>Prompt Injection: Hijack LLM Instructions</title>
 				<link>https://amylily1011.github.io/ai-security/prompt-injection/</link>
 				<pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
 				<guid>https://amylily1011.github.io/ai-security/prompt-injection/</guid>
-				<description>I started a Hack The Box AI security lab with zero expectations. Three minutes later, I had leaked a secret key the model had been explicitly told never to reveal. Here&amp;rsquo;s what I learned — and why it matters if you build with LLMs.</description>
+				<description>I started a Hack The Box AI security lab with zero expectations. Three minutes later, I had leaked a secret key the model had been explicitly told never to reveal. Here&amp;rsquo;s what I learned, and why it matters if you build with LLMs.</description>
 			</item>
 	</channel>
 </rss>

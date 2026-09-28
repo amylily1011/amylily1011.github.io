@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Amy Lily">
+<meta name="description" content="The terminal has no heatmaps or session recordings, so bad CLI design festers until users quietly uninstall. CLUX uses an LLM to score any CLI&#39;s help and output against a 46-signal usability rubric, for humans and for AI agents, and returns ranked, before/after fixes." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/projects/clux/" />
+
+
+    <title>
+        
+            CLUX: A Roast-Proof Scorecard for Your Sad Little CLI :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.b08f3be05fcf8347371d0b1753a28c8910cbcdcd99b1a76cc13a1233fb788d1f.css" integrity="sha256-sI874F/Pg0c3HQsXU6KMiRDLzc2ZsadswToSM/t4jR8=" crossorigin="anonymous">
+
+
+
+
+    
+        
+        <link rel="stylesheet" type="text/css" href="/css/custom.css?v=3a2082c58787add5ce1c03a1001d88cb">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+	<meta itemprop="name" content="CLUX: A Roast-Proof Scorecard for Your Sad Little CLI">
+	<meta itemprop="description" content="The terminal has no heatmaps or session recordings, so bad CLI design festers until users quietly uninstall. CLUX uses an LLM to score any CLI&#39;s help and output against a 46-signal usability rubric, for humans and for AI agents, and returns ranked, before/after fixes.">
+	<meta itemprop="datePublished" content="2026-07-16T16:41:00+01:00">
+	<meta itemprop="dateModified" content="2026-07-16T16:41:00+01:00">
+	<meta itemprop="wordCount" content="1036">
+	<meta itemprop="image" content="https://amylily1011.github.io/">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://amylily1011.github.io/">
+	<meta name="twitter:title" content="CLUX: A Roast-Proof Scorecard for Your Sad Little CLI">
+	<meta name="twitter:description" content="The terminal has no heatmaps or session recordings, so bad CLI design festers until users quietly uninstall. CLUX uses an LLM to score any CLI&#39;s help and output against a 46-signal usability rubric, for humans and for AI agents, and returns ranked, before/after fixes.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/projects/clux/">
+	<meta property="og:site_name" content="Amy Lily">
+	<meta property="og:title" content="CLUX: A Roast-Proof Scorecard for Your Sad Little CLI">
+	<meta property="og:description" content="The terminal has no heatmaps or session recordings, so bad CLI design festers until users quietly uninstall. CLUX uses an LLM to score any CLI&#39;s help and output against a 46-signal usability rubric, for humans and for AI agents, and returns ranked, before/after fixes.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="projects">
+		<meta property="article:published_time" content="2026-07-16T16:41:00+01:00">
+		<meta property="article:modified_time" content="2026-07-16T16:41:00+01:00">
+		<meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-07-16 16:41:00 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/projects">Projects</a></li><li><a href="/ai-security">AI Security</a></li><li><a href="/about/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post case-study">
+    <article>
+      <header class="case-study__header">
+        <p class="showcase__prompt"><span class="prompt-mark">$</span> cat ~/work/clux/case-study.md</p>
+        <h1 class="post-title">CLUX: A Roast-Proof Scorecard for Your Sad Little CLI</h1>
+        <div class="project-card__tags"><span class="tag tag--year">2026</span><span class="tag">Designer &amp; builder · solo</span>
+        </div>
+        <p class="case-study__hook">88% of confused users never file an issue. CLUX notices for them.</p>
+        
+          <nav class="lens-nav" aria-label="Case study sections">
+            
+              <a href="#problem"><span>01</span> Problem</a>
+            
+              <a href="#ai"><span>02</span> AI Opportunity</a>
+            
+              <a href="#experience"><span>03</span> Experience</a>
+            
+              <a href="#judgment"><span>04</span> Judgment</a>
+            
+              <a href="#evidence"><span>05</span> Evidence</a>
+            
+          </nav>
+        
+      </header>
+
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> After six years designing, auditing, and writing guidelines for command-line tools, I turned that judgment into a tool. Paste a CLI&rsquo;s <code>--help</code> or output; get a usability score with an honest uncertainty range, and fixes ranked by severity. The model reads the evidence; deterministic code does the scoring.</p>
+<p>→ <strong><a href="https://clux-eta.vercel.app/">Try the live prototype</a></strong> · <strong><a href="https://github.com/amylily1011/clux">View on GitHub</a></strong></p>
+<div class="lens-heading" id="problem">
+  <span class="lens-heading__num">01</span>
+  <h2 class="lens-heading__title">Problem</h2>
+  <p class="lens-heading__q">What hard, ambiguous problem did I take on?</p>
+</div>
+
+<p>The question I get most is <em>&ldquo;What makes a good CLI?&rdquo;</em> The honest answer is: <strong>it depends on who, or what, is running the command.</strong> A confirmation prompt is thoughtful safety for a human hovering over delete, and a pipeline-killer for a script running unattended at 3am.</p>
+<p>That&rsquo;s the first hard part. The second is worse: <strong>CLI design quality is invisible until users complain.</strong> GUIs get analytics, heatmaps, and session recordings. The terminal gets nothing. Roughly <strong>88% of users won&rsquo;t file an issue</strong> when a tool confuses them, they just <code>brew uninstall</code> and move on.</p>
+<p>So teams ship CLIs with no feedback loop, and &ldquo;ease of use&rdquo; gets argued on vibes. I wanted it measurable. The criteria I use:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Criteria</th>
+					<th>What it asks</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Learnability</strong></td>
+					<td>Can you find commands without reading the source? Does <code>--help</code> help?</td>
+			</tr>
+			<tr>
+					<td><strong>Efficiency</strong></td>
+					<td>Shortcuts, pipe-friendliness, <code>--json</code>, or three extra flags and a prayer?</td>
+			</tr>
+			<tr>
+					<td><strong>Error tolerance</strong></td>
+					<td>When it breaks, does it say <em>why</em> and <em>what to do next</em>?</td>
+			</tr>
+			<tr>
+					<td><strong>Pleasantness</strong></td>
+					<td>Consistent naming and output, or a different committee per subcommand?</td>
+			</tr>
+			<tr>
+					<td><strong>Safety</strong></td>
+					<td><code>--dry-run</code>? Confirmation before destruction?</td>
+			</tr>
+			<tr>
+					<td><strong>Security</strong></td>
+					<td>Do credentials land in a config with sane permissions, or your shell history?</td>
+			</tr>
+			<tr>
+					<td><strong>Accessibility</strong></td>
+					<td>Does it work with <code>--no-color</code> and screen readers?</td>
+			</tr>
+			<tr>
+					<td><strong>UNIX compliance</strong></td>
+					<td>Does it compose, stdout vs. stderr, exit codes, pipes?</td>
+			</tr>
+	</tbody>
+</table>
+<p>Every one of these fights the others depending on the audience. That tension is the problem CLUX has to model, not flatten.</p>
+<div class="lens-heading" id="ai">
+  <span class="lens-heading__num">02</span>
+  <h2 class="lens-heading__title">AI Opportunity</h2>
+  <p class="lens-heading__q">Where is AI the right lever — and why?</p>
+</div>
+
+<p><strong>Why an LLM:</strong> a usability expert reviewing a CLI is mostly <em>reading</em>, help text, error messages, output formats, and judging them against heuristics. That&rsquo;s a language task that normally needs a person and a user study. A model can do the reading <strong>at scale, on demand, without recruiting a single participant</strong>, which is exactly what a feedback-starved medium needs.</p>
+<p><strong>Why not <em>only</em> an LLM:</strong> a model asked &ldquo;score this CLI out of 100&rdquo; will happily produce a confident, unrepeatable number. So I split the job:</p>
+<ul>
+<li><strong>The model</strong> rates <strong>46 specific signals</strong> from 0–4, and must quote the evidence behind each rating.</li>
+<li><strong>Deterministic code</strong> turns those ratings into the score. The scoring weights live on the server and are <strong>never in the prompt</strong>, so the model can&rsquo;t game or drift them.</li>
+<li><strong>Missing evidence is an unknown, not a pass.</strong> Unknowns widen the score&rsquo;s range instead of silently inflating it.</li>
+</ul>
+<p>The model does what models are good at, reading and judging language. Everything that has to be consistent stays in code.</p>
+<div class="lens-heading" id="experience">
+  <span class="lens-heading__num">03</span>
+  <h2 class="lens-heading__title">Experience</h2>
+  <p class="lens-heading__q">What shipped, and what does the user journey look like?</p>
+</div>
+
+<p><strong>1. Paste evidence.</strong> A command&rsquo;s name, <code>--help</code>, output, or error text.</p>
+<p><strong>2. Pick the audience.</strong> <em>Human-first</em> or <em>AI-agent first</em>. The same rubric is reweighted: agents care far more about safety, predictability, and machine-readable output than about pleasant colours.</p>
+<p><strong>3. Optionally bring rules.</strong> None, the UNIX philosophy, or <strong>your organisation&rsquo;s own style guide</strong>, the fifteen-page doc everyone cites once in onboarding and never opens again. CLUX checks every CLI against it, every time, without getting tired or petty.</p>
+<p><img src="/images/clux/OrgRules.png" alt="CLUX org rules"></p>
+<p><strong>4. Read the report.</strong> A score out of 100 <strong>with its range</strong>, a grade, how many signals could be checked, a radar across dimensions, and <strong>current behaviour → recommended fix</strong> pairs ranked by severity, with before/after terminal snippets.</p>
+<p><img src="/images/clux/clux_demo.gif" alt="CLUX demo">
+<img src="/images/clux/summary.gif" alt="CLUX summary output"></p>
+<p><strong>5. Stay sceptical.</strong> A <strong>confidence score</strong> sits on every finding, on purpose, and a little annoyingly.</p>
+<p><img src="/images/clux/confidence.png" alt="CLUX confidence score"></p>
+<p>A public <strong>/methodology</strong> page renders the full rubric, with a worked example computed by the real scoring code.</p>
+<p><strong>Tools &amp; tech:</strong> Next.js, Vercel AI SDK (Anthropic, Google, or Kimi models), Supabase, Recharts, shadcn/ui.</p>
+<div class="lens-heading" id="judgment">
+  <span class="lens-heading__num">04</span>
+  <h2 class="lens-heading__title">Judgment</h2>
+  <p class="lens-heading__q">What did I trade off, kill, or push back on?</p>
+</div>
+
+<ul>
+<li><strong>No One True Score.</strong> Rather than one universal standard, CLUX weights the rubric by audience, because holding a <code>curl | bash</code> pipeline to the manners of a first-time user is wrong in both directions.</li>
+<li><strong>Killed &ldquo;scripting&rdquo; as a third audience.</strong> Early versions offered Human-first, Scripting-first, and Agent-first. But humans and agents <em>both</em> script, so scripting isn&rsquo;t an audience, it&rsquo;s a capability. It now appears as a comparison in every report, next to the audience score. The two can disagree, and the report shows both.</li>
+<li><strong>Refused to let a score look perfect on thin evidence.</strong> Unknowns count as a midpoint with a visible range; a dimension with fewer than 2 rated signals shows <strong>–</strong> instead of a number; one confident critical finding caps the grade at D, however good the rest looks.</li>
+<li><strong>Kept rules from moving the score.</strong> Custom-rule violations appear in the same ranked fix list, which half of the system noticed a problem is no reason to rank it lower, but they never change the usability score or grade cap. Your house style isn&rsquo;t universal usability.</li>
+<li><strong>Designed friction on purpose.</strong> The confidence score exists to interrupt the habit of nodding along with AI output. The machine can flag the smell; you still decide whether it&rsquo;s worth fixing.</li>
+<li><strong>Cut the design-level rules from single-command reports.</strong> Whether a CLI divides purposes well across commands (&ldquo;1 command ↔ 1 purpose&rdquo;) needs the whole repository. Judging it from one pasted command would be guessing, so it doesn&rsquo;t.</li>
+</ul>
+<div class="lens-heading" id="evidence">
+  <span class="lens-heading__num">05</span>
+  <h2 class="lens-heading__title">Evidence</h2>
+  <p class="lens-heading__q">What changed as a result?</p>
+</div>
+
+<table>
+	<thead>
+			<tr>
+					<th>Signal</th>
+					<th>Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Shipped</td>
+					<td><strong>Live prototype</strong> on Vercel, open source on GitHub</td>
+			</tr>
+			<tr>
+					<td>Rubric</td>
+					<td><strong>46 signals</strong> across 8 dimensions, published in full on the methodology page</td>
+			</tr>
+			<tr>
+					<td>Benchmarks</td>
+					<td>Benchmark fixtures from real CLIs: <code>git status</code>, <code>docker ps</code>, <code>gh pr create</code>, <code>tar</code>, <code>multipass find</code></td>
+			</tr>
+			<tr>
+					<td>Reliability</td>
+					<td>Scoring constants are tested against the rubric file, a test fails if code and rubric drift apart</td>
+			</tr>
+			<tr>
+					<td>Accessibility of the tool itself</td>
+					<td>Runs without an API key in <strong>demo mode</strong>, so anyone can see the report before plugging in a model</td>
+			</tr>
+	</tbody>
+</table>
+<!-- TODO: add usage numbers (evaluations run, GitHub stars, teams using custom rule sets) and any qualitative feedback. -->
+<p><strong>What building it taught me:</strong> the design work in an AI product is mostly deciding <strong>what the model is <em>not</em> allowed to decide.</strong> CLUX became trustworthy the moment scoring moved out of the prompt.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <nav class="case-study__next">
+      <a href="/projects/explain/">← /explain</a>
+      <a href="/projects/">$ ls ~/work</a>
+      <a href="/projects/openclaw-setup/">OpenClaw operator →</a>
+    </nav>
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

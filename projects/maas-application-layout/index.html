@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Amy Lily">
+<meta name="description" content="MAAS 2.8 buried actions far from context and hid real-time status, so operators trusted the CLI over the UI. Six tested iterations produced a side-nav, contextual-action layout that was promoted into Canonical&#39;s Cloud &amp; Infra design system." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/projects/maas-application-layout/" />
+
+
+    <title>
+        
+            Redesigning MAAS: A Scalable Infrastructure Layout That Became the Design System :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.b08f3be05fcf8347371d0b1753a28c8910cbcdcd99b1a76cc13a1233fb788d1f.css" integrity="sha256-sI874F/Pg0c3HQsXU6KMiRDLzc2ZsadswToSM/t4jR8=" crossorigin="anonymous">
+
+
+
+
+    
+        
+        <link rel="stylesheet" type="text/css" href="/css/custom.css?v=3a2082c58787add5ce1c03a1001d88cb">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+	<meta itemprop="name" content="Redesigning MAAS: A Scalable Infrastructure Layout That Became the Design System">
+	<meta itemprop="description" content="MAAS 2.8 buried actions far from context and hid real-time status, so operators trusted the CLI over the UI. Six tested iterations produced a side-nav, contextual-action layout that was promoted into Canonical&#39;s Cloud &amp; Infra design system.">
+	<meta itemprop="datePublished" content="2021-10-01T14:53:41+00:00">
+	<meta itemprop="dateModified" content="2021-10-01T14:53:41+00:00">
+	<meta itemprop="wordCount" content="927">
+	<meta itemprop="image" content="https://amylily1011.github.io/">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://amylily1011.github.io/">
+	<meta name="twitter:title" content="Redesigning MAAS: A Scalable Infrastructure Layout That Became the Design System">
+	<meta name="twitter:description" content="MAAS 2.8 buried actions far from context and hid real-time status, so operators trusted the CLI over the UI. Six tested iterations produced a side-nav, contextual-action layout that was promoted into Canonical&#39;s Cloud &amp; Infra design system.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/projects/maas-application-layout/">
+	<meta property="og:site_name" content="Amy Lily">
+	<meta property="og:title" content="Redesigning MAAS: A Scalable Infrastructure Layout That Became the Design System">
+	<meta property="og:description" content="MAAS 2.8 buried actions far from context and hid real-time status, so operators trusted the CLI over the UI. Six tested iterations produced a side-nav, contextual-action layout that was promoted into Canonical&#39;s Cloud &amp; Infra design system.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="projects">
+		<meta property="article:published_time" content="2021-10-01T14:53:41+00:00">
+		<meta property="article:modified_time" content="2021-10-01T14:53:41+00:00">
+		<meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-10-01 14:53:41 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/projects">Projects</a></li><li><a href="/ai-security">AI Security</a></li><li><a href="/about/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post case-study">
+    <article>
+      <header class="case-study__header">
+        <p class="showcase__prompt"><span class="prompt-mark">$</span> cat ~/work/maas-application-layout/case-study.md</p>
+        <h1 class="post-title">Redesigning MAAS: A Scalable Infrastructure Layout That Became the Design System</h1>
+        <div class="project-card__tags"><span class="tag tag--year">2021</span><span class="tag">UX Lead</span>
+        </div>
+        <p class="case-study__hook">9 in 10 misclicked. Six iterations later, the layout became the design system.</p>
+        
+          <nav class="lens-nav" aria-label="Case study sections">
+            
+              <a href="#problem"><span>01</span> Problem</a>
+            
+              <a href="#ai"><span>02</span> AI Opportunity</a>
+            
+              <a href="#experience"><span>03</span> Experience</a>
+            
+              <a href="#judgment"><span>04</span> Judgment</a>
+            
+              <a href="#evidence"><span>05</span> Evidence</a>
+            
+          </nav>
+        
+      </header>
+
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> The MAAS UI didn&rsquo;t scale: to 1,800 machines, to networking concepts, or to operators who trusted the CLI more. In six weeks and six iterations we rebuilt navigation, action placement, and status visibility, and other teams pivoted to the result before it was even finished.</p>
+<div class="lens-heading" id="problem">
+  <span class="lens-heading__num">01</span>
+  <h2 class="lens-heading__title">Problem</h2>
+  <p class="lens-heading__q">What hard, ambiguous problem did I take on?</p>
+</div>
+
+<p>MAAS 2.8&rsquo;s UI <strong>struggled to scale</strong>. Navigation was unintuitive, actions sat far from their context, and real-time status was hard to see. At the same time, the layout had to become a foundation for the wider Cloud &amp; Infra product family.</p>
+<p><strong>How might we</strong> create an application layout that improves learnability, efficiency, and error tolerance; scales to <strong>100–1,800+ machines</strong>; and can serve as the division&rsquo;s design system?</p>
+<p><strong>My role:</strong> UX Lead with Engineering and PM, 5 internal and 1 external interview, a survey, card sorting, and usability tests across <strong>6 design iterations</strong>.</p>
+<h3 id="who-we-were-designing-for">Who we were designing for</h3>
+<ul>
+<li><strong>35.5%</strong> production private cloud · <strong>64.6%</strong> lab/homelab · <strong>18.2%</strong> both</li>
+</ul>
+<p><img src="/images/maas-application-layout/usergroups.png" alt="MAAS user groups"></p>
+<ul>
+<li>Power users opened <strong>multiple tabs</strong> to offset slow loads (up to <strong>3 minutes</strong> for 1,800+ machines)</li>
+<li>~<strong>30%</strong> were <strong>CLI-first</strong>, using the UI only for bulk tasks</li>
+</ul>
+<blockquote>
+<p>&ldquo;I only use the UI for bulk actions because I cannot do that in the CLI, but the CLI is more reliable.&rdquo;</p>
+</blockquote>
+<h3 id="what-was-broken">What was broken</h3>
+<p><strong>Navigation &amp; IA.</strong> The top bar looked clean but didn&rsquo;t scale; nested submenus caused misclicks. In card sorting, networking concepts (fabric, VLAN, subnets, spaces) clustered poorly, <strong>9 of 10</strong> participants misclicked finding logs and networking.</p>
+<p><img src="/images/maas-application-layout/old-nav.png" alt="Old navigation">
+<img src="/images/maas-application-layout/card-sorting-1.png" alt="Card sorting 1">
+<img src="/images/maas-application-layout/card-sorting-2.png" alt="Card sorting 2"></p>
+<p><strong>Action placement.</strong> Every action hid behind one green button, far from the machine it acted on.</p>
+<p><img src="/images/maas-application-layout/action-button.png" alt="Action button"></p>
+<p><strong>Layout &amp; feedback.</strong> A centred grid constrained table space, and status and errors didn&rsquo;t appear where people looked, one reason users trusted the CLI more.</p>
+<div class="lens-heading" id="ai">
+  <span class="lens-heading__num">02</span>
+  <h2 class="lens-heading__title">AI Opportunity</h2>
+  <p class="lens-heading__q">Where is AI the right lever — and why?</p>
+</div>
+
+<p><em>Retrospective: this 2021 work predates AI in the product. Here&rsquo;s the lever I&rsquo;d reach for now.</em></p>
+<p>The research exposed a <strong>reality gap</strong>: when commissioning or deployment failed, the UI could say <em>that</em> it failed but not <em>why</em>, so operators went to logs and the CLI. That gap, turning raw logs into a plain-language cause and a next step, <strong>shown where the user is already looking</strong>, is a strong fit for a language model.</p>
+<p>The layout built the right slots for it. The state-aware Action Bundle already knows what a machine can do next, and the Status Bar is where failure lands. An explanation placed there would close the gap without adding yet another screen.</p>
+<div class="lens-heading" id="experience">
+  <span class="lens-heading__num">03</span>
+  <h2 class="lens-heading__title">Experience</h2>
+  <p class="lens-heading__q">What shipped, and what does the user journey look like?</p>
+</div>
+
+<p>We prototyped five components, <strong>Side Navigation, Action Bundle, Status Bar, Quick Access List,</strong> and <strong>IA changes</strong>, and tested each.</p>
+<p><strong>What worked ✅</strong></p>
+<ul>
+<li><strong>Side navigation</strong>, less left-right scanning, clearer grouping</li>
+<li><strong>Action Bundle</strong>, contextual actions cut click complexity (5 of 6 praised it)</li>
+<li><strong>Status Bar</strong>, commissioning and deploy progress visible without switching pages</li>
+<li><strong>Quick Access List</strong>, fast machine switching while debugging</li>
+</ul>
+<p><strong>What needed work ⚠️</strong></p>
+<ul>
+<li>Quick Access items &ldquo;jumped&rdquo; mid-action, risky in large lists</li>
+<li>At 100–1,800+ items, the quick list lost its usefulness</li>
+<li>Errors outside the F-pattern were often missed</li>
+</ul>
+<h3 id="action-bundle">Action Bundle</h3>
+<p>The primary action adapts to machine state (a deployed machine doesn&rsquo;t offer &ldquo;commission&rdquo;), with bulk vs. inline actions made explicit.</p>
+<p><img src="/images/maas-application-layout/before-after.png" alt="Before and after">
+<img src="/images/maas-application-layout/action-bundle.png" alt="Action bundle">
+<img src="/images/maas-application-layout/action-bundle-proposal.png" alt="Bundle proposal"></p>
+<p>An open question we validated: <em>how should actions display when machines in mixed states are selected?</em></p>
+<h3 id="status-bar">Status Bar</h3>
+<p>Commissioning failures were detectable, but bottom-right placement sat outside the F-pattern.</p>
+<p><img src="/images/maas-application-layout/commissioning-fail.png" alt="Commissioning fail"></p>
+<blockquote>
+<p>&ldquo;The bottom bug feels out of sight, very easy to not see.&rdquo;, David A., external user, 1,800 machines</p>
+</blockquote>
+<h3 id="quick-access-list">Quick Access List</h3>
+<p>Great for fast switching, until the list held 1,000 machines.</p>
+<p><img src="/images/maas-application-layout/quick-access-list-2.png" alt="Quick access list"></p>
+<h3 id="final-prototype">Final prototype</h3>
+<iframe style="border:none;max-width:100%;" width="800" height="450" src="https://embed.figma.com/proto/JRD38DvBBt6VMdqbW97vqO/Untitled?scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-4809&starting-point-node-id=1%3A9124&embed-host=share" allowfullscreen></iframe>
+<p>Test tasks covered the commissioning flow (how clear was the error?), comparing two machines in Quick Access, and which Status Bar information mattered most.</p>
+<p><img src="/images/maas-application-layout/research-summary.png" alt="Research summary"></p>
+<div class="lens-heading" id="judgment">
+  <span class="lens-heading__num">04</span>
+  <h2 class="lens-heading__title">Judgment</h2>
+  <p class="lens-heading__q">What did I trade off, kill, or push back on?</p>
+</div>
+
+<ul>
+<li><strong>Removed globals instead of adding them.</strong> The IA fix meant nesting networking concepts properly and dropping under-used top-level items, while promoting logs and recurring tasks to first-class places.</li>
+<li><strong>Defaulted Quick Access to what matters, not everything.</strong> Rather than list all machines, it defaults to <strong>relevant states</strong> (e.g., failed) and never reorders mid-action, a scope cut that made the feature survive at scale.</li>
+<li><strong>Took the Status Bar criticism seriously.</strong> It tested &ldquo;fine&rdquo; on detection, but the bottom-right placement meant errors were missed. We logged it as a real failure and proposed a notification centre rather than shipping a pattern we knew leaked errors.</li>
+<li><strong>Named performance as the real ceiling.</strong> No IA or list design helps when a page takes three minutes. Rather than design around slowness, we handed it to engineering, which became the <a href="/projects/maas-nlp-search/">MAAS Search</a> performance work.</li>
+<li><strong>Designed for the whole family, not just MAAS.</strong> Choosing patterns that would generalise cost some MAAS-specific polish, and it&rsquo;s why they became the design system.</li>
+</ul>
+<div class="lens-heading" id="evidence">
+  <span class="lens-heading__num">05</span>
+  <h2 class="lens-heading__title">Evidence</h2>
+  <p class="lens-heading__q">What changed as a result?</p>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;margin-bottom:2rem;">
+  <div style="flex:1 1 300px;">
+<table>
+	<thead>
+			<tr>
+					<th>Signal</th>
+					<th>Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Design system</td>
+					<td>Layout <strong>adopted into Canonical&rsquo;s design system</strong> for Cloud &amp; Infra apps</td>
+			</tr>
+			<tr>
+					<td>Cross-team</td>
+					<td>Other teams <strong>pivoted to the new layout</strong> after the final share-out</td>
+			</tr>
+			<tr>
+					<td>Action Bundle</td>
+					<td>Rated &ldquo;very convenient&rdquo; by <strong>5 of 6</strong> participants</td>
+			</tr>
+			<tr>
+					<td>Navigation</td>
+					<td>Errors decreased in testing with side nav + IA fixes (baseline: <strong>9/10</strong> misclicked)</td>
+			</tr>
+			<tr>
+					<td>Follow-on work</td>
+					<td>Surfaced the performance bottlenecks that became <strong>MAAS Search</strong></td>
+			</tr>
+			<tr>
+					<td>Speed</td>
+					<td><strong>6 weeks</strong>, 6 iterations, 6 participants</td>
+			</tr>
+	</tbody>
+</table>
+  </div>
+  <div style="flex:1 1 300px;">
+    <img src="/images/maas-application-layout/timeline.png" alt="Project timeline" style="width:100%;height:auto;border-radius:6px;" />
+  </div>
+</div>
+<p><strong>What came next:</strong> advanced search (<a href="/projects/maas-nlp-search/">NLP Search</a>), a global and local notification centre, local error messages, and machine profile templating for storage and networking.</p>
+<p><strong>What I learned:</strong> performance drives UX value. IA and lists only help if the system is fast, and users who open five tabs are telling you exactly where it isn&rsquo;t.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <nav class="case-study__next">
+      
+      <a href="/projects/">$ ls ~/work</a>
+      <a href="/projects/maas-site-manager/">MAAS Site Manager →</a>
+    </nav>
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

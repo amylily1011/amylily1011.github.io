@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Amy Lily">
+<meta name="description" content="Operators managing thousands of machines waited minutes per query, then still had to hand-translate intent into a set-theory DSL. We made search 60× faster, proved that better syntax help was not enough, and prototyped a natural-language layer that removes the translation step." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/projects/maas-nlp-search/" />
+
+
+    <title>
+        
+            From Syntax to Semantics: A Natural-Language Interface for Infrastructure Search :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.b08f3be05fcf8347371d0b1753a28c8910cbcdcd99b1a76cc13a1233fb788d1f.css" integrity="sha256-sI874F/Pg0c3HQsXU6KMiRDLzc2ZsadswToSM/t4jR8=" crossorigin="anonymous">
+
+
+
+
+    
+        
+        <link rel="stylesheet" type="text/css" href="/css/custom.css?v=3a2082c58787add5ce1c03a1001d88cb">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+	<meta itemprop="name" content="From Syntax to Semantics: A Natural-Language Interface for Infrastructure Search">
+	<meta itemprop="description" content="Operators managing thousands of machines waited minutes per query, then still had to hand-translate intent into a set-theory DSL. We made search 60× faster, proved that better syntax help was not enough, and prototyped a natural-language layer that removes the translation step.">
+	<meta itemprop="datePublished" content="2025-06-12T17:15:51+01:00">
+	<meta itemprop="dateModified" content="2025-06-12T17:15:51+01:00">
+	<meta itemprop="wordCount" content="1117">
+	<meta itemprop="image" content="https://amylily1011.github.io/">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://amylily1011.github.io/">
+	<meta name="twitter:title" content="From Syntax to Semantics: A Natural-Language Interface for Infrastructure Search">
+	<meta name="twitter:description" content="Operators managing thousands of machines waited minutes per query, then still had to hand-translate intent into a set-theory DSL. We made search 60× faster, proved that better syntax help was not enough, and prototyped a natural-language layer that removes the translation step.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/projects/maas-nlp-search/">
+	<meta property="og:site_name" content="Amy Lily">
+	<meta property="og:title" content="From Syntax to Semantics: A Natural-Language Interface for Infrastructure Search">
+	<meta property="og:description" content="Operators managing thousands of machines waited minutes per query, then still had to hand-translate intent into a set-theory DSL. We made search 60× faster, proved that better syntax help was not enough, and prototyped a natural-language layer that removes the translation step.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="projects">
+		<meta property="article:published_time" content="2025-06-12T17:15:51+01:00">
+		<meta property="article:modified_time" content="2025-06-12T17:15:51+01:00">
+		<meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2025-06-12 17:15:51 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/projects">Projects</a></li><li><a href="/ai-security">AI Security</a></li><li><a href="/about/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post case-study">
+    <article>
+      <header class="case-study__header">
+        <p class="showcase__prompt"><span class="prompt-mark">$</span> cat ~/work/maas-nlp-search/case-study.md</p>
+        <h1 class="post-title">From Syntax to Semantics: A Natural-Language Interface for Infrastructure Search</h1>
+        <div class="project-card__tags"><span class="tag tag--year">2022–25</span><span class="tag">Lead UX Designer</span>
+        </div>
+        <p class="case-study__hook">3-minute searches. A 2-second fix. Then we removed the syntax entirely.</p>
+        
+          <nav class="lens-nav" aria-label="Case study sections">
+            
+              <a href="#problem"><span>01</span> Problem</a>
+            
+              <a href="#ai"><span>02</span> AI Opportunity</a>
+            
+              <a href="#experience"><span>03</span> Experience</a>
+            
+              <a href="#judgment"><span>04</span> Judgment</a>
+            
+              <a href="#evidence"><span>05</span> Evidence</a>
+            
+          </nav>
+        
+      </header>
+
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> Search in MAAS failed twice: first on speed, then on language. We fixed speed with engineering (2 min → 2 sec per 1,000 machines), tested whether a smarter UI could fix language, but 7 of 11 users still went to the docs, and then prototyped a natural-language layer that writes the query for you.</p>
+<div class="lens-heading" id="problem">
+  <span class="lens-heading__num">01</span>
+  <h2 class="lens-heading__title">Problem</h2>
+  <p class="lens-heading__q">What hard, ambiguous problem did I take on?</p>
+</div>
+
+<p>MAAS search relied on a custom Domain Specific Language (DSL), precise, but <strong>intimidating and error-prone</strong> for experts and newcomers alike. Two problems were tangled together:</p>
+<ul>
+<li><strong>Speed.</strong> Environments with 1,800+ machines took <strong>~3 minutes</strong> to load. Every syntax mistake meant another full reload, so power users opened multiple tabs to work around it.</li>
+<li><strong>Translation.</strong> Users had to convert intent (&ldquo;deployed machines in us-west-2 with 2–8 TB&rdquo;) into DSL syntax, and they forgot the syntax between sessions. Search was a recurring learning curve, and the docs lived in a different UI entirely.</li>
+</ul>
+<p><img src="/images/maas-search/output-onlinegiftools.gif" alt="MAAS search in 2.9">
+<em>MAAS 2.9 (June 2021): string-based, client-side search over an API that joined multiple tables into one expensive object.</em></p>
+<p>The query itself hinted at AND/OR logic, but nothing told you which, you had to leave the page and learn it from the documentation.</p>
+<p><img src="/images/maas-search/search-query.png" alt="Search query"></p>
+<p>A typical search journey:</p>
+<p><img src="/images/maas-search/mermaid-search-journey.png" alt="Search journey"></p>
+<p><strong>Problem statements we committed to:</strong></p>
+<ul>
+<li><em>[Engineering]</em> Reduce load time from <strong>2 minutes to 10 seconds for 1,000 machines</strong>, scale shouldn&rsquo;t change the wait.</li>
+<li><em>[UX]</em> Let people <strong>search without learning the syntax</strong>, because the translation step is where most mistakes happen.</li>
+</ul>
+<p><strong>My role:</strong> Lead UX Designer with Engineering and PM. I ran 11 usability tests plus deep-dive interviews, mapped pain points across syntax, performance and query building, and partnered with engineers to prototype both the backend and the UI.</p>
+<div class="lens-heading" id="ai">
+  <span class="lens-heading__num">02</span>
+  <h2 class="lens-heading__title">AI Opportunity</h2>
+  <p class="lens-heading__q">Where is AI the right lever — and why?</p>
+</div>
+
+<p>The core failure was a <strong>translation problem</strong>: humans think in sentences, the system demanded set theory. That&rsquo;s a language task, mapping ambiguous, partial intent onto a formal grammar, which is exactly where natural-language models earn their place.</p>
+<p>Just how unforgiving that grammar was made the case. Every machine attribute is an object; a query is a chain of attribute filters and logical operators:</p>
+<pre tabindex="0"><code>ATTRIBUTE(KEY=VALUE|function() [AND|OR|NOT] KEY=VALUE|function() [AND|OR|NOT] RANGE=[MIN,MAX]|{MIN,MAX})
+
+status(type=&#34;deployed&#34; AND date=[30-05-2024,12-06-2024]) AND hostname(value=contains(&#34;us-west-2&#34;)) AND storage(size=[&#34;2TB&#34;,&#34;8TB&#34;])
+</code></pre><p><code>AND</code>, <code>OR</code>, and <code>NOT</code> behave like set operations, so users had to hold Venn diagrams in their heads to know whether a query would over- or under-match:</p>
+<p><img src="/images/maas-search/logicOps.png" alt="Logical operations and operational precedence"></p>
+<p>Without brackets, <code>AND</code> silently takes precedence over <code>OR</code>, so the same clause can return two different result sets:</p>
+<p><img src="/images/maas-search/logicOpsMix.png" alt="Mixing operations with and without brackets"></p>
+<p>Values are typed implicitly (bare numbers vs. quoted strings vs. integer-stored dates), inclusive <code>[ ]</code> and exclusive <code>{ }</code> ranges look almost identical, and storage units hide a 1000-vs-1024 trap, &ldquo;2TB&rdquo; and &ldquo;2TiB&rdquo; aren&rsquo;t the same number of bytes:</p>
+<p><img src="/images/maas-search/workingUnits.png" alt="Working with storage units"></p>
+<p>Every quote, bracket and operator was a place a user could get it wrong, and a place a language layer could get it right on their behalf.</p>
+<p><strong>Why this was the right lever, and not earlier:</strong> AI wouldn&rsquo;t have fixed a 2-minute load time, and it wouldn&rsquo;t have been worth trying before we knew whether better UI alone could close the gap. Only once performance was solved and UI assistance had <em>measurably</em> failed (see Judgment) was the translation step isolated as the thing to remove.</p>
+<p><strong>Where the model&rsquo;s job stops:</strong> the language layer resolves to the <strong>existing DSL</strong>, not to a black-box result. The DSL stays the precise, inspectable target; the model only removes the part humans were bad at.</p>
+<div class="lens-heading" id="experience">
+  <span class="lens-heading__num">03</span>
+  <h2 class="lens-heading__title">Experience</h2>
+  <p class="lens-heading__q">What shipped, and what does the user journey look like?</p>
+</div>
+
+<h3 id="iteration-1-performance-first-maas-30-2022">Iteration 1: Performance first (MAAS 3.0, 2022)</h3>
+<ul>
+<li>Moved filtering and grouping <strong>server-side</strong></li>
+<li>Reimplemented WebSocket handlers for machine listing</li>
+<li>Refactored DB queries to avoid unnecessary joins</li>
+</ul>
+<p>Load time degraded sharply past ~100 machines:</p>
+<p><img src="/images/maas-search/machinelist-metrics.png" alt="Machine list metrics">
+<img src="/images/maas-search/maas-performance-graph.png" alt="Performance graph"></p>
+<p>We spiked different WebSocket handlers against a 1,000-machine sample database:</p>
+<p><img src="/images/maas-search/sqlalchemy.png" alt="SQLAlchemy timing">
+<img src="/images/maas-search/machine-sqlalchemy-table.png" alt="Handler comparison"></p>
+<h3 id="iteration-2-syntax-assistance">Iteration 2: Syntax assistance</h3>
+<p>With speed solved, we made the DSL easier to use without leaving the page.</p>
+<div style="text-align:center;">
+    <img src="/images/maas-search/search-legend.png" alt="Search legend" width="350">
+</div>
+<ul>
+<li><strong>Helper chips</strong> listing available filters and the implicit AND / OR / NOT operators</li>
+</ul>
+<p><img src="/images/maas-search/search-helper.png" alt="Helper chips"></p>
+<ul>
+<li><strong>Keyboard-first free-text search</strong>, even for values not in the chips</li>
+</ul>
+<p><img src="/images/maas-search/free-text-search.png" alt="Free text search"></p>
+<ul>
+<li><strong>Edit or remove chips inline</strong></li>
+</ul>
+<p><img src="/images/maas-search/editing-chips.png" alt="Editing chips"></p>
+<ul>
+<li><strong>Save, share, and recall</strong> the last 5 searches</li>
+</ul>
+<p><img src="/images/maas-search/save-search.png" alt="Save search"></p>
+<h3 id="iteration-3-removing-translation-entirely">Iteration 3: Removing translation entirely</h3>
+<p>A natural-language layer that converts plain English into valid MAAS DSL, prototyped in <strong>Python + Streamlit</strong>:</p>
+<ul>
+<li>Designed for <strong>ambiguous and partial queries</strong> (&ldquo;all Ubuntu machines not running&rdquo;)</li>
+<li>Mapped <strong>fallback behaviours</strong> for underspecified requests</li>
+<li><strong>Feedback loops</strong> resolve ambiguity with the user <em>before</em> anything executes</li>
+</ul>
+<p>Representative scenarios the prototype was tested against:</p>
+<table>
+	<thead>
+			<tr>
+					<th>The user says</th>
+					<th>The layer writes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>&ldquo;Machines deployed between May 30th and June 12th 2024, in us-west-2, with 2–8 TB of storage.&rdquo;</td>
+					<td><code>status(type=&quot;deployed&quot; AND date=[30-05-2024,12-06-2024]) AND hostname(value=contains(&quot;us-west-2&quot;)) AND storage(size=[&quot;2TB&quot;,&quot;8TB&quot;])</code></td>
+			</tr>
+			<tr>
+					<td>&ldquo;Any machine with a hostname like sparkiegeek.&rdquo;</td>
+					<td><code>hostname(value=contains(&quot;sparkiegeek&quot;))</code></td>
+			</tr>
+			<tr>
+					<td>&ldquo;Machines running either SSD or NVMe storage.&rdquo;</td>
+					<td><code>storage(type=&quot;SSD&quot; OR type=&quot;NVMe&quot;)</code></td>
+			</tr>
+			<tr>
+					<td>&ldquo;Storage strictly between 2TB and 8TB, not inclusive.&rdquo;</td>
+					<td><code>storage(size={&quot;2TB&quot;,&quot;8TB&quot;})</code></td>
+			</tr>
+	</tbody>
+</table>
+<video width="100%" controls>
+  <source src="/images/maas-search/maas-search-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p><a href="https://github.com/amylily1011/NLPsearch"><img src="https://img.shields.io/badge/view-on%20github-blue?logo=github" alt="GitHub Repo"></a>, sample code simulating the interaction.</p>
+<div class="lens-heading" id="judgment">
+  <span class="lens-heading__num">04</span>
+  <h2 class="lens-heading__title">Judgment</h2>
+  <p class="lens-heading__q">What did I trade off, kill, or push back on?</p>
+</div>
+
+<ul>
+<li><strong>Sequenced speed before usability.</strong> No search UI can feel good when every mistake costs a two-minute reload. We held back UX work until the engineering goal was met.</li>
+<li><strong>Fixed the model, not the symptom.</strong> Rather than masking latency in the UI, we pushed filtering server-side and simplified the database model the listing depended on, slower to land, but it removed the ceiling instead of raising it.</li>
+<li><strong>Didn&rsquo;t declare victory on &ldquo;feels more efficient.&rdquo;</strong> Iteration 2 tested well on sentiment, but observed behaviour disagreed: users still made translation mistakes and 7 of 11 went back to the docs. We treated the chip UI as a stepping stone, not the answer.</li>
+<li><strong>Kept what worked.</strong> Save &amp; share survived into the direction because 9 of 11 users said it solved a real pain, they never remembered the syntax.</li>
+<li><strong>Layered AI over the DSL instead of replacing it.</strong> The DSL stays the source of truth: precise, auditable, and editable. The language layer is only allowed to <em>propose</em> a query, and asks when a request is ambiguous rather than guessing.</li>
+</ul>
+<div class="lens-heading" id="evidence">
+  <span class="lens-heading__num">05</span>
+  <h2 class="lens-heading__title">Evidence</h2>
+  <p class="lens-heading__q">What changed as a result?</p>
+</div>
+
+<table>
+	<thead>
+			<tr>
+					<th>Signal</th>
+					<th>Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Load time, 1,000 machines</td>
+					<td><strong>2 min → 2 sec</strong>, 5× better than the 10-second goal</td>
+			</tr>
+			<tr>
+					<td>Architecture</td>
+					<td>Exposed and simplified DB-model inefficiencies for long-term scale</td>
+			</tr>
+			<tr>
+					<td>Save &amp; share (n=11)</td>
+					<td><strong>9/11</strong> said it solved a major pain</td>
+			</tr>
+			<tr>
+					<td>Syntax assistance alone (n=11)</td>
+					<td><strong>7/11</strong> still returned to docs → evidence that syntax help wasn&rsquo;t enough</td>
+			</tr>
+			<tr>
+					<td>Natural-language prototype</td>
+					<td>Being tested with MAAS users and other Canonical cloud product teams as a <strong>reusable, cross-product search model</strong></td>
+			</tr>
+	</tbody>
+</table>
+<p>Usability was scored 1–5 on efficiency, learnability, error tolerance, and pleasantness:</p>
+<p><img src="/images/maas-search/pie-chart.png" alt="Usability results"></p>
+<!-- TODO: add NLP prototype results (query accuracy, time-to-query vs. DSL, adoption) once testing concludes. -->
+<p><strong>What I&rsquo;d tell another team:</strong> search at scale is equal parts speed, precision and cognitive load. Even &ldquo;better syntax&rdquo; isn&rsquo;t enough, <strong>removing syntax</strong> is what unlocks usability, and only a fast backend makes that worth building.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <nav class="case-study__next">
+      <a href="/projects/maas-cli/">← MAAS CLI</a>
+      <a href="/projects/">$ ls ~/work</a>
+      <a href="/projects/explain/">/explain →</a>
+    </nav>
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

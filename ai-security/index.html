@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Amy Lily">
-<meta name="description" content="What is this? This is my personal learning journal on AI security — topics, techniques, and concepts I&rsquo;m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
+<meta name="description" content="This is my personal learning journal on AI security, topics, techniques, and concepts I&rsquo;m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
 AI systems introduce a new class of vulnerabilities that don&rsquo;t exist in traditional software. As language models get embedded into products and pipelines, understanding how they can be attacked and how to defend them is becoming an essential skill.
 This section documents what I learn along the way: the attacks, the mechanics behind them, and the defenses worth knowing.
 " />
@@ -26,39 +26,40 @@ This section documents what I learn along the way: the attacks, the mechanics be
 
 
 
-  <link rel="stylesheet" href="https://amylily1011.github.io/main.min.9abac49fd497ef4ac370c437eea2c982082c90c232db50d04365a0b2480e247c.css" integrity="sha256-mrrEn9SX70rDcMQ37qLJgggskMIy21DQQ2WgskgOJHw=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/main.min.b08f3be05fcf8347371d0b1753a28c8910cbcdcd99b1a76cc13a1233fb788d1f.css" integrity="sha256-sI874F/Pg0c3HQsXU6KMiRDLzc2ZsadswToSM/t4jR8=" crossorigin="anonymous">
 
 
 
 
     
-        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        
+        <link rel="stylesheet" type="text/css" href="/css/custom.css?v=3a2082c58787add5ce1c03a1001d88cb">
     
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://amylily1011.github.io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://amylily1011.github.io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://amylily1011.github.io/favicon-16x16.png">
-    <link rel="manifest" href="https://amylily1011.github.io/site.webmanifest">
-    <link rel="mask-icon" href="https://amylily1011.github.io/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="https://amylily1011.github.io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="">
 
 
 
 	<meta itemprop="name" content="AI Security">
-	<meta itemprop="description" content="What is this? This is my personal learning journal on AI security — topics, techniques, and concepts I’m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
+	<meta itemprop="description" content="This is my personal learning journal on AI security, topics, techniques, and concepts I’m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
 AI systems introduce a new class of vulnerabilities that don’t exist in traditional software. As language models get embedded into products and pipelines, understanding how they can be attacked and how to defend them is becoming an essential skill.
 This section documents what I learn along the way: the attacks, the mechanics behind them, and the defenses worth knowing.">
 	<meta itemprop="datePublished" content="2026-03-26T00:00:00+00:00">
 	<meta itemprop="dateModified" content="2026-03-26T00:00:00+00:00">
-	<meta itemprop="wordCount" content="89">
+	<meta itemprop="wordCount" content="84">
 	<meta itemprop="image" content="https://amylily1011.github.io/">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:image" content="https://amylily1011.github.io/">
 	<meta name="twitter:title" content="AI Security">
-	<meta name="twitter:description" content="What is this? This is my personal learning journal on AI security — topics, techniques, and concepts I’m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
+	<meta name="twitter:description" content="This is my personal learning journal on AI security, topics, techniques, and concepts I’m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
 AI systems introduce a new class of vulnerabilities that don’t exist in traditional software. As language models get embedded into products and pipelines, understanding how they can be attacked and how to defend them is becoming an essential skill.
 This section documents what I learn along the way: the attacks, the mechanics behind them, and the defenses worth knowing.">
 
@@ -67,7 +68,7 @@ This section documents what I learn along the way: the attacks, the mechanics be
     <meta property="og:url" content="https://amylily1011.github.io/ai-security/">
 	<meta property="og:site_name" content="Amy Lily">
 	<meta property="og:title" content="AI Security">
-	<meta property="og:description" content="What is this? This is my personal learning journal on AI security — topics, techniques, and concepts I’m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
+	<meta property="og:description" content="This is my personal learning journal on AI security, topics, techniques, and concepts I’m working through, primarily via Hack The Box (HTB) and hands-on experimentation.
 AI systems introduce a new class of vulnerabilities that don’t exist in traditional software. As language models get embedded into products and pipelines, understanding how they can be attacked and how to defend them is becoming an essential skill.
 This section documents what I learn along the way: the attacks, the mechanics behind them, and the defenses worth knowing.">
 	<meta property="og:locale" content="en_us">
@@ -102,7 +103,7 @@ This section documents what I learn along the way: the attacks, the mechanics be
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://amylily1011.github.io/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
@@ -120,7 +121,7 @@ This section documents what I learn along the way: the attacks, the mechanics be
 
         <span class="header__right">
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://amylily1011.github.io/about/">whoami</a></li><li><a href="https://amylily1011.github.io/ai-security">AI Security</a></li><li><a href="https://amylily1011.github.io/misc">Miscs</a></li><li><a href="https://amylily1011.github.io/projects">Projects</a></li>
+    <ul class="menu__inner"><li><a href="/projects">Projects</a></li><li><a href="/ai-security">AI Security</a></li><li><a href="/about/">whoami</a></li>
     </ul>
 </nav>
 
@@ -142,71 +143,60 @@ This section documents what I learn along the way: the attacks, the mechanics be
 
             <div class="content">
                 
-    
-
-    <main class="posts">
-        <h1>AI Security</h1>
-
-        
-            <div class="content"><h2 id="what-is-this">What is this?</h2>
-<p>This is my personal learning journal on AI security — topics, techniques, and concepts I&rsquo;m working through, primarily via <a href="https://www.hackthebox.com/">Hack The Box (HTB)</a> and hands-on experimentation.</p>
+  <main class="work-index work-index--security">
+    <header class="work-index__header">
+      <h1>AI Security</h1>
+    </header>
+    <section class="work-index__summary" aria-labelledby="security-summary-title">
+      <h2 id="security-summary-title">What is this?</h2>
+      <div class="work-index__intro"><p>This is my personal learning journal on AI security, topics, techniques, and concepts I&rsquo;m working through, primarily via <a href="https://www.hackthebox.com/">Hack The Box (HTB)</a> and hands-on experimentation.</p>
 <p>AI systems introduce a new class of vulnerabilities that don&rsquo;t exist in traditional software. As language models get embedded into products and pipelines, understanding how they can be attacked <strong>and how to defend them</strong> is becoming an essential skill.</p>
 <p>This section documents what I learn along the way: the attacks, the mechanics behind them, and the defenses worth knowing.</p>
-<hr>
-<h2 id="articles">Articles</h2>
 </div>
-        
-
-        
-            <div class="posts-group">
-                <div class="post-year">2026</div>
-
-                <ul class="posts-list">
-                    
-                        <li class="post-item">
-                            <a href="https://amylily1011.github.io/ai-security/jailbreaking/" class="post-item-inner">
-                                <span class="post-title">Jailbreaking LLMs: When the Chef Decides to Go Rogue</span>
-                                <span class="post-day">
-                                    
-                                        Apr 29
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://amylily1011.github.io/ai-security/same-model-different-answer/" class="post-item-inner">
-                                <span class="post-title">Same Model, Different Answer: What System Prompts Actually Do</span>
-                                <span class="post-day">
-                                    
-                                        Apr 6
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://amylily1011.github.io/ai-security/prompt-injection/" class="post-item-inner">
-                                <span class="post-title">Prompt Injection: Hijack LLM Instructions</span>
-                                <span class="post-day">
-                                    
-                                        Mar 26
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                </ul>
-            </div>
-        
-    <div class="pagination">
-    <div class="pagination__buttons">
-        
-        
+    </section>
+    <div class="work-list">
+      
+        <a class="work-card" href="/ai-security/jailbreaking/">
+  <figure class="work-card__media">
+    <img src="/images/security-cards/jailbreaking.svg" alt="Preview of Jailbreaking LLMs" loading="lazy" decoding="async">
+  </figure>
+  <div class="work-card__body">
+    <p class="work-card__eyebrow">
+      <span>learning note</span><span aria-hidden="true">/</span><span>2026</span></p>
+    <h2 class="work-card__title">Jailbreaking LLMs</h2><p class="work-card__hook">Why changing a model&rsquo;s intent is different from smuggling it a bad instruction.</p><p class="work-card__desc">A practical learning note on jailbreaks, adversarial behaviour, and why no model is fully immune to attempts to bypass its guardrails.</p><div class="work-card__footer"><span class="work-card__role">AI Security learning journal</span><span class="work-card__cta">Explore learning note <span aria-hidden="true">→</span></span>
     </div>
-</div>
+  </div>
+</a>
 
-    </main>
+      
+        <a class="work-card" href="/ai-security/same-model-different-answer/">
+  <figure class="work-card__media">
+    <img src="/images/security-cards/system-prompts.svg" alt="Preview of Same Model, Different Answer" loading="lazy" decoding="async">
+  </figure>
+  <div class="work-card__body">
+    <p class="work-card__eyebrow">
+      <span>learning note</span><span aria-hidden="true">/</span><span>2026</span></p>
+    <h2 class="work-card__title">Same Model, Different Answer</h2><p class="work-card__hook">The same model can behave differently when the surrounding system changes.</p><p class="work-card__desc">A comparison of three Claude interfaces that shows how system prompts and surrounding product context shape a model&rsquo;s response.</p><div class="work-card__footer"><span class="work-card__role">AI Security learning journal</span><span class="work-card__cta">Explore learning note <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+      
+        <a class="work-card" href="/ai-security/prompt-injection/">
+  <figure class="work-card__media">
+    <img src="/images/security-cards/prompt-injection.svg" alt="Preview of Prompt Injection" loading="lazy" decoding="async">
+  </figure>
+  <div class="work-card__body">
+    <p class="work-card__eyebrow">
+      <span>learning note</span><span aria-hidden="true">/</span><span>2026</span></p>
+    <h2 class="work-card__title">Prompt Injection</h2><p class="work-card__hook">What happens when untrusted content starts directing an LLM&rsquo;s behaviour.</p><p class="work-card__desc">A hands-on learning note about direct and indirect prompt injection, and why it matters when models can read, browse, and take action.</p><div class="work-card__footer"><span class="work-card__role">AI Security learning journal</span><span class="work-card__cta">Explore learning note <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+      
+    </div>
+  </main>
 
             </div>
 
@@ -239,7 +229,7 @@ This section documents what I learn along the way: the attacks, the mechanics be
 
 
 
-<script type="text/javascript" src="https://amylily1011.github.io/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
 
 
 

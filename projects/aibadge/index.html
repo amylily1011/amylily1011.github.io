@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Amy Lily">
+<meta name="description" content="A management debate about labelling AI-written content exposed a trust problem that AI detectors can&#39;t solve. AIBadge is a weekend prototype that lets authors declare how content was made and cryptographically sign that claim, so a single changed character breaks verification." />
+<meta name="keywords" content=", AI, UX, Experiment, Security, Provenance, Side Project" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/projects/aibadge/" />
+
+
+    <title>
+        
+            AIBadge: A Weekend Experiment in AI Provenance :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.b08f3be05fcf8347371d0b1753a28c8910cbcdcd99b1a76cc13a1233fb788d1f.css" integrity="sha256-sI874F/Pg0c3HQsXU6KMiRDLzc2ZsadswToSM/t4jR8=" crossorigin="anonymous">
+
+
+
+
+    
+        
+        <link rel="stylesheet" type="text/css" href="/css/custom.css?v=3a2082c58787add5ce1c03a1001d88cb">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+	<meta itemprop="name" content="AIBadge: A Weekend Experiment in AI Provenance">
+	<meta itemprop="description" content="A management debate about labelling AI-written content exposed a trust problem that AI detectors can&#39;t solve. AIBadge is a weekend prototype that lets authors declare how content was made and cryptographically sign that claim, so a single changed character breaks verification.">
+	<meta itemprop="datePublished" content="2026-02-09T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-02-09T00:00:00+00:00">
+	<meta itemprop="wordCount" content="727">
+	<meta itemprop="image" content="https://amylily1011.github.io/">
+	<meta itemprop="keywords" content="AI,UX,Experiment,Security,Provenance,Side Project">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://amylily1011.github.io/">
+	<meta name="twitter:title" content="AIBadge: A Weekend Experiment in AI Provenance">
+	<meta name="twitter:description" content="A management debate about labelling AI-written content exposed a trust problem that AI detectors can&#39;t solve. AIBadge is a weekend prototype that lets authors declare how content was made and cryptographically sign that claim, so a single changed character breaks verification.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/projects/aibadge/">
+	<meta property="og:site_name" content="Amy Lily">
+	<meta property="og:title" content="AIBadge: A Weekend Experiment in AI Provenance">
+	<meta property="og:description" content="A management debate about labelling AI-written content exposed a trust problem that AI detectors can&#39;t solve. AIBadge is a weekend prototype that lets authors declare how content was made and cryptographically sign that claim, so a single changed character breaks verification.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="projects">
+		<meta property="article:published_time" content="2026-02-09T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-02-09T00:00:00+00:00">
+		<meta property="article:tag" content="AI">
+		<meta property="article:tag" content="UX">
+		<meta property="article:tag" content="Experiment">
+		<meta property="article:tag" content="Security">
+		<meta property="article:tag" content="Provenance">
+		<meta property="article:tag" content="Side Project">
+		<meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+    <meta property="article:section" content="UX" />
+
+    <meta property="article:section" content="AI" />
+
+
+
+    <meta property="article:published_time" content="2026-02-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/projects">Projects</a></li><li><a href="/ai-security">AI Security</a></li><li><a href="/about/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post case-study">
+    <article>
+      <header class="case-study__header">
+        <p class="showcase__prompt"><span class="prompt-mark">$</span> cat ~/work/aibadge/case-study.md</p>
+        <h1 class="post-title">AIBadge: A Weekend Experiment in AI Provenance</h1>
+        <div class="project-card__tags"><span class="tag tag--year">2026</span><span class="tag">Solo · weekend experiment</span>
+        </div>
+        <p class="case-study__hook">Stop guessing whether AI wrote it. Make the author sign for it.</p>
+        
+          <nav class="lens-nav" aria-label="Case study sections">
+            
+              <a href="#problem"><span>01</span> Problem</a>
+            
+              <a href="#ai"><span>02</span> AI Opportunity</a>
+            
+              <a href="#experience"><span>03</span> Experience</a>
+            
+              <a href="#judgment"><span>04</span> Judgment</a>
+            
+              <a href="#evidence"><span>05</span> Evidence</a>
+            
+          </nav>
+        
+      </header>
+
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> The question in the room was <em>&ldquo;Should we add a badge when AI wrote this?&rdquo;</em> The real question was <em>&ldquo;How do we design for trust when the line between human and AI is blurry?&rdquo;</em> I skipped the AI detector and built a signed declaration instead: authors state how content was made and stand behind it, tamper-evidently.</p>
+<div class="lens-heading" id="problem">
+  <span class="lens-heading__num">01</span>
+  <h2 class="lens-heading__title">Problem</h2>
+  <p class="lens-heading__q">What hard, ambiguous problem did I take on?</p>
+</div>
+
+<p>In a management meeting, a colleague asked:</p>
+<blockquote>
+<p><em>&ldquo;Should we add a badge to indicate that AI was used to write this?&rdquo;</em></p>
+</blockquote>
+<p>There was no simple yes or no. Some felt transparency mattered. Others worried that admitting AI use would undermine credibility, invite scrutiny, or send the wrong signal about the company. The conversation stopped being about a badge and became about <strong>culture, perception, and trust.</strong></p>
+<p>That&rsquo;s what made it hard: the problem was only partly technical. A badge anyone can add or remove proves nothing. A badge people are afraid to add is worse. <strong>In a world where AI is everywhere, what does honesty about authorship actually look like?</strong></p>
+<div class="lens-heading" id="ai">
+  <span class="lens-heading__num">02</span>
+  <h2 class="lens-heading__title">AI Opportunity</h2>
+  <p class="lens-heading__q">Where is AI the right lever — and why?</p>
+</div>
+
+<p>The obvious &ldquo;AI solution&rdquo; was the wrong one. <strong>AI detectors guess.</strong> They output a probability, produce high false-positive rates, and are easy to defeat:</p>
+<ul>
+<li>Edit AI text until it sounds human</li>
+<li>Rewrite human text until it sounds like AI</li>
+<li>Wait, models change constantly</li>
+</ul>
+<p>So instead of <em>&ldquo;Can we detect AI?&rdquo;</em> I asked: <strong>&ldquo;What if authors simply tell the truth and stand behind it?&rdquo;</strong></p>
+<p>We already trust content that way elsewhere, through <strong>signed declarations</strong>, not surveillance. Authors sign their work, journalists carry bylines, developers sign releases. Those systems work because of accountability.</p>
+<p>The opportunity AI creates here isn&rsquo;t another model, it&rsquo;s a new <strong>disclosure moment</strong>. Once AI is part of how nearly everything is written, provenance becomes a UX problem: how to make an honest claim cheap to make and easy to check.</p>
+<div class="lens-heading" id="experience">
+  <span class="lens-heading__num">03</span>
+  <h2 class="lens-heading__title">Experience</h2>
+  <p class="lens-heading__q">What shipped, and what does the user journey look like?</p>
+</div>
+
+<p><strong>1. Declare.</strong> The author chooses a disclosure: <em>Human-written</em>, <em>AI-assisted</em>, or <em>AI-generated</em>.</p>
+<p><img src="/images/aibadge/select-sign.gif" alt="Select a disclosure and sign"></p>
+<p><strong>2. Sign.</strong> AIBadge creates a cryptographic signature over the content&rsquo;s hash, the disclosure label, and metadata (time, model, issuer).</p>
+<p><img src="/images/aibadge/signature.png" alt="Hash and signature"></p>
+<p><strong>3. Share.</strong> A token travels alongside the content.</p>
+<p><strong>4. Verify.</strong> Anyone can check that the claim was signed and the content hasn&rsquo;t changed since.</p>
+<p><img src="/images/aibadge/verify.gif" alt="Verify"></p>
+<p>Change a single character and verification fails:</p>
+<p><img src="/images/aibadge/mismatch.gif" alt="Mismatch"></p>
+<p><strong>5. Verify in place.</strong> A Chrome extension checks the token against the page text wherever you&rsquo;re reading, here using Pastebin as a stand-in for a blog or shared doc.</p>
+<p><img src="/images/aibadge/chrome.gif" alt="Chrome extension"></p>
+<p>If the text was modified after signing, it flags a <strong>content mismatch</strong>:</p>
+<p><img src="/images/aibadge/mismatch-chrome.png" alt="Chrome mismatch"></p>
+<div class="lens-heading" id="judgment">
+  <span class="lens-heading__num">04</span>
+  <h2 class="lens-heading__title">Judgment</h2>
+  <p class="lens-heading__q">What did I trade off, kill, or push back on?</p>
+</div>
+
+<ul>
+<li><strong>Killed the detector before building it.</strong> Detection is surveillance with a false-positive rate. It would have answered the literal question and failed the real one.</li>
+<li><strong>Claimed only what the system can prove.</strong> AIBadge does <strong>not</strong> prove content is human. It proves the author stands behind a specific claim about this exact content, closer to a byline or a tamper-evident seal. Trust still comes from identity and reputation; I didn&rsquo;t dress it up as more.</li>
+<li><strong>Made disclosure a choice, not an accusation.</strong> Three neutral labels, chosen by the author, shift the experience from <em>surveillance</em> to <em>responsibility</em>, and avoid turning &ldquo;AI-assisted&rdquo; into a stigma.</li>
+<li><strong>Flipped the CAPTCHA.</strong> Instead of &ldquo;prove you&rsquo;re human&rdquo;, the model is &ldquo;if you make a claim, prove it hasn&rsquo;t been altered.&rdquo; Proof of integrity, not proof of humanity.</li>
+<li><strong>Kept it a weekend.</strong> The cryptography is the easy part. I stopped at a working end-to-end loop, because the open questions are about interaction and incentives, not more code.</li>
+</ul>
+<div class="lens-heading" id="evidence">
+  <span class="lens-heading__num">05</span>
+  <h2 class="lens-heading__title">Evidence</h2>
+  <p class="lens-heading__q">What changed as a result?</p>
+</div>
+
+<table>
+	<thead>
+			<tr>
+					<th>Signal</th>
+					<th>Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Shipped</td>
+					<td>Working end-to-end prototype: declare → sign → share → verify, plus a Chrome extension</td>
+			</tr>
+			<tr>
+					<td>Integrity</td>
+					<td>A <strong>one-character edit</strong> reliably fails verification</td>
+			</tr>
+			<tr>
+					<td>Reframe</td>
+					<td>Turned a yes/no badge debate into a design question about provenance and accountability</td>
+			</tr>
+	</tbody>
+</table>
+<!-- TODO: add any reactions from the original meeting or from people who tried the prototype. -->
+<p>What the meeting taught me: people weren&rsquo;t resisting transparency. <strong>They were navigating a new social contract around AI.</strong> The questions I&rsquo;d take forward:</p>
+<ul>
+<li>How might we make provenance visible without adding friction?</li>
+<li>How might we signal trust without creating a stigma around AI?</li>
+<li>How might we make verification feel lightweight and contextual?</li>
+</ul>
+<p>Because in the age of generative AI, the question isn&rsquo;t only <em>&ldquo;Was this written by AI?&rdquo;</em>, it&rsquo;s <strong>&ldquo;Can I trust the origin of this content?&rdquo;</strong></p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <nav class="case-study__next">
+      <a href="/projects/maas-site-manager/">← MAAS Site Manager</a>
+      <a href="/projects/">$ ls ~/work</a>
+      <a href="/projects/ubuntu-pro-cli/">Ubuntu Pro CLI →</a>
+    </nav>
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

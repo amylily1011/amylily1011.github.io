@@ -2,14 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://amylily1011.github.io/projects/agent-warroom/</loc>
+    <lastmod>2026-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/openclaw-setup/</loc>
+    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/clux/</loc>
+    <lastmod>2026-07-16T16:41:00+01:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/explain/</loc>
+    <lastmod>2022-03-12T17:15:51+01:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/maas-nlp-search/</loc>
+    <lastmod>2025-06-12T17:15:51+01:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/maas-cli/</loc>
+    <lastmod>2020-09-28T17:15:51+01:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/ubuntu-pro-cli/</loc>
+    <lastmod>2024-04-12T17:15:51+01:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/aibadge/</loc>
+    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/maas-site-manager/</loc>
+    <lastmod>2022-03-12T17:15:51+01:00</lastmod>
+  </url><url>
+    <loc>https://amylily1011.github.io/projects/maas-application-layout/</loc>
+    <lastmod>2021-10-01T14:53:41+00:00</lastmod>
+  </url><url>
     <loc>https://amylily1011.github.io/</loc>
-    <lastmod>2026-07-16T16:41:00+01:00</lastmod>
+    <lastmod>2026-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://amylily1011.github.io/misc/clux/</loc>
-    <lastmod>2026-07-16T16:41:00+01:00</lastmod>
-  </url><url>
-    <loc>https://amylily1011.github.io/misc/</loc>
-    <lastmod>2026-07-16T16:41:00+01:00</lastmod>
+    <loc>https://amylily1011.github.io/projects/</loc>
+    <lastmod>2026-09-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://amylily1011.github.io/tags/adversarial-ml/</loc>
     <lastmod>2026-04-29T00:00:00+00:00</lastmod>
@@ -47,9 +74,6 @@
     <loc>https://amylily1011.github.io/tags/anthropic/</loc>
     <lastmod>2026-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://amylily1011.github.io/misc/openclaw-setup/</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://amylily1011.github.io/tags/infra/</loc>
     <lastmod>2026-04-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -80,9 +104,6 @@
     <loc>https://amylily1011.github.io/categories/ai/</loc>
     <lastmod>2026-02-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://amylily1011.github.io/misc/aibadge/</loc>
-    <lastmod>2026-02-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://amylily1011.github.io/tags/experiment/</loc>
     <lastmod>2026-02-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -101,29 +122,8 @@
     <loc>https://amylily1011.github.io/tags/ux/</loc>
     <lastmod>2026-02-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://amylily1011.github.io/projects/projectdirectory/maassearch/</loc>
-    <lastmod>2025-06-12T17:15:51+01:00</lastmod>
-  </url><url>
-    <loc>https://amylily1011.github.io/projects/</loc>
-    <lastmod>2025-06-12T17:15:51+01:00</lastmod>
-  </url><url>
     <loc>https://amylily1011.github.io/about/</loc>
     <lastmod>2024-12-01T16:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://amylily1011.github.io/projects/projectdirectory/ubuntuproclient/</loc>
-    <lastmod>2024-04-12T17:15:51+01:00</lastmod>
-  </url><url>
-    <loc>https://amylily1011.github.io/misc/explain/</loc>
-    <lastmod>2022-03-12T17:15:51+01:00</lastmod>
-  </url><url>
-    <loc>https://amylily1011.github.io/projects/projectdirectory/maassitemanager/</loc>
-    <lastmod>2022-03-12T17:15:51+01:00</lastmod>
-  </url><url>
-    <loc>https://amylily1011.github.io/projects/projectdirectory/applicationlayout/</loc>
-    <lastmod>2021-10-01T14:53:41+00:00</lastmod>
-  </url><url>
-    <loc>https://amylily1011.github.io/misc/maas-cli/</loc>
-    <lastmod>2020-09-28T17:15:51+01:00</lastmod>
   </url><url>
     <loc>https://amylily1011.github.io/series/</loc>
   </url>

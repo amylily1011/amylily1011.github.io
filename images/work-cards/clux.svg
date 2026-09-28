@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Clux case study card</title><desc id="description">An AI-assisted CLI usability scorecard.</desc>
+  <rect width="1200" height="720" fill="#101010"/><rect x="44" y="44" width="1112" height="632" rx="12" fill="#1a1a1a" stroke="#3d3a39" stroke-width="2"/>
+  <text x="92" y="126" fill="#00d992" font-family="monospace" font-size="24" letter-spacing="4">AI UX AUDIT · CLI DESIGN</text>
+  <text x="92" y="232" fill="#f2f2f2" font-family="Arial, sans-serif" font-size="78">CLUX</text>
+  <text x="92" y="290" fill="#bdbdbd" font-family="Arial, sans-serif" font-size="31">A scorecard for human and agent-ready CLIs</text>
+  <rect x="92" y="370" width="1016" height="82" rx="7" fill="#101010" stroke="#3d3a39" stroke-width="2"/>
+  <text x="124" y="422" fill="#f2f2f2" font-family="monospace" font-size="26">$ clux audit --audience agent-first</text>
+  <g font-family="monospace" font-size="22"><text x="92" y="538" fill="#00d992">46 SIGNALS</text><text x="92" y="578" fill="#bdbdbd">Evidence-led scoring</text><text x="520" y="538" fill="#00d992">HUMAN + AGENT</text><text x="520" y="578" fill="#bdbdbd">Audience-aware findings</text></g>
+</svg>

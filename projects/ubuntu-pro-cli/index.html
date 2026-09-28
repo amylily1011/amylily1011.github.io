@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Amy Lily">
+<meta name="description" content="`pro status` was the front door to Ubuntu Pro security and compliance, and it had grown into an inconsistent wall of text operators couldn&#39;t act on. I split it into four single-purpose commands with state-aware next steps, cutting related support tickets by ~45% in pilot." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://amylily1011.github.io/projects/ubuntu-pro-cli/" />
+
+
+    <title>
+        
+            Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability :: Amy Lily 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.b08f3be05fcf8347371d0b1753a28c8910cbcdcd99b1a76cc13a1233fb788d1f.css" integrity="sha256-sI874F/Pg0c3HQsXU6KMiRDLzc2ZsadswToSM/t4jR8=" crossorigin="anonymous">
+
+
+
+
+    
+        
+        <link rel="stylesheet" type="text/css" href="/css/custom.css?v=3a2082c58787add5ce1c03a1001d88cb">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+	<meta itemprop="name" content="Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability">
+	<meta itemprop="description" content="`pro status` was the front door to Ubuntu Pro security and compliance, and it had grown into an inconsistent wall of text operators couldn&#39;t act on. I split it into four single-purpose commands with state-aware next steps, cutting related support tickets by ~45% in pilot.">
+	<meta itemprop="datePublished" content="2024-04-12T17:15:51+01:00">
+	<meta itemprop="dateModified" content="2024-04-12T17:15:51+01:00">
+	<meta itemprop="wordCount" content="895">
+	<meta itemprop="image" content="https://amylily1011.github.io/">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://amylily1011.github.io/">
+	<meta name="twitter:title" content="Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability">
+	<meta name="twitter:description" content="`pro status` was the front door to Ubuntu Pro security and compliance, and it had grown into an inconsistent wall of text operators couldn&#39;t act on. I split it into four single-purpose commands with state-aware next steps, cutting related support tickets by ~45% in pilot.">
+
+
+
+    <meta property="og:url" content="https://amylily1011.github.io/projects/ubuntu-pro-cli/">
+	<meta property="og:site_name" content="Amy Lily">
+	<meta property="og:title" content="Ubuntu Pro CLI: Redesigning `pro status` for Clarity, Scale, and Actionability">
+	<meta property="og:description" content="`pro status` was the front door to Ubuntu Pro security and compliance, and it had grown into an inconsistent wall of text operators couldn&#39;t act on. I split it into four single-purpose commands with state-aware next steps, cutting related support tickets by ~45% in pilot.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="projects">
+		<meta property="article:published_time" content="2024-04-12T17:15:51+01:00">
+		<meta property="article:modified_time" content="2024-04-12T17:15:51+01:00">
+		<meta property="og:image" content="https://amylily1011.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2024-04-12 17:15:51 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/amylily</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/projects">Projects</a></li><li><a href="/ai-security">AI Security</a></li><li><a href="/about/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post case-study">
+    <article>
+      <header class="case-study__header">
+        <p class="showcase__prompt"><span class="prompt-mark">$</span> cat ~/work/ubuntu-pro-cli/case-study.md</p>
+        <h1 class="post-title">Ubuntu Pro CLI: Redesigning <code>pro status</code> for Clarity, Scale, and Actionability</h1>
+        <div class="project-card__tags"><span class="tag tag--year">2024</span><span class="tag">Lead UX Designer</span>
+        </div>
+        <p class="case-study__hook">One overloaded command became four clear ones. Support tickets dropped ~45%.</p>
+        
+          <nav class="lens-nav" aria-label="Case study sections">
+            
+              <a href="#problem"><span>01</span> Problem</a>
+            
+              <a href="#ai"><span>02</span> AI Opportunity</a>
+            
+              <a href="#experience"><span>03</span> Experience</a>
+            
+              <a href="#judgment"><span>04</span> Judgment</a>
+            
+              <a href="#evidence"><span>05</span> Evidence</a>
+            
+          </nav>
+        
+      </header>
+
+      <div class="post-content">
+        <p><strong>TL;DR:</strong> The CLI that told enterprise operators whether their machines were secure had become hard to read and harder to act on. I redesigned the command structure and every output state around &ldquo;one command, one purpose&rdquo;, kept every old command working, and shipped a spec engineering could build against.</p>
+<div class="lens-heading" id="problem">
+  <span class="lens-heading__num">01</span>
+  <h2 class="lens-heading__title">Problem</h2>
+  <p class="lens-heading__q">What hard, ambiguous problem did I take on?</p>
+</div>
+
+<p>Ubuntu Pro provides security, compliance, and extended maintenance for enterprise and developer machines. <code>pro status</code> is the <strong>primary entry point</strong> for operators to check subscription, security coverage, vulnerabilities, and service health.</p>
+<p>As the portfolio grew across <strong>LTS, EOSS, non-LTS, and cloud-attached systems</strong>, the output became <strong>inconsistent, hard to parse, and hard to act on</strong>, especially for operators managing dozens or hundreds of machines.</p>
+<p><img src="/images/pro-status/Old-jammy.png" alt="pro status before">
+<em>Before: one command carrying subscription, services, and security in fragmented, verbose text.</em></p>
+<p>The ambiguity was in the edges. The same command had to behave well for:</p>
+<ul>
+<li>attached, unattached, and expired machines (with and without grace periods)</li>
+<li>end-of-support releases that needed an upgrade prompt</li>
+<li>cloud auto-attach failures</li>
+<li>humans in a colour terminal <strong>and</strong> scripts reading non-TTY output</li>
+</ul>
+<p><strong>How might we</strong> unify every <code>pro status</code> output into one consistent, human-readable format that guides people to the next action, without breaking the automation already built on top of it?</p>
+<p><strong>My role:</strong> Lead UX Designer across the Server, Compliance, and Support teams. I audited existing outputs, wrote the interaction and layout spec for every main and edge case, defined colour/icon/text conventions that adapt to terminal themes, and worked with engineering on backward compatibility.</p>
+<div class="lens-heading" id="ai">
+  <span class="lens-heading__num">02</span>
+  <h2 class="lens-heading__title">AI Opportunity</h2>
+  <p class="lens-heading__q">Where is AI the right lever — and why?</p>
+</div>
+
+<p><em>Retrospective: AI is not part of this product, and that&rsquo;s deliberate territory.</em></p>
+<p>Security and compliance status is a place where output must be <strong>deterministic and exact</strong>: an operator acting on &ldquo;3 fixable CVEs&rdquo; needs that number to be true every time, not a plausible summary. The right lever here was structure, not generation.</p>
+<p>What the work <em>did</em> set up is the ground AI agents need. Consistent sections, stable wording, clean non-TTY output, and <strong>exact next-step commands</strong> are what make a CLI legible to an agent working through text alone, not just to a person. Designing <code>pro</code> taught me that CLI quality for machines and CLI quality for humans can be specified, and measured, which is the idea that later became <a href="/projects/clux/">Clux</a>.</p>
+<div class="lens-heading" id="experience">
+  <span class="lens-heading__num">03</span>
+  <h2 class="lens-heading__title">Experience</h2>
+  <p class="lens-heading__q">What shipped, and what does the user journey look like?</p>
+</div>
+
+<h3 id="design-principles">Design principles</h3>
+<ol>
+<li><strong>Consistency first</strong>, tables, sections, and labels keep the same order and wording.</li>
+<li><strong>Signal over noise</strong>, security and subscription surface first.</li>
+<li><strong>Progressive disclosure</strong>, summaries in <code>pro status</code>, details in <code>pro service show</code>.</li>
+<li><strong>Accessibility &amp; compatibility</strong>, colour-free mode, UTF-8 detection, non-TTY handling.</li>
+<li><strong>Context-aware guidance</strong>, suggestions adapt to the machine&rsquo;s state.</li>
+</ol>
+<h3 id="one-command-became-four">One command became four</h3>
+<p><code>pro status</code>, <code>pro security status</code>, and two new commands: <code>pro service</code> and <code>pro subscription</code>. Commands were regrouped into Quick Start, Service, Security, and Troubleshooting, using a consistent <strong>verb-noun</strong> pattern (<code>pro service enable</code>, <code>pro service show</code>).</p>
+<p><strong><code>pro status</code></strong>, more concise, skimmable, with important messages highlighted.</p>
+<p><img src="/images/pro-status/pro-status.png" alt="pro status">
+<img src="/images/pro-status/before-after-pro-status2.png" alt="pro status before and after"></p>
+<p><strong><code>pro security status</code></strong>, the command users found most confusing. Now a glanceable view of fixable CVEs and vulnerabilities, ordered by severity, with package coverage broken down by source and the exact command to fix.</p>
+<p><img src="/images/pro-status/pro-security.png" alt="pro security status">
+<img src="/images/pro-status/before-after-security-status.png" alt="security status before and after"></p>
+<p><strong><code>pro service</code> (new)</strong>, lists services and what each entitles, then lets you drill into one with <code>pro service show [name]</code>.</p>
+<p><img src="/images/pro-status/pro-services.png" alt="pro service">
+<img src="/images/pro-status/pro-service-show.png" alt="pro service show"></p>
+<p><strong><code>pro subscription</code> (new)</strong>, sysadmins asked for this to maintain infrastructure and know who to contact for support. It used to be buried inside <code>pro status</code>.</p>
+<p><img src="/images/pro-status/pro-subscription.png" alt="pro subscription"></p>
+<p>Designed states include the warning before expiry and the expired state:</p>
+<p><img src="/images/pro-status/pro-subscription-almost-expired.png" alt="Subscription almost expired">
+<img src="/images/pro-status/pro-sub-expired.png" alt="Subscription expired"></p>
+<h3 id="edge-cases-and-accessibility">Edge cases and accessibility</h3>
+<ul>
+<li><code>--no-color</code> and the <code>NO_COLOR</code> environment variable</li>
+<li>UTF-8 detection with fallback characters</li>
+<li><strong>Clean non-TTY output</strong> for automation</li>
+<li><code>--no-suggestions</code> for experienced operators</li>
+</ul>
+<div class="lens-heading" id="judgment">
+  <span class="lens-heading__num">04</span>
+  <h2 class="lens-heading__title">Judgment</h2>
+  <p class="lens-heading__q">What did I trade off, kill, or push back on?</p>
+</div>
+
+<ul>
+<li><strong>Split the command instead of polishing it.</strong> The easy path was reformatting <code>pro status</code>. I pushed for &ldquo;one command, one purpose&rdquo;: subscription details didn&rsquo;t belong in a health check, so they got their own command and became easier to find.</li>
+<li><strong>Kept every old command working.</strong> A clean break would have been simpler to design, but operators had scripts on top of this output. New structure shipped alongside preserved commands, compatibility cost spec complexity, and it was worth paying.</li>
+<li><strong>Summaries up front, detail on request.</strong> Progressive disclosure was a tradeoff against completeness: <code>pro status</code> shows less than before, deliberately, and points to the command that shows more.</li>
+<li><strong>Balanced first-timers against power users.</strong> Contextual suggestions help newcomers; <code>--no-suggestions</code> and clean non-TTY output keep the tool quiet for experts and scripts.</li>
+<li><strong>Made the spec extensible, not just correct.</strong> Service templates (FIPS, esm-apps, esm-infra, Livepatch) mean new services plug in without re-litigating layout.</li>
+</ul>
+<div class="lens-heading" id="evidence">
+  <span class="lens-heading__num">05</span>
+  <h2 class="lens-heading__title">Evidence</h2>
+  <p class="lens-heading__q">What changed as a result?</p>
+</div>
+
+<table>
+	<thead>
+			<tr>
+					<th>Signal</th>
+					<th>Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Support tickets related to <code>pro status</code></td>
+					<td><strong>~45% reduction</strong> in pilot</td>
+			</tr>
+			<tr>
+					<td>Operator time-to-action</td>
+					<td>Faster, via precise, state-specific next-step commands</td>
+			</tr>
+			<tr>
+					<td>Engineering</td>
+					<td>A <strong>single-source CLI spec</strong> covering every main and edge state</td>
+			</tr>
+			<tr>
+					<td>Extensibility</td>
+					<td>New services plug into the same template without breaking consistency</td>
+			</tr>
+	</tbody>
+</table>
+<table>
+	<thead>
+			<tr>
+					<th>Before</th>
+					<th>After</th>
+					<th>Impact</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Inconsistent service lists</td>
+					<td>Standard table: name, status, entitlement, description</td>
+					<td>Less confusion</td>
+			</tr>
+			<tr>
+					<td>No clear next steps</td>
+					<td>Contextual suggestions with exact commands</td>
+					<td>Better task completion</td>
+			</tr>
+			<tr>
+					<td>Hard-coded colours</td>
+					<td>Theme-aware colours with no-colour fallback</td>
+					<td>Accessibility</td>
+			</tr>
+			<tr>
+					<td>Subscription buried in text</td>
+					<td>Dedicated <code>pro subscription</code> command</td>
+					<td>Fewer missed critical details</td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>What I took away:</strong> CLI UX <em>is</em> product UX. Consistency, accessibility, and context matter just as much in a terminal, and backward compatibility is a design constraint, not an engineering footnote.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <nav class="case-study__next">
+      <a href="/projects/aibadge/">← AIBadge</a>
+      <a href="/projects/">$ ls ~/work</a>
+      <a href="/projects/maas-cli/">MAAS CLI →</a>
+    </nav>
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://amylily1011.github.io/">Amy Lily</a></span>
+            
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/amylily1011">Amy Lily</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>
