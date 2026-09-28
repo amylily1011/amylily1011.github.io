@@ -3,8 +3,9 @@
 {{- $name := $page.LinkTitle | default $page.Title -}}
 {{- $role := $page.Params.role -}}
 {{- if and .compact $page.Params.homeRole }}{{ $role = $page.Params.homeRole }}{{ end -}}
+{{- $cardHero := $page.Params.cardHero | default $page.Params.hero -}}
 <a class="work-card" href="{{ $page.RelPermalink }}">
-  {{- with $page.Params.hero }}
+  {{- with $cardHero }}
   <figure class="work-card__media">
     <img src="{{ . | relURL }}" alt="Preview of {{ $name }}" loading="lazy" decoding="async">
   </figure>

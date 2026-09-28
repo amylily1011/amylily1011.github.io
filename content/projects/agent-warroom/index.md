@@ -10,109 +10,101 @@ weight = 1
 year = '2026'
 role = 'Product designer & builder · Canonical AI Ubuntu Hackathon'
 homeRole = 'AI Ubuntu Hackathon'
-hero = '/images/agent-warroom/war-room-overview.svg'
+hero = '/images/agent-warroom/incident-intake.svg'
+cardHero = '/images/agent-warroom/war-room-overview.svg'
 hook = 'When an AI skips validation, the human needs a war room, not another prompt to approve.'
 description = 'A working three-agent prototype for diagnosing and remediating an infrastructure incident caused by another AI, designed around evidence, reversibility, and meaningful human control.'
 repository = 'https://github.com/amylily1011/agent-warroom'
 hideLensNav = true
 +++
 
-## Context
+## Problems
 
-At the Canonical AI Ubuntu Hackathon, I built **Agent War Room**, a working prototype for a specific, uncomfortable scenario: an AI deploy agent pushes a bad configuration across a fleet, and another set of agents has to diagnose and remediate the incident.
+At the Canonical AI Ubuntu Hackathon, I built **Agent War Room** around an uncomfortable but plausible operational failure: an AI deploy agent pushes an invalid nginx directive across a fleet and one VM fails to reload.
 
-The demo uses mocked Multipass VMs for reliability. A deploy agent pushes an invalid nginx directive; one VM fails to reload. The important detail is not only that a change failed. The Paranoid agent can pull the deploy agent's own reasoning trace and find the line that matters: **“VALIDATE skipped.”** The AI has left the evidence of its skipped validation step inside the incident itself.
+The immediate incident is technical. The larger problem is organisational. When an AI makes an infrastructure change, the on-call person inherits the consequence but often cannot see the decision, the evidence, or the validation that led to it.
 
-![Agent War Room overview](/images/agent-warroom/war-room-overview.svg)
+### The operating problem
 
-## My Role
+In the simulated incident, `deploy-agent` emits an invalid directive, `http2_max_concurrent_streams`, and pushes it to mocked Multipass VMs. The reload on `vm-web-01` fails. A normal alert tells an operator that something is broken. It does not tell them whether the configuration was reasoned about, checked, or merely guessed.
 
-I designed and built the prototype end to end: the incident flow, the three operational agent roles, the handoff loop, the Streamlit interface, and the human-control model. I used the Claude Agent SDK and Python, with a deliberately small handoff loop of roughly 80 lines rather than an orchestration framework.
+### The management and leadership problem
 
-## Challenge
+Adding approval prompts to every agent write is not a serious control model. It turns an accountable operator into a rubber stamp and makes recovery slower without increasing understanding. Asking a manager or on-call lead to verify every technical choice is equally unrealistic.
 
-The challenge was not to make three agents look busy. It was to make an AI-led incident response legible and accountable when another AI had caused the failure.
+The leadership question became: **how might a team move quickly during an AI-caused incident while retaining clear accountability, sensible escalation, and the ability to stop the system?**
 
-A generic approval prompt is not enough. If a person is asked to approve every write, they become a rubber stamp and a bottleneck. If they are asked to review every technical detail, the system assumes they can out-reason the agents under incident pressure. Neither model gives the human a useful job.
+## AI opportunities
 
-**How might we** design an agentic incident response that moves quickly, surfaces evidence, and keeps a human meaningfully in control without turning them into a permanent correctness reviewer?
+The opportunity was not to make three agents look busy. It was to give each one a bounded operational responsibility and make their work inspectable.
 
-## Design Principles
+- **Optimist** looks for the fastest, lowest-cost recovery path.
+- **Paranoid** gathers evidence, tests assumptions, and identifies risk.
+- **Decider** acts as incident commander, reconciles the options, and writes the post-mortem.
 
-1. **Give each agent a real operational role.** Optimist looks for fast, low-cost recovery. Paranoid gathers evidence and tests risk. Decider acts as incident commander and writes the post-mortem.
-2. **Make the evidence inspectable.** The system should show why an agent reached a recommendation, including the originating deploy agent's reasoning trace when it is relevant to the incident.
-3. **Gate irreversibility, not every write.** Human approval should concentrate at the point where a change becomes difficult to undo.
-4. **Bring lead indicators into the room.** A fleet-status signal that precedes an alert is useful incident evidence, not background telemetry.
-5. **Define the human role honestly.** The human provides accountability, operating context, and a kill switch. They are not there to verify every line of agent reasoning.
+This separation creates productive disagreement rather than a single opaque recommendation. Crucially, Paranoid can pull `deploy-agent`'s own reasoning trace. In the live scenario, that trace contains the line **`VALIDATE skipped`**. The AI has left the evidence of its missed validation step inside the incident.
 
-## Scope of Work
+![Agent War Room incident intake](/images/agent-warroom/incident-intake.svg)
 
-The prototype covers one contained incident from detection through post-mortem:
+## Experience
 
-- a deploy agent pushes an invalid nginx directive across mocked Multipass VMs
-- one nginx reload fails
-- Optimist proposes a quick, low-cost recovery path
-- Paranoid gathers the failing configuration, service evidence, fleet status, and the deploy agent's reasoning trace
-- Decider weighs the options, records the decision, and produces the post-mortem
-- a human approval gate appears only when the proposed action crosses an irreversibility boundary
+### My role
 
-The interface is a Streamlit war room. The infrastructure is mocked so the demo remains deterministic and the design discussion can stay focused on the incident model.
+I designed and built the prototype end to end: the incident flow, operational roles, human-control model, Streamlit interface, and small Python handoff loop. I used the Claude Agent SDK and a deliberately lightweight orchestration loop of roughly 80 lines rather than a multi-agent framework.
 
-## Before/After or Key Decisions
+### The incident flow
 
-### Before: approval as a substitute for control
+1. A reload-failure alert opens the war room.
+2. Decider frames the incident and delegates the fast-path check to Optimist.
+3. Paranoid gathers the service journal, `nginx -t`, config diff, commit history, fleet status, and the deploy agent's reasoning trace.
+4. Decider presents a proposed recovery action with its evidence and risk.
+5. A human chooses whether to approve, hold, or select a different action.
+6. Decider records the decision and the post-mortem.
 
-The tempting interaction is an approval dialog for every agent write. It creates an appearance of human oversight, but asks a person to repeatedly confirm actions they cannot realistically assess at incident speed. The result is delay without meaningful accountability.
+The experience makes the human's job explicit. They do not have to re-derive the diagnosis at incident speed. They are there to bring operational context, own a consequential decision, and stop the system when necessary.
 
-### After: approval at the irreversibility boundary
+![Agent War Room evidence trail](/images/agent-warroom/evidence-trace.svg)
+*The deploy agent's own trace makes the missed validation step visible before a recovery decision is made.*
 
-I designed the gate around **irreversibility**. Reversible investigation and low-risk recovery can proceed within the agents' operational roles. When a proposed action has a lasting or difficult-to-reverse consequence, the system stops and asks the human to make the accountable decision.
+## Judgment
 
-![Agent War Room approval gate](/images/agent-warroom/screenshot-placeholder.svg)
+### Gate irreversibility, not every write
 
-### Lead indicators belong in the war room
+The key interaction decision was to place human review at an **irreversibility boundary**, or when the agents materially disagree. Reversible investigation and low-risk actions should not demand a click simply to simulate oversight.
 
-The fleet-status dashboard would have shown the bad push around 14 minutes before the alert fired. That makes it an incident signal, not a secondary operations view. I brought this context into the same place as the evidence and options, so the Decider can reason from the warning signs as well as the failure.
+The prototype renders a Slack-style approval card for the proposed config revert so the decision and audit trail are visible in the demo. The broader design principle is narrower: a human should be interrupted when accountability is needed, not whenever an agent mutates state.
 
-![Agent War Room fleet status](/images/agent-warroom/screenshot-placeholder.svg)
+![Agent War Room approval gate](/images/agent-warroom/approval-gate.svg)
+*The approval card gives the accountable operator a meaningful choice: approve, redirect, or hold.*
 
-### The human is accountable, contextual, and able to stop the system
+### Bring lead indicators into the room
 
-The human's value is not perfect technical correctness review. They provide organisational context the agents do not have, own the decision when risk crosses a boundary, and can stop the system. This made the control model more concrete than “human in the loop.”
+Fleet status is part of the decision, not background telemetry. In this scenario, the dashboard would have shown the bad push around 14 minutes before the reload alert. I brought capacity, unvalidated AI commits, and the last fleet-wide syntax check into the same surface as the recommendation.
 
-## Impact & Outcomes
+For an incident lead, this changes the conversation from "can we fix the failing VM?" to "what did the system tell us before it became an outage, and what should change next?"
 
-Agent War Room is a working prototype and demo, not a shipped product. Its outcome is a design proposition rather than an adoption metric: an incident response can use multiple agents without hiding the source of a recommendation or making human oversight performative.
+### Define human oversight honestly
 
-The prototype makes three choices visible in one flow:
+The human is not the model's correctness reviewer. Their value is accountability, organisational context, and a kill switch. This is a management decision as much as an interface decision: it creates a clear owner for risk while allowing the agents to perform the specialised recovery work.
 
-- role-based disagreement can improve an incident decision when each role has a distinct mandate
-- an agent's own trace can be first-class evidence when that agent caused the incident
-- approval can be reserved for decisions that need human accountability, rather than added to every step by default
+## Evidence
 
-## Reflection & Learnings
+Agent War Room is a working prototype and demo, not a shipped product. Its evidence is therefore in the interaction model and the live scenario, not adoption or percentage metrics.
 
-The most useful reframe was that human oversight is not a binary switch. “Human in the loop” can still mean a person clicks through opaque prompts. In this prototype, the human is designed as the accountable operator with context and a kill switch, while the agents do the specialised work of recovery, risk analysis, and incident command.
+The prototype demonstrates that:
 
-I also learned that observability is part of the interaction design. The skipped validation step only becomes useful when it is connected to the failed reload, the fleet signal, and the recommended action. A trace is not trust by itself; it needs to be presented as evidence in the decision.
+- the incident can move from alert to evidence to a human decision in one coherent surface
+- operational roles can make disagreement legible instead of hiding it inside one answer
+- the originating AI's trace can become first-class evidence when that AI caused the incident
+- fleet signals can give an incident commander context before and during the failure
 
-## Deep Dive
+I ran the prototype through the nginx scenario and verified the real interface states for the alert, evidence trace, fleet-status degradation, and approval gate. The captured views show the deploy agent's skipped validation alongside the recovery decision.
 
-The screenshots below are intentional placeholders for the next iteration of the case study.
+What this prototype does **not** demonstrate is production adoption, reliability across real infrastructure, or measured incident outcomes. Those need validation with an operating team and real integration points.
 
-![Agent War Room agent roles](/images/agent-warroom/screenshot-placeholder.svg)
-*Capture the Optimist, Paranoid, and Decider panels together, with each role's mandate visible.*
+### Capture plan
 
-![Agent War Room evidence trail](/images/agent-warroom/screenshot-placeholder.svg)
-*Capture the failed nginx reload beside the deploy agent's reasoning trace, including “VALIDATE skipped.”*
-
-![Agent War Room decision and post-mortem](/images/agent-warroom/screenshot-placeholder.svg)
-*Capture the Decider's recommendation, the irreversibility-based approval gate, and the generated post-mortem.*
-
-**Shots to capture**
-
-- The full war-room view at the point the incident is recognised
-- The fleet-status lead indicator and the alert timeline
-- The evidence drawer showing the deploy agent's skipped validation step
-- The irreversible-action approval gate
-- The final Decider handoff and generated post-mortem
+- Alert and fleet-status view at incident recognition
+- Evidence trace showing the invalid directive and `VALIDATE skipped`
+- Approval gate for the proposed config revert
+- Final Decider handoff and post-mortem

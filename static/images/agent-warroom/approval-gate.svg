@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Agent War Room approval gate</title>
+  <desc id="desc">The Streamlit prototype showing a human approval card for a proposed configuration revert.</desc>
+  <rect width="1400" height="820" fill="#ffffff"/>
+  <rect width="330" height="820" fill="#f1f3f6"/>
+  <text x="28" y="112" fill="#22252a" font-family="Arial, sans-serif" font-size="24" font-weight="700">The war room</text>
+  <text x="28" y="150" fill="#71757d" font-family="Arial, sans-serif" font-size="16">Three AI agents in</text><text x="190" y="150" fill="#4e8d64" font-family="monospace" font-size="15">#ops-incidents</text>
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#292d32"><text x="28" y="205">🎯  Decider</text><text x="28" y="252">⚡  Optimist</text><text x="28" y="299">🔍  Paranoid</text></g>
+  <line x1="28" y1="345" x2="302" y2="345" stroke="#cfd3d8"/>
+  <text x="28" y="405" fill="#22252a" font-family="Arial, sans-serif" font-size="22" font-weight="700">📊 Fleet status</text>
+  <text x="28" y="453" fill="#71757d" font-family="Arial, sans-serif" font-size="14">Fleet capacity</text><text x="28" y="486" fill="#22252a" font-family="Arial, sans-serif" font-size="29" font-weight="700">2 / 3</text>
+  <text x="28" y="535" fill="#71757d" font-family="Arial, sans-serif" font-size="14">AI commits unvalidated</text><text x="28" y="568" fill="#22252a" font-family="Arial, sans-serif" font-size="29" font-weight="700">1</text>
+  <text x="378" y="111" fill="#22252a" font-family="Arial, sans-serif" font-size="32" font-weight="700">Recovery decision</text>
+  <text x="378" y="154" fill="#33373d" font-family="Arial, sans-serif" font-size="18" font-weight="700">🎯 Decider</text>
+  <text x="378" y="189" fill="#34383d" font-family="Arial, sans-serif" font-size="18">Root cause locked: invalid directive with no pre-deploy validation gate.</text>
+  <text x="378" y="220" fill="#34383d" font-family="Arial, sans-serif" font-size="18">Reverting config and reloading nginx on vm-web-01.</text>
+  <text x="378" y="280" fill="#71757d" font-family="Arial, sans-serif" font-size="15">↓ In production this would be a Slack DM to the on-call engineer.</text>
+  <rect x="378" y="307" width="960" height="276" rx="8" fill="#ffffff" stroke="#d9dde2"/>
+  <rect x="378" y="307" width="5" height="276" fill="#5c276e"/>
+  <rect x="404" y="332" width="36" height="36" rx="5" fill="#5c276e"/>
+  <text x="449" y="356" fill="#282c31" font-family="Arial, sans-serif" font-size="20" font-weight="700">war-room-bot</text>
+  <text x="602" y="356" fill="#71757d" font-family="monospace" font-size="13">APP  just now · #ops-oncall</text>
+  <text x="404" y="404" fill="#272b30" font-family="Arial, sans-serif" font-size="21" font-weight="700">🚨 Approval required — production change</text>
+  <text x="404" y="446" fill="#373b40" font-family="Arial, sans-serif" font-size="16">vm-web-01 has been failing nginx reloads since 14:03 UTC.</text>
+  <text x="404" y="473" fill="#373b40" font-family="Arial, sans-serif" font-size="16">Root cause identified: a config push from deploy-agent. The war room proposes:</text>
+  <rect x="404" y="497" width="900" height="42" fill="#f3f4f5"/>
+  <rect x="404" y="497" width="4" height="42" fill="#5c276e"/>
+  <text x="424" y="524" fill="#2f3338" font-family="monospace" font-size="16">$ multipass exec vm-web-01 -- config-revert</text>
+  <rect x="378" y="614" width="292" height="52" rx="8" fill="#ef5b55"/>
+  <text x="476" y="647" fill="#ffffff" font-family="Arial, sans-serif" font-size="17" font-weight="700">✅ Approve</text>
+  <rect x="688" y="614" width="292" height="52" rx="8" fill="#ffffff" stroke="#cfd3d8"/>
+  <text x="768" y="647" fill="#34383d" font-family="Arial, sans-serif" font-size="17">✏️ Different action</text>
+  <rect x="998" y="614" width="340" height="52" rx="8" fill="#ffffff" stroke="#cfd3d8"/>
+  <text x="1062" y="647" fill="#34383d" font-family="Arial, sans-serif" font-size="17">⏸ Hold (page on-call)</text>
+  <text x="378" y="735" fill="#71757d" font-family="Arial, sans-serif" font-size="16">The human owns the consequential decision, not a line-by-line correctness review.</text>
+</svg>

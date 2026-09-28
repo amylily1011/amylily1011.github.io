@@ -27,8 +27,8 @@ During a design review, I realized that while I thought I had clearly explained 
 
 Little did I know, this was how other designers understood my explanation. 
 
-![NapImust](https://i.imgur.com/lBBxrh1.jpeg)
-*Image source:* [imgur.com/lBBxrh1](https://imgur.com/lBBxrh1)
+<!-- ![NapImust](https://i.imgur.com/lBBxrh1.jpeg)
+*Image source:* [imgur.com/lBBxrh1](https://imgur.com/lBBxrh1) -->
 
 
 In that very same meeting, below was how my colleague explained the concept of Ubuntu Advantage.

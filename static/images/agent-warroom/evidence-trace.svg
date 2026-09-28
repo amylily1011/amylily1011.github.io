@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Agent War Room evidence trace</title>
+  <desc id="desc">The prototype showing Paranoid gathering evidence and the deploy agent validation skip.</desc>
+  <rect width="1400" height="820" fill="#ffffff"/>
+  <rect width="330" height="820" fill="#f1f3f6"/>
+  <text x="28" y="112" fill="#22252a" font-family="Arial, sans-serif" font-size="24" font-weight="700">The war room</text>
+  <text x="28" y="150" fill="#71757d" font-family="Arial, sans-serif" font-size="16">Three AI agents in</text><text x="190" y="150" fill="#4e8d64" font-family="monospace" font-size="15">#ops-incidents</text>
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#292d32"><text x="28" y="205">🎯  Decider</text><text x="28" y="252">⚡  Optimist</text><text x="28" y="299">🔍  Paranoid</text></g>
+  <line x1="28" y1="345" x2="302" y2="345" stroke="#cfd3d8"/>
+  <text x="28" y="405" fill="#22252a" font-family="Arial, sans-serif" font-size="22" font-weight="700">📊 Fleet status</text>
+  <text x="28" y="453" fill="#71757d" font-family="Arial, sans-serif" font-size="14">Fleet capacity</text><text x="28" y="486" fill="#22252a" font-family="Arial, sans-serif" font-size="29" font-weight="700">2 / 3</text>
+  <text x="28" y="535" fill="#71757d" font-family="Arial, sans-serif" font-size="14">AI commits unvalidated</text><text x="28" y="568" fill="#22252a" font-family="Arial, sans-serif" font-size="29" font-weight="700">1</text>
+  <text x="28" y="622" fill="#71757d" font-family="Arial, sans-serif" font-size="14">Last fleet-wide nginx -t pass</text><text x="28" y="655" fill="#22252a" font-family="Arial, sans-serif" font-size="21" font-weight="700">13:48 UTC</text><text x="150" y="655" fill="#bd4c42" font-family="Arial, sans-serif" font-size="14">stale · 14m</text>
+  <text x="378" y="111" fill="#22252a" font-family="Arial, sans-serif" font-size="32" font-weight="700">Evidence gathered by Paranoid</text>
+  <text x="378" y="149" fill="#71757d" font-family="Arial, sans-serif" font-size="17">The root cause is traceable back to the originating AI agent.</text>
+  <text x="378" y="207" fill="#33373d" font-family="Arial, sans-serif" font-size="19" font-weight="700">🔍 Paranoid</text>
+  <text x="378" y="240" fill="#3a3e44" font-family="Arial, sans-serif" font-size="17">Pulling the journal, syntax test, diff, history, and deploy-agent's reasoning trace.</text>
+  <rect x="378" y="274" width="960" height="400" rx="8" fill="#f6f7f8"/>
+  <text x="412" y="319" fill="#30343a" font-family="monospace" font-size="16">$ multipass exec vm-web-01 -- agent-log deploy-agent</text>
+  <text x="412" y="366" fill="#555b62" font-family="monospace" font-size="15">[deploy-agent / task TX-4421 / 2026-05-13 13:48:54 UTC]</text>
+  <text x="412" y="405" fill="#30343a" font-family="monospace" font-size="16">INTENT     improve HTTP/2 throughput on web fleet</text>
+  <text x="412" y="439" fill="#30343a" font-family="monospace" font-size="16">SEARCH     nginx-docs(&quot;http2 concurrent streams&quot;) → 0 hits</text>
+  <text x="412" y="473" fill="#30343a" font-family="monospace" font-size="16">DECIDE     emit `http2_max_concurrent_streams 999999;`</text>
+  <text x="412" y="501" fill="#555b62" font-family="monospace" font-size="15">           confidence: 0.71 · no exact directive match found</text>
+  <rect x="400" y="530" width="850" height="53" rx="5" fill="#fff0ee"/>
+  <text x="412" y="564" fill="#b74238" font-family="monospace" font-size="17" font-weight="700">VALIDATE   skipped (no `nginx -t` gate configured for deploy-agent tasks)</text>
+  <text x="412" y="621" fill="#30343a" font-family="monospace" font-size="16">APPLY      perf.conf written across vm-web-01, vm-web-02, vm-web-03</text>
+  <rect x="378" y="712" width="960" height="55" rx="27" fill="#ffffff" stroke="#d9dde2"/>
+  <text x="410" y="747" fill="#99a0a8" font-family="Arial, sans-serif" font-size="16">Evidence is shown before the recovery decision, not buried in a log.</text>
+</svg>
