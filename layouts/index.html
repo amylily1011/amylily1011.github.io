@@ -1,0 +1,39 @@
+{{ define "body" }}
+    <body class="{{ if .Site.Params.backgroundImage }} background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');" {{ else }}"{{ end }}>
+{{ end }}
+
+{{ define "main" }}
+    <main class="showcase showcase--home">
+        <div class="home-intro">
+            {{ if .Site.Params.Portrait.Path }}
+               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+            {{ end }}
+
+            <h1>{{ .Site.Title }}</h1>
+
+            {{ partial "subtitle.html" . }}
+
+            {{- with .Site.Params.social }}
+                <div>
+                    {{ partial "social-icons.html" . }}
+                </div>
+            {{- end }}
+        </div>
+
+        {{ with site.GetPage "/projects" }}
+            <section class="home-projects">
+                <div class="home-projects__command">
+                    <code><span class="prompt-mark">$</span> ls ~/projects | head -{{ site.Params.homeProjectCount }}</code>
+                </div>
+                <div class="project-grid">
+                    {{ range first site.Params.homeProjectCount .Pages.ByWeight }}
+                        {{ partial "project-card.html" . }}
+                    {{ end }}
+                </div>
+                <div class="home-projects__command home-projects__command--more">
+                    <a href="{{ .RelPermalink }}"><code><span class="prompt-mark">$</span> ls ~/projects · all {{ len .Pages }} case studies <span aria-hidden="true">→</span></code></a>
+                </div>
+            </section>
+        {{ end }}
+    </main>
+{{ end }}

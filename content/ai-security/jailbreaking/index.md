@@ -1,7 +1,13 @@
 ---
 title: "Jailbreaking LLMs: When the Chef Decides to Go Rogue"
+linkTitle: "Jailbreaking LLMs"
 date: 2026-04-29
 draft: false
+year: "2026"
+role: "AI Security learning journal"
+hero: "/images/security-cards/jailbreaking.svg"
+hook: "Why changing a model's intent is different from smuggling it a bad instruction."
+description: "A practical learning note on jailbreaks, adversarial behaviour, and why no model is fully immune to attempts to bypass its guardrails."
 tags: ["AI Security", "Jailbreaking", "LLM", "Red Teaming", "Adversarial ML"]
 categories: ["AI Security"]
 summary: "Prompt injection tricks the chef with a fake note. Jailbreaking convinces the chef to want to break the rules. Here's the theory, the research, and the tools that show why no model is fully immune."
@@ -295,4 +301,4 @@ Knowing where the cracks are is at least a starting point.
 
 ---
 
-*Part of my AI Security learning journal — topics explored via [Hack The Box](https://academy.hackthebox.com/path/preview/ai-red-teamer), published research, and hands-on experimentation.*
+*Part of my AI Security learning journal, topics explored via [Hack The Box](https://academy.hackthebox.com/path/preview/ai-red-teamer), published research, and hands-on experimentation.*

@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <main class="post case-study">
+    <article>
+      <header class="case-study__header">
+        <p class="showcase__prompt"><span class="prompt-mark">$</span> cat ~/work/{{ path.Base .File.Dir }}/case-study.md</p>
+        <h1 class="post-title">{{ .Title | markdownify }}</h1>
+        <div class="project-card__tags">
+          {{- with .Params.year }}<span class="tag tag--year">{{ . }}</span>{{ end }}
+          {{- with .Params.role }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ with .Params.hook }}<p class="case-study__hook">{{ . | markdownify }}</p>{{ end }}
+        {{ if not .Params.hideLensNav }}
+          <nav class="lens-nav" aria-label="Case study sections">
+            {{ range site.Data.lenses.lens }}
+              <a href="#{{ .id }}"><span>{{ .num }}</span> {{ .title }}</a>
+            {{ end }}
+          </nav>
+        {{ end }}
+      </header>
+
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+    </article>
+
+    <hr />
+
+    <nav class="case-study__next">
+      {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">← {{ .LinkTitle }}</a>{{ end }}
+      <a href="{{ "projects/" | relURL }}">$ ls ~/work</a>
+      {{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }} →</a>{{ end }}
+    </nav>
+  </main>
+{{ end }}

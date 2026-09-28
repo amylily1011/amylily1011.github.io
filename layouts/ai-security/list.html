@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <main class="work-index work-index--security">
+    <header class="work-index__header">
+      <h1>{{ .Title }}</h1>
+    </header>
+    <section class="work-index__summary" aria-labelledby="security-summary-title">
+      <h2 id="security-summary-title">What is this?</h2>
+      {{ with .Content }}<div class="work-index__intro">{{ . }}</div>{{ end }}
+    </section>
+    <div class="work-list">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "work-card.html" (dict "page" . "kind" "learning note") }}
+      {{ end }}
+    </div>
+  </main>
+{{ end }}

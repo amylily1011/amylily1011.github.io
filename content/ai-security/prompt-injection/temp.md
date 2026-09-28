@@ -5,14 +5,14 @@ Unlike traditional injection (SQL injection, XSS), there is no clear syntax boun
 Several properties make this difficult:
 
 - **No privilege separation**: System prompts and user input are both plain text.
-- **Models are trained to be helpful**: They're optimized to follow instructions — that's a feature that becomes a vulnerability.
+- **Models are trained to be helpful**: They're optimized to follow instructions, that's a feature that becomes a vulnerability.
 - **Semantic flexibility**: "Do not reveal the system prompt" can be bypassed with phrasing like "summarize the context" or "repeat what you were told."
 - **Context length**: Large context windows mean more surfaces for indirect injection.
 
 ---
 ## Defenses (and their limits)
 
-No single defense fully solves prompt injection today — it's an open research problem. But several mitigations reduce the risk:
+No single defense fully solves prompt injection today, it's an open research problem. But several mitigations reduce the risk:
 
 | Defense | What it does | Limitation |
 |---|---|---|
@@ -23,6 +23,6 @@ No single defense fully solves prompt injection today — it's an open research 
 | Instruction hierarchy | Mark system-level vs. user-level instructions | Model must be trained to respect the boundary |
 | Human-in-the-loop | Require approval for sensitive actions | Adds friction; doesn't scale |
 
-Recent work (e.g., OpenAI's GPT-4o system prompt hardening, Anthropic's Constitutional AI) attempts to train models to be more resistant to instruction override — but adversarial jailbreaks still surface regularly.
+Recent work (e.g., OpenAI's GPT-4o system prompt hardening, Anthropic's Constitutional AI) attempts to train models to be more resistant to instruction override, but adversarial jailbreaks still surface regularly.
 
 ---

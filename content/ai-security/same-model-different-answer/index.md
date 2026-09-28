@@ -1,10 +1,16 @@
 ---
 title: "Same Model, Different Answer: What System Prompts Actually Do"
+linkTitle: "Same Model, Different Answer"
 date: 2026-04-06
 draft: false
+year: "2026"
+role: "AI Security learning journal"
+hero: "/images/security-cards/system-prompts.svg"
+hook: "The same model can behave differently when the surrounding system changes."
+description: "A comparison of three Claude interfaces that shows how system prompts and surrounding product context shape a model's response."
 tags: ["AI Security", "Prompt Injection", "LLM", "System Prompts", "Anthropic"]
 categories: ["AI Security"]
-summary: "I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model — completely different behavior. Here's what that reveals."
+summary: "I asked three Claude interfaces the same prompt injection question. One gave me a full strategy guide. The other two drew the line at explanation. Same model, completely different behavior. Here's what that reveals."
 ---
 
 In the midst of solving the prompt injection exercise, I got stuck and ran out of creativity. Before AI, I would have searched multiple materials, borrowed a few books, and sat down with a friend who might understand this topic better. But why bother doing all the hard work when I have Claude Cowork, Claude Code, and MyClaw (My OpenClaw setup that is hooked with Anthropic API.)

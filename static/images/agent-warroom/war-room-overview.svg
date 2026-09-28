@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Agent War Room placeholder</title>
+  <desc id="description">A placeholder title card for the Agent War Room case study.</desc>
+  <rect width="1200" height="720" fill="#101010"/>
+  <rect x="44" y="44" width="1112" height="632" rx="12" fill="#1a1a1a" stroke="#3d3a39" stroke-width="2"/>
+  <text x="92" y="132" fill="#00d992" font-family="monospace" font-size="24" letter-spacing="4">CANONICAL AI UBUNTU HACKATHON</text>
+  <text x="92" y="240" fill="#f2f2f2" font-family="Arial, sans-serif" font-size="76">Agent War Room</text>
+  <text x="92" y="300" fill="#bdbdbd" font-family="Arial, sans-serif" font-size="30">A prototype for accountable AI incident response</text>
+  <line x1="92" y1="360" x2="1108" y2="360" stroke="#3d3a39" stroke-width="2"/>
+  <g font-family="monospace" font-size="24">
+    <rect x="92" y="420" width="300" height="160" rx="8" fill="#101010" stroke="#3d3a39" stroke-width="2"/>
+    <text x="124" y="472" fill="#00d992">OPTIMIST</text>
+    <text x="124" y="520" fill="#bdbdbd">Fast recovery</text>
+    <rect x="450" y="420" width="300" height="160" rx="8" fill="#101010" stroke="#3d3a39" stroke-width="2"/>
+    <text x="482" y="472" fill="#00d992">PARANOID</text>
+    <text x="482" y="520" fill="#bdbdbd">Evidence and risk</text>
+    <rect x="808" y="420" width="300" height="160" rx="8" fill="#101010" stroke="#3d3a39" stroke-width="2"/>
+    <text x="840" y="472" fill="#00d992">DECIDER</text>
+    <text x="840" y="520" fill="#bdbdbd">Incident command</text>
+  </g>
+  <text x="92" y="632" fill="#8b949e" font-family="monospace" font-size="20">SCREENSHOT PLACEHOLDER · CAPTURE THE WORKING PROTOTYPE NEXT</text>
+</svg>

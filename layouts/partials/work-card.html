@@ -1,0 +1,25 @@
+{{- $page := .page -}}
+{{- $kind := .kind | default "case study" -}}
+{{- $name := $page.LinkTitle | default $page.Title -}}
+{{- $role := $page.Params.role -}}
+{{- if and .compact $page.Params.homeRole }}{{ $role = $page.Params.homeRole }}{{ end -}}
+<a class="work-card" href="{{ $page.RelPermalink }}">
+  {{- with $page.Params.hero }}
+  <figure class="work-card__media">
+    <img src="{{ . | relURL }}" alt="Preview of {{ $name }}" loading="lazy" decoding="async">
+  </figure>
+  {{- end }}
+  <div class="work-card__body">
+    <p class="work-card__eyebrow">
+      <span>{{ $kind }}</span>
+      {{- with $page.Params.year }}<span aria-hidden="true">/</span><span>{{ . }}</span>{{ end -}}
+    </p>
+    <h2 class="work-card__title">{{ $name | markdownify }}</h2>
+    {{- with $page.Params.hook }}<p class="work-card__hook">{{ . | markdownify }}</p>{{ end -}}
+    {{- with $page.Description }}<p class="work-card__desc">{{ . | markdownify }}</p>{{ end -}}
+    <div class="work-card__footer">
+      {{- with $role }}<span class="work-card__role">{{ . }}</span>{{ end -}}
+      <span class="work-card__cta">Explore {{ $kind }} <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>

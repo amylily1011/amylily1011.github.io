@@ -17,7 +17,9 @@ publishDir   = "public"
 buildDrafts  = false
 buildFuture  = false
 buildExpired = false
-canonifyURLs = true
+# Keep asset URLs relative so local previews load the same stylesheet that will
+# be published, while canonical metadata remains absolute via baseURL.
+canonifyURLs = false
 
 enableRobotsTXT = true
 enableGitInfo   = false
@@ -70,6 +72,9 @@ disableHugoGeneratorInject = false
   # Home subtitle of the index page.
   #
   homeSubtitle = "Define. Prototype. Sleep. Repeat."
+
+  # Number of project cards featured on the homepage (ordered by front-matter weight).
+  homeProjectCount = 3
 
   # Set a background for the homepage
   # backgroundImage = "assets/images/background.jpg"
@@ -248,18 +253,13 @@ disableHugoGeneratorInject = false
     identifier = "projects"
     name       = "Projects"
     url        = "/projects"
-  
-  [[menu.main]]
-    identifier = "Miscs"
-    name       = "Miscs"
-    url        = "/misc"
+    weight     = 1
 
   [[menu.main]]
     identifier = "ai-security"
     name       = "AI Security"
     url        = "/ai-security"
-
-  
+    weight     = 2
 
 [markup]
   [markup.goldmark]

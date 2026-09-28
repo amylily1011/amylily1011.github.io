@@ -10,7 +10,7 @@ draft : false
 
 UX explorer by day, dumpling enthusiast by night 🥟✨
 
-I’m a London-based UX Design Manager with a soft spot for elegant systems, bold ideas, and anything that makes complex things feel delightfully simple. I’ve spent the last 10+ years designing products and experiences that live at the intersection of cloud infrastructure, AI, and open source — making the technical feel human.
+I’m a London-based UX Design Manager with a soft spot for elegant systems, bold ideas, and anything that makes complex things feel delightfully simple. I’ve spent the last 10+ years designing products and experiences that live at the intersection of cloud infrastructure, AI, and open source, making the technical feel human.
 
 ![tangbao](/images/about-me/tangbao.jpg)
 

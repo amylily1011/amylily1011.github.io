@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <main class="work-index work-index--projects">
+    <header class="work-index__header">
+      <h1>{{ .Title }}</h1>
+    </header>
+    <section class="work-index__summary" aria-labelledby="work-summary-title">
+      <h2 id="work-summary-title">What is this?</h2>
+      {{ with .Content }}<div class="work-index__intro">{{ . }}</div>{{ end }}
+      <p class="work-index__note">A focused selection of systems work, from agent oversight to infrastructure operations.</p>
+    </section>
+
+    {{/* Add featured = true to a case study to include it here; lower weight leads. */}}
+    <div class="work-list">
+      {{ range (where site.RegularPages "Params.featured" true).ByWeight }}
+        {{ partial "work-card.html" (dict "page" . "kind" "case study") }}
+      {{ end }}
+    </div>
+
+    {{ $explorations := where site.RegularPages "Params.workCollection" "explorations" }}
+    {{ if gt (len $explorations) 0 }}
+      <section class="work-index__secondary" aria-labelledby="explorations-title">
+        <header>
+          <h2 id="explorations-title">Experiments worth exploring</h2>
+          <p>Smaller, hands-on pieces that show how I learn, test ideas, and make complex systems easier to use.</p>
+        </header>
+        <div class="work-list">
+          {{ range $explorations.ByWeight }}
+            {{ partial "work-card.html" (dict "page" . "kind" "exploration") }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  </main>
+{{ end }}

@@ -1,0 +1,33 @@
+# The five lenses every case study answers, in reading order.
+# Used by the `lens` shortcode (section headings) and the projects/single
+# layout (jump-nav), so the wording lives in one place.
+
+[[lens]]
+id = "problem"
+num = "01"
+title = "Problem"
+question = "What hard, ambiguous problem did I take on?"
+
+[[lens]]
+id = "ai"
+num = "02"
+title = "AI Opportunity"
+question = "Where is AI the right lever — and why?"
+
+[[lens]]
+id = "experience"
+num = "03"
+title = "Experience"
+question = "What shipped, and what does the user journey look like?"
+
+[[lens]]
+id = "judgment"
+num = "04"
+title = "Judgment"
+question = "What did I trade off, kill, or push back on?"
+
+[[lens]]
+id = "evidence"
+num = "05"
+title = "Evidence"
+question = "What changed as a result?"

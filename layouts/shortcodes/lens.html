@@ -1,0 +1,11 @@
+{{- /* Usage: {{< lens "problem" >}} — renders the numbered lens heading defined in data/lenses.toml. */ -}}
+{{- $id := .Get 0 -}}
+{{- $lens := index (where site.Data.lenses.lens "id" $id) 0 -}}
+{{- if not $lens -}}
+  {{- errorf "lens shortcode: unknown lens %q in %s" $id .Page.File.Path -}}
+{{- end -}}
+<div class="lens-heading" id="{{ $lens.id }}">
+  <span class="lens-heading__num">{{ $lens.num }}</span>
+  <h2 class="lens-heading__title">{{ $lens.title }}</h2>
+  <p class="lens-heading__q">{{ $lens.question }}</p>
+</div>
